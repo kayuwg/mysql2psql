@@ -864,8 +864,10 @@ func (n *AggregateFuncExpr) Restore(ctx *format.RestoreCtx) error {
 		}
 		ctx.WriteKeyWord("DISTINCT ")
 	}
+	fmt.Println("here")
 	switch strings.ToLower(n.F) {
 	case "string_agg":
+		fmt.Println(n.Args)
 		for i := 0; i < len(n.Args)-1; i++ {
 			if i != 0 {
 				ctx.WritePlain(", ")

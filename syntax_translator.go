@@ -12,14 +12,18 @@ import (
 	_ "github.com/pingcap/parser/test_driver"
 )
 
+func testCustom(parser *parser.Parser) {
+	// sql := `with w1 as ( Select *, Dense_Rank() over (partition by DepartmentId order by Salary desc ) as "Rank" from Employee ) Select Department.Name as "Department" , w1.Name as "Employee", w1.Salary as "Salary" from w1 join Department on Department.Id = w1.DepartmentId where w1.Rank = 1 or w1.Rank =2 or w1.Rank = 3 order by Department.Name , w1.Salary desc`
+	sql := `select a.customer_id as customer_id from (select customer_id, group_concat(distinct(product_key) order by product_key) as new from customer group by customer_id) a where new = (select group_concat(distinct(product_key) order by product_key) from product)`
+	translated := translate(sql, parser)
+	fmt.Println(translated)
+}
+
 func main() {
 
-	// sql := `with w1 as ( Select *, Dense_Rank() over (partition by DepartmentId order by Salary desc ) as "Rank" from Employee ) Select Department.Name as "Department" , w1.Name as "Employee", w1.Salary as "Salary" from w1 join Department on Department.Id = w1.DepartmentId where w1.Rank = 1 or w1.Rank =2 or w1.Rank = 3 order by Department.Name , w1.Salary desc`
-	sql := `SELECT GROUP_CONCAT(a2 SEPARATOR ",") FROM a GROUP BY a1`
 	parser := parser.New()
 	if len(os.Args) < 2 {
-		translated := translate(sql, parser)
-		fmt.Println(translated)
+		testCustom(parser)
 		return
 	}
 	filename := os.Args[1]
@@ -69,6 +73,9 @@ func translate(sql string, parser *parser.Parser) string {
 			format.RestoreStringWithoutDefaultCharset,
 		&stringBuilder,
 	)
-	(*astNode).Restore(ctx)
+	err = (*astNode).Restore(ctx)
+	if err != nil {
+		return fmt.Sprintf("ERROR: %v", err.Error())
+	}
 	return stringBuilder.String()
 }
