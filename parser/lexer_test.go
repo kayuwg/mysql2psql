@@ -125,23 +125,23 @@ func (s *testLexerSuite) TestLiteral(c *C) {
 		{"N'some text'", underscoreCS},
 		{"n'some text'", underscoreCS},
 		{"\\N", null},
-		{".*", int('.')},       // `.`, `*`
-		{".1_t_1_x", int('.')}, // `.`, `1_t_1_x`
-		{"9e9e", floatLit},     // 9e9e = 9e9 + e
+		{".*", int('.')},     // `.`, `*`
+		{".1_t_1_x", decLit}, // `.1`, `_t_1_x`
+		{"9e9e", floatLit},   // 9e9e = 9e9 + e
+		{".1e", invalid},
 		// Issue #3954
-		{".1e23", floatLit}, // `.1e23`
-		{".123", decLit},    // `.123`
-		{".1*23", decLit},   // `.1`, `*`, `23`
-		{".1,23", decLit},   // `.1`, `,`, `23`
-		{".1 23", decLit},   // `.1`, `23`
-		// TODO: See #3963. The following test cases do not test the ambiguity.
-		{".1$23", int('.')},    // `.`, `1$23`
-		{".1a23", int('.')},    // `.`, `1a23`
-		{".1e23$23", int('.')}, // `.`, `1e23$23`
-		{".1e23a23", int('.')}, // `.`, `1e23a23`
-		{".1C23", int('.')},    // `.`, `1C23`
-		{".1\u0081", int('.')}, // `.`, `1\u0081`
-		{".1\uff34", int('.')}, // `.`, `1\uff34`
+		{".1e23", floatLit},    // `.1e23`
+		{".123", decLit},       // `.123`
+		{".1*23", decLit},      // `.1`, `*`, `23`
+		{".1,23", decLit},      // `.1`, `,`, `23`
+		{".1 23", decLit},      // `.1`, `23`
+		{".1$23", decLit},      // `.1`, `$23`
+		{".1a23", decLit},      // `.1`, `a23`
+		{".1e23$23", floatLit}, // `.1e23`, `$23`
+		{".1e23a23", floatLit}, // `.1e23`, `a23`
+		{".1C23", decLit},      // `.1`, `C23`
+		{".1\u0081", decLit},   // `.1`, `\u0081`
+		{".1\uff34", decLit},   // `.1`, `\uff34`
 		{`b''`, bitLit},
 		{`b'0101'`, bitLit},
 		{`0b0101`, bitLit},
@@ -201,7 +201,7 @@ func (s *testLexerSuite) TestscanString(c *C) {
 		{`' \n\tTest String'`, " \n\tTest String"},
 		{`'\x\B'`, "xB"},
 		{`'\0\'\"\b\n\r\t\\'`, "\000'\"\b\n\r\t\\"},
-		{`'\Z'`, string(26)},
+		{`'\Z'`, "\x1a"},
 		{`'\%\_'`, `\%\_`},
 		{`'hello'`, "hello"},
 		{`'"hello"'`, `"hello"`},
@@ -216,7 +216,7 @@ func (s *testLexerSuite) TestscanString(c *C) {
 		{`'disappearing\ backslash'`, "disappearing backslash"},
 		{"'한국의中文UTF8およびテキストトラック'", "한국의中文UTF8およびテキストトラック"},
 		{"'\\a\x90'", "a\x90"},
-		{`"\aèàø»"`, `aèàø»`},
+		{"'\\a\x18èàø»\x05'", "a\x18èàø»\x05"},
 	}
 
 	for _, v := range table {
@@ -279,16 +279,16 @@ func (s *testLexerSuite) TestFeatureIDsComment(c *C) {
 	c.Assert(tok, Equals, identifier)
 	c.Assert(lit, Equals, "auto_random")
 	c.Assert(pos, Equals, Pos{0, 16, 16})
-	tok, pos, lit = l.scan()
+	tok, pos, _ = l.scan()
 	c.Assert(tok, Equals, int('('))
-	tok, pos, lit = l.scan()
+	_, pos, lit = l.scan()
 	c.Assert(lit, Equals, "5")
 	c.Assert(pos, Equals, Pos{0, 28, 28})
-	tok, pos, lit = l.scan()
+	tok, pos, _ = l.scan()
 	c.Assert(tok, Equals, int(')'))
 
 	l = NewScanner("/*T![unsupported_feature] unsupported(123) */")
-	tok, pos, lit = l.scan()
+	tok, pos, _ = l.scan()
 	c.Assert(tok, Equals, 0)
 }
 

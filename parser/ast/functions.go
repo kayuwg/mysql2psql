@@ -17,6 +17,7 @@ package ast
 import (
 	"fmt"
 	"io"
+	"regexp"
 	"strings"
 	"time"
 
@@ -35,45 +36,46 @@ var (
 
 // List scalar function names.
 const (
-	LogicAnd   = "and"
-	Cast       = "cast"
-	LeftShift  = "leftshift"
-	RightShift = "rightshift"
-	LogicOr    = "or"
-	GE         = "ge"
-	LE         = "le"
-	EQ         = "eq"
-	NE         = "ne"
-	LT         = "lt"
-	GT         = "gt"
-	Plus       = "plus"
-	Minus      = "minus"
-	And        = "bitand"
-	Or         = "bitor"
-	Mod        = "mod"
-	Xor        = "bitxor"
-	Div        = "div"
-	Mul        = "mul"
-	UnaryNot   = "not" // Avoid name conflict with Not in github/pingcap/check.
-	BitNeg     = "bitneg"
-	IntDiv     = "intdiv"
-	LogicXor   = "xor"
-	NullEQ     = "nulleq"
-	UnaryPlus  = "unaryplus"
-	UnaryMinus = "unaryminus"
-	In         = "in"
-	Like       = "like"
-	Case       = "case"
-	Regexp     = "regexp"
-	IsNull     = "isnull"
-	IsTruth    = "istrue"  // Avoid name conflict with IsTrue in github/pingcap/check.
-	IsFalsity  = "isfalse" // Avoid name conflict with IsFalse in github/pingcap/check.
-	RowFunc    = "row"
-	SetVar     = "setvar"
-	GetVar     = "getvar"
-	Values     = "values"
-	BitCount   = "bit_count"
-	GetParam   = "getparam"
+	LogicAnd           = "and"
+	Cast               = "cast"
+	LeftShift          = "leftshift"
+	RightShift         = "rightshift"
+	LogicOr            = "or"
+	GE                 = "ge"
+	LE                 = "le"
+	EQ                 = "eq"
+	NE                 = "ne"
+	LT                 = "lt"
+	GT                 = "gt"
+	Plus               = "plus"
+	Minus              = "minus"
+	And                = "bitand"
+	Or                 = "bitor"
+	Mod                = "mod"
+	Xor                = "bitxor"
+	Div                = "div"
+	Mul                = "mul"
+	UnaryNot           = "not" // Avoid name conflict with Not in github/pingcap/check.
+	BitNeg             = "bitneg"
+	IntDiv             = "intdiv"
+	LogicXor           = "xor"
+	NullEQ             = "nulleq"
+	UnaryPlus          = "unaryplus"
+	UnaryMinus         = "unaryminus"
+	In                 = "in"
+	Like               = "like"
+	Case               = "case"
+	Regexp             = "regexp"
+	IsNull             = "isnull"
+	IsTruthWithoutNull = "istrue" // Avoid name conflict with IsTrue in github/pingcap/check.
+	IsTruthWithNull    = "istrue_with_null"
+	IsFalsity          = "isfalse" // Avoid name conflict with IsFalse in github/pingcap/check.
+	RowFunc            = "row"
+	SetVar             = "setvar"
+	GetVar             = "getvar"
+	Values             = "values"
+	BitCount           = "bit_count"
+	GetParam           = "getparam"
 
 	// common functions
 	Coalesce = "coalesce"
@@ -176,7 +178,12 @@ const (
 	Year             = "year"
 	YearWeek         = "yearweek"
 	LastDay          = "last_day"
-	TiDBParseTso     = "tidb_parse_tso"
+	// TSO functions
+	// TiDBBoundedStaleness is used to determine the TS for a read only request with the given bounded staleness.
+	// It will be used in the Stale Read feature.
+	// For more info, please see AsOfClause.
+	TiDBBoundedStaleness = "tidb_bounded_staleness"
+	TiDBParseTso         = "tidb_parse_tso"
 
 	// string functions
 	ASCII           = "ascii"
@@ -229,6 +236,7 @@ const (
 	CharacterLength = "character_length"
 	FindInSet       = "find_in_set"
 	WeightString    = "weight_string"
+	Soundex         = "soundex"
 
 	// information functions
 	Benchmark      = "benchmark"
@@ -277,6 +285,9 @@ const (
 	Sleep           = "sleep"
 	UUID            = "uuid"
 	UUIDShort       = "uuid_short"
+	UUIDToBin       = "uuid_to_bin"
+	BinToUUID       = "bin_to_uuid"
+	VitessHash      = "vitess_hash"
 	// get_lock() and release_lock() is parsed but do nothing.
 	// It is used for preventing error in Ruby's activerecord migrations.
 	GetLock     = "get_lock"
@@ -329,7 +340,8 @@ const (
 	JSONLength        = "json_length"
 
 	// TiDB internal function.
-	TiDBDecodeKey = "tidb_decode_key"
+	TiDBDecodeKey       = "tidb_decode_key"
+	TiDBDecodeBase64Key = "tidb_decode_base64_key"
 
 	// MVCC information fetching function.
 	GetMvccInfo = "get_mvcc_info"
@@ -340,13 +352,40 @@ const (
 	SetVal  = "setval"
 )
 
+type FuncCallExprType int8
+
+const (
+	FuncCallExprTypeKeyword FuncCallExprType = iota
+	FuncCallExprTypeGeneric
+)
+
 // FuncCallExpr is for function expression.
 type FuncCallExpr struct {
 	funcNode
+	Tp     FuncCallExprType
+	Schema model.CIStr
 	// FnName is the function name.
 	FnName model.CIStr
 	// Args is the function args.
 	Args []ExprNode
+}
+
+func isStringLiteral(expr ExprNode) bool {
+	return expr.GetType().EvalType() == types.ETString && expr.GetFlag() == FlagConstant
+}
+
+// if arg is string literal, cast it to date when restoring it
+func restoreCastStringToDate(ctx *format.RestoreCtx, arg ExprNode) error {
+	if isStringLiteral(arg) {
+		ctx.WriteKeyWord("CAST(")
+	}
+	if err := arg.Restore(ctx); err != nil {
+		return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Expr")
+	}
+	if isStringLiteral(arg) {
+		ctx.WriteKeyWord(" AS DATE)")
+	}
+	return nil
 }
 
 // Restore implements Node interface.
@@ -368,7 +407,108 @@ func (n *FuncCallExpr) Restore(ctx *format.RestoreCtx) error {
 		return nil
 	}
 
-	ctx.WriteKeyWord(n.FnName.O)
+	// transform some function calls for PSQL
+	switch n.FnName.L {
+	case If:
+		ctx.WriteKeyWord("CASE WHEN ")
+		if err := n.Args[0].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Expr")
+		}
+		ctx.WriteKeyWord(" THEN ")
+		if err := n.Args[1].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Expr")
+		}
+		ctx.WriteKeyWord(" ELSE ")
+		if err := n.Args[2].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Expr")
+		}
+		ctx.WriteKeyWord(" END")
+		return nil
+	case IsNull:
+		if err := n.Args[0].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Expr")
+		}
+		ctx.WriteKeyWord(" IS NULL")
+		return nil
+	case Ifnull:
+		n.FnName = model.NewCIStr("COALESCE")
+	case AddDate, SubDate, DateAdd, DateSub:
+		if err := restoreCastStringToDate(ctx, n.Args[0]); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
+		}
+		if n.FnName.L == AddDate || n.FnName.L == DateAdd {
+			ctx.WritePlain(" + ")
+		} else {
+			ctx.WritePlain(" - ")
+		}
+		ctx.WriteKeyWord("INTERVAL '")
+		if err := n.Args[1].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[1]")
+		}
+		ctx.WritePlain(" ")
+		if err := n.Args[2].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[2]")
+		}
+		ctx.WritePlain("'")
+		return nil
+	case DateFormat:
+		n.FnName = model.NewCIStr("TO_CHAR")
+		if isStringLiteral(n.Args[1]) {
+			return errors.New("Psql translation: date_format argument format must be string literal")
+		}
+		valueExpr := n.Args[1].(ValueExpr)
+		month := regexp.MustCompile(`%b`)
+		day := regexp.MustCompile(`%e`)
+		year := regexp.MustCompile(`%Y`)
+		time := regexp.MustCompile(`%T`)
+		dayName := regexp.MustCompile(`%W`)
+		format := valueExpr.GetDatumString()
+		format = month.ReplaceAllString(format, `Mon`)
+		format = day.ReplaceAllString(format, `dd`)
+		format = year.ReplaceAllString(format, `YYYY`)
+		format = time.ReplaceAllString(format, `HH24:MM:SS`)
+		format = dayName.ReplaceAllString(format, `Day`)
+		valueExpr.SetValue(format)
+	case Day, Month, Quarter, Year:
+		ctx.WriteKeyWord("EXTRACT(")
+		ctx.WriteKeyWord(n.FnName.O)
+		ctx.WritePlain(", ")
+		if err := n.Args[0].Restore(ctx); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
+		}
+		ctx.WritePlain(")")
+		return nil
+	case Round:
+		// no change for unary round
+		if len(n.Args) == 1 {
+			break
+		}
+		// I want to see how many problems have double precision (which leads to problems)
+		// before adding CAST to all queries
+	case DateDiff:
+
+		if err := restoreCastStringToDate(ctx, n.Args[0]); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
+		}
+		ctx.WritePlain(" - ")
+		if err := restoreCastStringToDate(ctx, n.Args[1]); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[1]")
+		}
+		return nil
+	}
+
+	// end of translation logic
+
+	if len(n.Schema.String()) != 0 {
+		ctx.WriteName(n.Schema.O)
+		ctx.WritePlain(".")
+	}
+	if n.Tp == FuncCallExprTypeGeneric {
+		ctx.WriteName(n.FnName.O)
+	} else {
+		ctx.WriteKeyWord(n.FnName.O)
+	}
+
 	ctx.WritePlain("(")
 	switch n.FnName.L {
 	case "convert":
@@ -376,19 +516,8 @@ func (n *FuncCallExpr) Restore(ctx *format.RestoreCtx) error {
 			return errors.Annotatef(err, "An error occurred while restore FuncCastExpr.Expr")
 		}
 		ctx.WriteKeyWord(" USING ")
-		ctx.WriteKeyWord(n.Args[1].GetType().Charset)
-	case "adddate", "subdate", "date_add", "date_sub":
-		if err := n.Args[0].Restore(ctx); err != nil {
-			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
-		}
-		ctx.WritePlain(", ")
-		ctx.WriteKeyWord("INTERVAL ")
 		if err := n.Args[1].Restore(ctx); err != nil {
-			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[1]")
-		}
-		ctx.WritePlain(" ")
-		if err := n.Args[2].Restore(ctx); err != nil {
-			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[2]")
+			return errors.Annotatef(err, "An error occurred while restore FuncCastExpr.Expr")
 		}
 	case "extract":
 		if err := n.Args[0].Restore(ctx); err != nil {
@@ -415,7 +544,7 @@ func (n *FuncCallExpr) Restore(ctx *format.RestoreCtx) error {
 			ctx.WritePlain(" ")
 			fallthrough
 		case 2:
-			if n.Args[1].(ValueExpr).GetValue() != nil {
+			if expr, isValue := n.Args[1].(ValueExpr); !isValue || expr.GetValue() != nil {
 				if err := n.Args[1].Restore(ctx); err != nil {
 					return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[1]")
 				}
@@ -520,6 +649,8 @@ type FuncCastExpr struct {
 	Tp *types.FieldType
 	// FunctionType is either Cast, Convert or Binary.
 	FunctionType CastFunctionType
+	// ExplicitCharSet is true when charset is explicit indicated.
+	ExplicitCharSet bool
 }
 
 // Restore implements Node interface.
@@ -532,7 +663,7 @@ func (n *FuncCastExpr) Restore(ctx *format.RestoreCtx) error {
 			return errors.Annotatef(err, "An error occurred while restore FuncCastExpr.Expr")
 		}
 		ctx.WriteKeyWord(" AS ")
-		n.Tp.RestoreAsCastType(ctx)
+		n.Tp.RestoreAsCastType(ctx, n.ExplicitCharSet)
 		ctx.WritePlain(")")
 	case CastConvertFunction:
 		ctx.WriteKeyWord("CONVERT")
@@ -541,7 +672,7 @@ func (n *FuncCastExpr) Restore(ctx *format.RestoreCtx) error {
 			return errors.Annotatef(err, "An error occurred while restore FuncCastExpr.Expr")
 		}
 		ctx.WritePlain(", ")
-		n.Tp.RestoreAsCastType(ctx)
+		n.Tp.RestoreAsCastType(ctx, n.ExplicitCharSet)
 		ctx.WritePlain(")")
 	case CastBinaryOperator:
 		ctx.WriteKeyWord("BINARY ")
@@ -559,13 +690,13 @@ func (n *FuncCastExpr) Format(w io.Writer) {
 		fmt.Fprint(w, "CAST(")
 		n.Expr.Format(w)
 		fmt.Fprint(w, " AS ")
-		n.Tp.FormatAsCastType(w)
+		n.Tp.FormatAsCastType(w, n.ExplicitCharSet)
 		fmt.Fprint(w, ")")
 	case CastConvertFunction:
 		fmt.Fprint(w, "CONVERT(")
 		n.Expr.Format(w)
 		fmt.Fprint(w, ", ")
-		n.Tp.FormatAsCastType(w)
+		n.Tp.FormatAsCastType(w, n.ExplicitCharSet)
 		fmt.Fprint(w, ")")
 	case CastBinaryOperator:
 		fmt.Fprint(w, "BINARY ")
@@ -682,14 +813,18 @@ const (
 	AggFuncVarPop = "var_pop"
 	// AggFuncVarSamp is the name of var_samp function
 	AggFuncVarSamp = "var_samp"
-	// AggFuncStddevPop is the name of stddev_pop function
+	// AggFuncStddevPop is the name of stddev_pop/std/stddev function
 	AggFuncStddevPop = "stddev_pop"
 	// AggFuncStddevSamp is the name of stddev_samp function
 	AggFuncStddevSamp = "stddev_samp"
+	// AggFuncJsonArrayagg is the name of json_arrayagg function
+	AggFuncJsonArrayagg = "json_arrayagg"
 	// AggFuncJsonObjectAgg is the name of json_objectagg function
 	AggFuncJsonObjectAgg = "json_objectagg"
 	// AggFuncApproxCountDistinct is the name of approx_count_distinct function.
 	AggFuncApproxCountDistinct = "approx_count_distinct"
+	// AggFuncApproxPercentile is the name of approx_percentile function.
+	AggFuncApproxPercentile = "approx_percentile"
 )
 
 // AggregateFuncExpr represents aggregate function expression.
@@ -708,14 +843,23 @@ type AggregateFuncExpr struct {
 }
 
 // Restore implements Node interface.
+// changed for PSQL: group_concat
 func (n *AggregateFuncExpr) Restore(ctx *format.RestoreCtx) error {
+	switch n.F {
+	case "group_concat":
+		n.F = "string_agg"
+	}
+
 	ctx.WriteKeyWord(n.F)
 	ctx.WritePlain("(")
 	if n.Distinct {
+		if n.F == "string_agg" {
+			return errors.New("Psql translation: string_agg does not support DISTINCT")
+		}
 		ctx.WriteKeyWord("DISTINCT ")
 	}
 	switch strings.ToLower(n.F) {
-	case "group_concat":
+	case "string_agg":
 		for i := 0; i < len(n.Args)-1; i++ {
 			if i != 0 {
 				ctx.WritePlain(", ")
@@ -724,15 +868,15 @@ func (n *AggregateFuncExpr) Restore(ctx *format.RestoreCtx) error {
 				return errors.Annotatef(err, "An error occurred while restore AggregateFuncExpr.Args[%d]", i)
 			}
 		}
+		ctx.WritePlain(", ")
+		if err := n.Args[len(n.Args)-1].Restore(ctx); err != nil {
+			return errors.Annotate(err, "An error occurred while restore AggregateFuncExpr.Args SEPARATOR")
+		}
 		if n.Order != nil {
 			ctx.WritePlain(" ")
 			if err := n.Order.Restore(ctx); err != nil {
 				return errors.Annotate(err, "An error occur while restore AggregateFuncExpr.Args Order")
 			}
-		}
-		ctx.WriteKeyWord(" SEPARATOR ")
-		if err := n.Args[len(n.Args)-1].Restore(ctx); err != nil {
-			return errors.Annotate(err, "An error occurred while restore AggregateFuncExpr.Args SEPARATOR")
 		}
 	default:
 		for i, argv := range n.Args {
