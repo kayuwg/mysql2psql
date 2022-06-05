@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"os"
 	"strings"
 
 	"github.com/pingcap/parser"
@@ -10,11 +13,30 @@ import (
 )
 
 func main() {
+
 	// sql := `with w1 as ( Select *, Dense_Rank() over (partition by DepartmentId order by Salary desc ) as "Rank" from Employee ) Select Department.Name as "Department" , w1.Name as "Employee", w1.Salary as "Salary" from w1 join Department on Department.Id = w1.DepartmentId where w1.Rank = 1 or w1.Rank =2 or w1.Rank = 3 order by Department.Name , w1.Salary desc`
 	sql := `SELECT GROUP_CONCAT(a2 SEPARATOR ",") FROM a GROUP BY a1`
 	parser := parser.New()
-	translated := translate(sql, parser)
-	fmt.Println(translated)
+	if len(os.Args) < 2 {
+		translated := translate(sql, parser)
+		fmt.Println(translated)
+		return
+	}
+	filename := os.Args[1]
+	file, err := os.Open(filename)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	defer file.Close()
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		fmt.Println(translate(scanner.Text(), parser))
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
 }
 
 func translate(sql string, parser *parser.Parser) string {
@@ -26,7 +48,11 @@ func translate(sql string, parser *parser.Parser) string {
 	astNode := &stmtNodes[0]
 	var stringBuilder strings.Builder
 	ctx := format.NewRestoreCtx(
-		format.RestoreStringSingleQuotes|format.RestoreNameDoubleQuotes|format.RestoreKeyWordUppercase|format.RestoreStringWithoutCharset|format.RestoreStringWithoutDefaultCharset,
+		format.RestoreStringSingleQuotes|
+			format.RestoreNameDoubleQuotes|
+			format.RestoreKeyWordUppercase|
+			format.RestoreStringWithoutCharset|
+			format.RestoreStringWithoutDefaultCharset,
 		&stringBuilder,
 	)
 	(*astNode).Restore(ctx)
