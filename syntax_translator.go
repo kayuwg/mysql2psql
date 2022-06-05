@@ -14,7 +14,7 @@ import (
 
 func testCustom(parser *parser.Parser) {
 	// sql := `with w1 as ( Select *, Dense_Rank() over (partition by DepartmentId order by Salary desc ) as "Rank" from Employee ) Select Department.Name as "Department" , w1.Name as "Employee", w1.Salary as "Salary" from w1 join Department on Department.Id = w1.DepartmentId where w1.Rank = 1 or w1.Rank =2 or w1.Rank = 3 order by Department.Name , w1.Salary desc`
-	sql := `select a.customer_id as customer_id from (select customer_id, group_concat(distinct(product_key) order by product_key) as new from customer group by customer_id) a where new = (select group_concat(distinct(product_key) order by product_key) from product)`
+	sql := `select a.customer_id as customer_id from (select customer_id, group_concat(product_key order by product_key) as new from customer group by customer_id) a`
 	translated := translate(sql, parser)
 	fmt.Println(translated)
 }
