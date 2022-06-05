@@ -55,7 +55,5 @@ def rectify_file(filename):
             print(rectify(line))
     
 if __name__ == "__main__": 
-    if len(sys.argv) == 1: 
-        test_custom()
-    else:
-        rectify_file(sys.argv[1])
+    if len(sys.argv) > 1:
+        rectify_file(sys.argv[0])
