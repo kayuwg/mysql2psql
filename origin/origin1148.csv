@@ -1,0 +1,320 @@
+id,original query
+1,select distinct author_id as id from Views where author_id = viewer_id order by id
+2,SELECT author_id AS id FROM Views WHERE author_id = viewer_id GROUP BY author_id HAVING COUNT(viewer_id) >= 1 ORDER BY 1
+3,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+4,select distinct author_id as id from views where author_id = viewer_id order by id
+5,select distinct author_id id from Views where author_id = viewer_id order by author_id
+6,select distinct author_id as id from views where author_id=viewer_id order by author_id 
+7,select distinct(author_id) as id from views where author_id = viewer_id order by author_id
+8,"select author_id as id from views where author_id = viewer_id group by author_id, viewer_id order by 1"
+9,select distinct author_id as id from views where author_id = viewer_id order by author_id
+10,select author_id as id from Views where author_id=viewer_id group by author_id having count(author_id)>=1 order by author_id asc
+11,SELECT DISTINCT author_id AS id FROM Views where author_id = viewer_id ORDER BY id
+12,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+13,select distinct author_id id from views where author_id = viewer_id order by 1 
+14,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1
+15,SELECT DISTINCT author_id AS 'id' FROM Views WHERE author_id = viewer_id ORDER BY author_id
+16,select distinct author_id as id from Views where author_id = viewer_id order by id 
+17,select author_id as id from Views where author_id=viewer_id group by 1 having count(*)>=1 order by 1 asc 
+18,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+19,select distinct author_id as id from Views where viewer_id = author_id order by author_id
+20,select author_id as id from views where author_id = viewer_id group by 1 order by id asc
+21,select distinct author_id id from views where author_id = viewer_id order by author_id
+22,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+23,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+24,select distinct author_id as id from views where author_id = viewer_id order by id
+25,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id 
+26,"select distinct a1.author_id as id from views a1, views a2 where a1.author_id = a2.viewer_id and a1.article_id = a2.article_id order by a1.author_id asc"
+27,select distinct author_id as id from views where author_id=viewer_id order by id
+28,SELECT DISTINCT author_id AS id FROM Views WHERE author_id=viewer_id order by author_id 
+29,Select distinct author_id as id From Views where author_id = viewer_id Order by id ASC 
+30,"SELECT author_id as id FROM ( SELECT author_id, CASE WHEN author_id = viewer_id THEN 1 ELSE 0 END as own FROM Views) t group by 1 HAVING SUM(own) >= 1 ORDER BY 1"
+31,select distinct author_id as id from Views where author_id = viewer_id order by 1 asc
+32,select distinct author_id as id from views where author_id = viewer_id order by author_id asc
+33,SELECT DISTINCT(author_id) AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+34,select distinct author_id id from views where author_id = viewer_id order by author_id
+35,SELECT DISTINCT author_id AS id FROM views WHERE author_id = viewer_id ORDER BY author_id ASC
+36,SELECT DISTINCT author_id AS id FROM Views WHERE author_id=viewer_id ORDER BY author_id ASC
+37,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+38,SELECT author_id as id FROM views WHERE author_id = viewer_id GROUP BY author_id HAVING COUNT(*) >= 1 ORDER BY author_id
+39,select distinct author_id as id from views where author_id = viewer_id order by author_id ASC
+40,select distinct author_id as id from views where author_id = viewer_id order by 1 
+41,select distinct author_id as id from Views where viewer_id = author_id order by id 
+42,Select distinct author_id as id from views where author_id = viewer_id order by author_id
+43,select author_id as id from views where author_id=viewer_id group by 1 order by 1
+44,select distinct author_id as id from views where author_id = viewer_id order by author_id
+45,select distinct(author_id) as id from Views where author_id=viewer_id order by id asc
+46,with cte_final as ( select distinct author_id as id from Views where author_id = viewer_id order by 1 ) select * from cte_final
+47,Select distinct author_id as id from Views where author_id = viewer_id Order by author_id
+48,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+49,select distinct author_id as id from Views where author_id=viewer_id order by author_id
+50,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1 ASC 
+51,SELECT DISTINCT author_id id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+52,SELECT distinct author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id ASC
+53,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+54,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1
+55,select distinct author_id as id from views where author_id = viewer_id order by id
+56,select distinct author_id as id from Views a where author_id = viewer_id order by id
+57,select author_id as id from Views a where author_id = viewer_id group by author_id order by author_id
+58,select author_id id from Views group by 1 having sum(author_id = viewer_id)>=1 order by 1 
+59,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+60,SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+61,select author_id id from Views where author_id = viewer_id group by author_id order by author_id
+62,select distinct author_id as 'id' from views where author_id = viewer_id order by author_id
+63,select distinct author_id id from Views where author_id = viewer_id order by author_id
+64,select distinct author_id as id from Views where author_id = viewer_id order by author_id 
+65,select distinct author_id as id from views where author_id = viewer_id order by author_id
+66,select v1.author_id id from views v1 inner join views v2 on v1.author_id = v2.viewer_id and v1.view_date = v2.view_date and v1.article_id = v2.article_id group by v1.author_id having count(*) >=1 order by id asc 
+67,SELECT distinct author_id as id from Views Where author_id = viewer_id order by id asc
+68,select distinct author_id as id from views where author_id = viewer_id order by author_id asc
+69,select distinct author_id id from Views where author_id = viewer_id order by author_id
+70,SELECT DISTINCT author_id AS id FROM views WHERE author_id = viewer_id ORDER BY 1 ASC
+71,select distinct author_id id from views where author_id=viewer_id order by id
+72,with own_views as ( select author_id as id from views v where author_id = viewer_id group by 1 having count(1) >=1 ) select v.author_id id from views v inner join own_views o on o.id = v.author_id group by 1 order by 1
+73,select distinct(a.author_id) as id from views a join views b using(author_id) where a.author_id=b.viewer_id order by id asc 
+74,SELECT t.author_id AS id FROM (SELECT author_id FROM Views WHERE author_id = viewer_id GROUP BY author_id HAVING COUNT(author_id) >=1) t ORDER BY t.author_id
+75,SELECT DISTINCT(author_id) AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+76,select distinct author_id as id from views where (author_id = viewer_id) order by 1
+77,"select author_id as id from Views where author_id = viewer_id group by id order by id ASC , count(id) DESC"
+78,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+79,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc 
+80,SELECT distinct author_id as id FROM Views WHERE author_id=viewer_id ORDER BY author_id
+81,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1 ASC
+82,select author_id as id from views where author_id = viewer_id group by author_id order by author_id
+83,select distinct(author_id) as id from views where author_id=viewer_id order by id
+84,select distinct author_id as id from Views where author_id = viewer_id order by author_id 
+85,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+86,SELECT DISTINCT(author_id) id FROM views WHERE author_id = viewer_id ORDER BY author_id 
+87,select distinct author_id as id from Views where author_id = viewer_id order by id
+88,SELECT DISTINCT author_id AS id FROM Views where author_id = viewer_id ORDER BY id
+89,select distinct author_id as id from views where author_id = viewer_id order by 1 
+90,select distinct author_id as id from views where author_id = viewer_id order by 1 
+91,select distinct(viewer_id) as id from Views where author_id=viewer_id order by author_id
+92,SELECT author_id AS id FROM Views where author_id = viewer_id GROUP BY id ORDER BY id
+93,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id ASC
+94,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+95,select distinct author_id as id from Views where author_id=viewer_id order by author_id
+96,select author_id as id from Views where author_id=viewer_id group by author_id order by author_id
+97,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+98,SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id ORDER BY id
+99,Select distinct author_id as id from Views where author_id = viewer_id Order by id
+100,select distinct author_id id from views where author_id = viewer_id order by 1
+101,SELECT distinct author_id as id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+102,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+103,select distinct author_id id from views where author_id = viewer_id order by id
+104,select distinct author_id as id from views where author_id=viewer_id order by id 
+105,select distinct author_id id from views where author_id = viewer_id order by 1 asc
+106,select distinct author_id as id from views where author_id = viewer_id order by id
+107,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+108,select distinct author_id as id from views where author_id = viewer_id order by author_id
+109,Select Distinct(author_id) AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+110,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+111,select distinct author_id as id from Views where viewer_id = author_id order by author_id 
+112,select distinct author_id as id from views where author_id = viewer_id order by author_id asc 
+113,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc 
+114,select distinct author_id as id from Views where author_id = viewer_id order by id
+115,SELECT distinct author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id ASC
+116,select distinct(author_id) as id from views where author_id = viewer_id order by id
+117,"select distinct v1.author_id as id from Views v1, Views v2 where v1.article_id = v2.article_id and v1.author_id = v2.viewer_id order by v1.author_id asc "
+118,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+119,select distinct author_id as id from Views where author_id = viewer_id order by id
+120,SELECT author_id AS id FROM Views WHERE author_id = viewer_id GROUP BY author_id ORDER BY author_id
+121,with x as (select author_id from Views where author_id = viewer_id) select distinct author_id as id from x having (select count(author_id) >=1 from Views) order by author_id asc 
+122,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+123,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+124,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id ASC 
+125,SELECT DISTINCT(author_id) id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+126,select distinct author_id as id from views where author_id = viewer_id order by author_id
+127,select distinct author_id as id from Views where author_id = viewer_id order by id
+128,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+129,select distinct viewer_id as id from Views where author_id = viewer_id order by viewer_id asc 
+130,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+131,select distinct author_id as id from views where author_id = viewer_id order by 1 asc
+132,select distinct author_id as id from views where author_id = viewer_id order by author_id asc
+133,select distinct author_id as id from Views where author_id=viewer_id order by id asc 
+134,select distinct author_id id from Views where author_id = viewer_id order by 1
+135,SELECT distinct(author_id) id FROM Views where author_id = viewer_id order by 1
+136,SELECT author_id AS id FROM Views WHERE author_id = viewer_id GROUP BY author_id ORDER BY author_id
+137,SELECT DISTINCT(V1.author_id) AS id FROM Views as V1 JOIN Views as V2 ON V1.viewer_id = V2.author_id WHERE V1.author_id = V2.author_id ORDER BY id 
+138,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+139,SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC 
+140,"select distinct author_id as ""id"" from Views where author_id=viewer_id order by author_id"
+141,SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id ORDER BY id ASC
+142,select author_id as id from Views where author_id=viewer_id group by author_id order by author_id
+143,Select distinct(author_id) as id from Views where author_id = viewer_id order by author_id
+144,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+145,select author_id as id from Views where viewer_id= author_id Group by author_id order by author_id asc
+146,SELECT DISTINCT author_id AS id FROM Views where author_id = viewer_id ORDER BY id
+147,select author_id id from Views where author_id = viewer_id group by author_id order by id asc
+148,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+149,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+150,select distinct author_id as id from Views where author_id = viewer_id order by id
+151,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc 
+152,select distinct author_id as id from Views where author_id = viewer_id order by 1 
+153,"Select DISTINCT v1.author_id as ""id"" From Views v1 Where v1.author_id = v1.viewer_id Order by v1.author_id ASC"
+154,select distinct author_id as id from views where author_id=viewer_id order by id
+155,select distinct author_id as id from views where (case when author_id=viewer_id then 1 else null end ) =1 order by author_id
+156,SELECT distinct author_id as id FROM Views WHERE author_id=viewer_id ORDER BY author_id
+157,Select distinct author_id as id From Views where author_id = viewer_id order by author_id
+158,select author_id as id from Views where author_id=viewer_id group by 1 order by 1
+159,select distinct author_id as id from Views where author_id=viewer_id order by id
+160,select distinct author_id as id from views where author_id = viewer_id order by id 
+161,SELECT DISTINCT author_id AS id FROM Views WHERE author_id=viewer_id ORDER BY author_id
+162,select distinct author_id as id from Views where author_id = viewer_id order by id
+163,select distinct author_id as id from views where author_id = viewer_id order by id
+164,"select distinct q.author_id as id from ( select v1.author_id as author_id, v1.article_id from Views v1 inner join (select viewer_id, article_id from Views) v2 ON v1.article_id=v2.article_id and v1.author_id=v2.viewer_id ) q order by id "
+165,SELECT author_id id FROM Views WHERE author_id = viewer_id GROUP BY author_id ORDER BY author_id ASC
+166,"select otr.viewer_id as id from( select v.viewer_id, sum(case when v.author_id=v.viewer_id then 1 end )as c_id from Views v group by v.viewer_id having c_id>=1) as otr order by otr.viewer_id"
+167,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+168,select distinct author_id as id from Views where author_id = viewer_id order by id
+169,SELECT distinct author_id as id FROM Views WHERE viewer_id=author_id order by author_id
+170,SELECT DISTINCT v1.author_id AS id FROM Views v1 JOIN Views v2 ON v1.article_id = v2.article_id AND v1.author_id = v2.viewer_id ORDER BY v1.author_id
+171,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id ASC
+172,SELECT author_id AS 'id' FROM Views WHERE author_id = viewer_id GROUP BY author_id HAVING COUNT(*) >= 1 ORDER BY id ASC
+173,select distinct author_id as id from Views where author_id = viewer_id order by id asc
+174,select distinct author_id as id from Views where author_id = viewer_id order by 1
+175,SELECT author_id AS id FROM Views where author_id = viewer_id GROUP BY id ORDER BY id
+176,select distinct(author_id) as id from views where author_id=viewer_id order by id
+177,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1
+178,SELECT author_id AS id FROM Views WHERE author_id = viewer_id GROUP BY author_id ORDER BY author_id
+179,select distinct author_id as id from Views as v where v.author_id = v.viewer_id order by id
+180,select distinct(author_id) as id from Views where author_id=viewer_id order by id
+181,select distinct author_id as 'id' from Views v where v.author_id = v.viewer_id order by author_id 
+182,select distinct author_id as id from views where author_id = viewer_id order by 1
+183,SELECT DISTINCT(author_id) as id FROM Views WHERE author_id = viewer_id ORDER BY id
+184,SELECT DISTINCT author_id AS id FROM Views where author_id = viewer_id ORDER BY id
+185,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+186,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+187,SELECT DISTINCT AUTHOR_ID AS ID FROM VIEWS WHERE AUTHOR_ID=VIEWER_ID ORDER BY AUTHOR_ID 
+188,SELECT DISTINCT author_id id FROM Views WHERE author_id = viewer_id ORDER BY id
+189,SELECT author_id id FROM Views v WHERE author_id = viewer_id GROUP BY author_id HAVING COUNT(article_id) >= 1 ORDER BY id
+190,select distinct author_id as id from views where author_id = viewer_id order by 1
+191,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+192,SELECT DISTINCT author_id AS id FROM views WHERE author_id = viewer_id ORDER BY author_id
+193,select DISTINCT(author_id) as id from Views where viewer_id = author_id order by author_id 
+194,select distinct author_id as id from Views where author_id = viewer_id order by 1
+195,select distinct(author_id) as id from Views where author_id = viewer_id order by id
+196,select distinct author_id as id from Views where author_id=viewer_id order by author_id
+197,select author_id as id from Views where author_id = viewer_id group by author_id order by count(distinct article_id) desc 
+198,select author_id as id from views where author_id = viewer_id group by author_id having count(article_id) >= 1 order by id
+199,select author_id as id from views where author_id = viewer_id group by 1 order by 1
+200,select distinct author_id as id from views where author_id=viewer_id order by 1
+201,SELECT DISTINCT author_id AS id FROM Views AS v WHERE author_id = viewer_id ORDER BY id 
+202,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1
+203,select distinct author_id as id from views where author_id = viewer_id order by 1 
+204,select distinct author_id as id from Views where author_id=viewer_id order by author_id
+205,SELECT DISTINCT(author_id) as id FROM Views WHERE Viewer_id = author_id ORDER BY id ASC 
+206,select distinct author_id as id from views where author_id = viewer_id order by 1 
+207,SELECT distinct author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id ASC 
+208,SELECT author_id as id FROM Views GROUP BY author_id HAVING SUM(author_id=viewer_id)>0 ORDER BY author_id
+209,SELECT distinct author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+210,select v.viewer_id as id from (select distinct viewer_id from Views where author_id=viewer_id) v order by id asc 
+211,select author_id as id from Views where author_id=viewer_id group by author_id having count(*)>=1 order by id 
+212,select distinct viewer_id as id from views where author_id=viewer_id order by viewer_id
+213,SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id ORDER BY id
+214,SELECT DISTINCT v1.author_id AS id FROM views v1 WHERE v1.author_id = v1.viewer_id ORDER BY 1
+215,SELECT distinct author_id as id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+216,"select distinct a.author_id as id from Views a, Views b where a.article_id = b.article_id and a.author_id = b.viewer_id order by a.author_id"
+217,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1 ASC 
+218,SELECT distinct author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id ASC 
+219,select author_id as id from views where author_id=viewer_id group by author_id order by author_id
+220,select distinct author_id as 'id' from views where author_id = viewer_id group by article_id order by id asc
+221,select distinct author_id as id from views where author_id = viewer_id order by 1
+222,select distinct author_id as id from views where author_id = viewer_id order by id
+223,SELECT DISTINCT(author_id) as id FROM Views WHERE author_id = viewer_id ORDER BY 1 ASC
+224,select author_id as id from views v where v.author_id = v.viewer_id group by 1 order by 1 asc
+225,SELECT author_id as id FROM Views WHERE author_id = viewer_id GROUP BY id ORDER BY author_id ASC
+226,SELECT DISTINCT author_id id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+227,select distinct(v.author_id) as id from Views v where v.author_id = v.viewer_id order by id asc 
+228,SELECT DISTINCT author_id as id FROM views WHERE author_id = viewer_id ORDER BY 1 asc 
+229,select distinct author_id as id from Views where author_id = viewer_id order by 1
+230,select distinct author_id as id from views where author_id = viewer_id order by 1
+231,SELECT DISTINCT author_id as Id FROM Views WHERE Author_id = viewer_id ORDER BY ID 
+232,SELECT author_id as id from Views where author_id = viewer_id group by author_id order by author_id
+233,select distinct author_id as id from views where author_id = viewer_id order by 1
+234,SELECT distinct v2.author_id as id FROM Views v1 INNER JOIN Views v2 ON v1.author_id = v2.viewer_id AND v1.article_id = v2.article_id ORDER BY id ASC
+235,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+236,select distinct author_id as id from Views where author_id = viewer_id order by author_id 
+237,SELECT distinct author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id ASC 
+238,select distinct author_id as id from views where author_id - viewer_id = 0 order by author_id
+239,SELECT DISTINCT author_id AS id FROM Views where author_id = viewer_id ORDER BY id
+240,select distinct author_ID as id FROM views where author_id = viewer_id order by 1 asc
+241,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+242,select DISTINCT author_id as id from Views where author_id=viewer_id order by author_id
+243,select distinct author_id as id from views where (case when author_id=viewer_id then 1 else null end ) =1 ORDER BY 1
+244,select distinct author_id as id from views where author_id = viewer_id order by id
+245,select distinct author_id as id from Views where author_id = viewer_id order by id 
+246,Select distinct author_id as id From Views Where author_id = viewer_id Order by id 
+247,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY 1
+248,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+249,SELECT DISTINCT author_id id FROM Views WHERE author_id = viewer_id ORDER BY id
+250,select t1.author_id as id from Views t1 left join Views t2 on t1.author_id=t2.viewer_id and t1.article_id=t2.article_id group by 1 having count(t2.viewer_id)>=1 order by 1
+251,select v1.author_id id from views v1 inner join views v2 on v1.author_id = v2.viewer_id and v1.view_date = v2.view_date and v1.article_id = v2.article_id group by v1.author_id having count(*) >=1 order by id asc 
+252,select distinct author_id as id from views where author_id=viewer_id order by author_id asc
+253,"select distinct a.author_id as id from ( select author_id, viewer_id, count(*) as req from views where author_id = viewer_id group by 1,2 having(count(*) >= 1))a order by a.author_id "
+254,select distinct author_id as id from views where author_id = viewer_id order by author_id
+255,select distinct author_id id from views where author_id = viewer_id order by author_id 
+256,select distinct author_id id from views where author_id = viewer_id order by id
+257,select DISTINCT(author_id) as id from Views where viewer_id = author_id order by author_id 
+258,SELECT DISTINCT(author_id) AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+259,SELECT DISTINCT(author_id) as id FROM views WHERE author_id = viewer_id ORDER BY author_id ASC
+260,"SELECT DISTINCT(author_id) AS id FROM Views WHERE author_id = viewer_id GROUP BY article_id, view_date ORDER BY id"
+261,SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+262,SELECT DISTINCT author_id AS id FROM Views WHERE author_id=viewer_id ORDER BY author_id
+263,select distinct author_id as id from views where author_id = viewer_id order by id
+264,Select distinct author_id as id from Views where author_id = viewer_id order by author_id ASC
+265,select distinct author_id as id from views where author_id = viewer_id order by 1
+266,select author_id id from views group by author_id having sum(case when author_id = viewer_id then 1 else 0 end) >= 1 order by 1 asc
+267,SELECT DISTINCT viewer_id AS id FROM Views WHERE viewer_id = author_id ORDER BY 1 ASC
+268,select distinct author_id as id from Views where author_id = viewer_id order by 1 
+269,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+270,SELECT DISTINCT viewer_id as id FROM Views WHERE author_id = viewer_id ORDER BY id
+271,select distinct(viewer_id) as id from Views where author_id = viewer_id order by id 
+272,select distinct author_id as id from Views where author_id = viewer_id order by 1
+273,select distinct author_id as id from views where author_id = viewer_id order by id
+274,select distinct author_id as id from views where author_id=viewer_id order by author_id
+275,select distinct author_id as id from Views where author_id=viewer_id order by author_id
+276,select distinct author_id as id from views where author_id = viewer_id order by 1
+277,SELECT author_id AS id FROM Views WHERE author_id = viewer_id GROUP BY id ORDER BY 1 ASC
+278,"select q.a as 'id' from (select author_id as a, count(author_id) as c from views where author_id=viewer_id group by author_id order by a) q"
+279,select distinct a.author_id as id from Views as a inner join Views as b on a.article_id=b.article_id and a.author_id=b.viewer_id order by a.author_id 
+280,SELECT DISTINCT author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id
+281,select distinct author_id as id from Views where author_id = viewer_id order by 1
+282,select author_id as id from views where author_id = viewer_id group by author_id order by author_id
+283,select distinct author_id as 'id' from views where author_id = viewer_id order by 1
+284,select distinct author_id as id from Views where author_id = viewer_id order by 1
+285,SELECT DISTINCT author_id AS 'id' FROM Views WHERE author_id = viewer_id ORDER BY 1 ASC 
+286,select distinct author_id id from Views v where v.author_id = v.viewer_id order by author_id 
+287,Select distinct author_id as id From Views Where author_id = viewer_id order by 1
+288,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+289,select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+290,SELECT DISTINCT author_id id FROM Views WHERE author_id = viewer_id ORDER BY id asc
+291,select distinct author_id id from views where author_id = viewer_id order by 1 
+292,select distinct author_id as id from views where author_id = viewer_id order by id
+293,select distinct author_id as id from views where author_id = viewer_id order by author_id
+294,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+295,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+296,select distinct author_id id from views where author_id = viewer_id order by id
+297,select distinct author_id as id from views where author_id = viewer_id order by author_id asc 
+298,Select distinct author_id as id from Views where author_id = viewer_id order by author_id asc
+299,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+300,SELECT DISTINCT v1.author_id as id FROM views v1 INNER JOIN views v2 ON v1.author_id = v2.viewer_id AND v1.article_id = v2.article_id ORDER BY 1 ASC
+301,select distinct author_id as id from views where author_id = viewer_id order by 1
+302,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id
+303,"select author_id as id from views where author_id = viewer_id group by author_id, viewer_id order by author_id asc"
+304,SELECT author_id id FROM Views WHERE author_id = viewer_id group by author_id HAVING count(article_id)>=1 ORDER BY 1
+305,SELECT distinct author_id AS id FROM views WHERE author_id = viewer_id ORDER BY id ASC 
+306,select distinct author_id as id from views where author_id=viewer_id order by author_id
+307,select author_id as id from views where author_id = viewer_id group by id order by id 
+308,SELECT DISTINCT(author_id) AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC
+309,select distinct author_id as id from views where author_id = viewer_id order by author_id asc
+310,select distinct author_id as id from Views where author_id = viewer_id order by id
+311,select DISTINCT(author_id) as id from Views where author_id = viewer_id order by author_id
+312,SELECT DISTINCT author_id as id FROM views WHERE author_id = viewer_id ORDER by author_id asc
+313,select distinct(author_id) id from views t1 where exists(select * from views t2 where t1.article_id = t2.article_id and t1.author_id = t2.viewer_id) order by id
+314,SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id
+315,select distinct author_id as id from Views where author_id = viewer_id order by 1
+316,SELECT author_id AS id FROM Views WHERE author_id = viewer_id GROUP BY author_id ORDER BY author_id 
+317,SELECT author_id as id FROM views WHERE author_id = viewer_id GROUP BY author_id order by id
+318,select distinct author_id as id from Views where author_id = viewer_id order by author_id
+319,"SELECT DISTINCT author_id as id FROM Views WHERE author_id = viewer_id GROUP BY author_id, viewer_id HAVING COUNT(*)>=1"

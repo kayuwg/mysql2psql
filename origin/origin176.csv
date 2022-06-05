@@ -1,0 +1,243 @@
+id,original query
+1,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+2,Select max(salary) as SecondHighestSalary from employee where salary not in (select max(salary) from employee)
+3,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+4,select max(Salary) as 'SecondHighestSalary' from Employee where Salary<(select max(Salary) from Employee)
+5,"select ifnull((select distinct salary from employee order by salary desc limit 1 offset 1),null)as SecondHighestSalary"
+6,SELECT MAX(salary) AS SecondHighestSalary FROM employee WHERE salary < (SELECT MAX(salary) FROM employee) 
+7,SELECT ( SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1 ) AS SecondHighestSalary
+8,select max(salary) as SecondHighestSalary from employee where salary != (select max(salary) from employee)
+9,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+10,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee) 
+11,SELECT max(Salary) as SecondHighestSalary FROM Employee WHERE Salary < (SELECT max(Salary) FROM Employee)
+12,SELECT (SELECT Distinct Salary as SecondHighestSalary from Employee order by salary DESC LIMIT 1 offset 1) AS SecondHighestSalary 
+13,"SELECT (SELECT DISTINCT Salary SecondHighestSalary FROM Employee ORDER BY SecondHighestSalary DESC LIMIT 1,1) as SecondHighestSalary FROM DUAL"
+14,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+15,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+16,WITH max_salary AS (SELECT max(salary) AS max_salary FROM Employee) SELECT max(salary) as SecondHighestSalary FROM Employee JOIN max_salary WHERE Employee.Salary <> max_salary.max_salary
+17,select max(salary) as SecondHighestSalary from Employee where salary not in (select max(salary) from Employee)
+18,select max(salary) as secondHighestSalary from employee where salary<(select max(salary) from employee) 
+19,SELECT max(salary) as SecondHighestSalary FROM employee WHERE salary < (SELECT max(salary) FROM employee)
+20,SELECT ( SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1 ) AS SecondHighestSalary
+21,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < ( SELECT MAX(Salary) FROM Employee )
+22,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary  
+23,select max(Salary) as SecondHighestSalary from Employee where Salary not in (select max(Salary) from Employee)
+24,"Select MAX(Salary) as ""SecondHighestSalary"" from Employee where Salary < (Select MAX(Salary) from Employee)"
+25,"( SELECT SALARY ,RANK () OVER (ORDER BY salary desc) myrank FROM Employee) AS t WHERE myrank = 2 "
+26,Select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee)
+27,"Select (select distinct Salary from employee order by Salary desc limit 1,1) as SecondHighestSalary"
+28,select(select distinct salary from Employee order by salary desc limit 1 offset 1) as SecondHighestSalary
+29,Select max(Salary) as SecondHighestSalary from Employee where salary<(select max(salary) from employee)
+30,SELECT(SELECT DISTINCT Salary FROM EMPLOYEE ORDER BY Salary DESC LIMIT 1 OFFSET 1) as SecondHighestSalary
+31,Select Max(Salary) as SecondHighestSalary From Employee Where Salary <> (Select Max(Salary) From Employee)
+32,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+33,SELECT (SELECT DISTINCT Salary From Employee ORDER by Salary DESC LIMIT 1 OFFSET 1) As SecondhighestSalary
+34,select max(e.Salary) as SecondHighestSalary from Employee e where e.Salary < (Select Max(Salary) from Employee )
+35,SELECT max(Salary) as SecondHighestSalary FROM Employee WHERE Salary < (SELECT max(Salary) FROM Employee)
+36,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee)
+37,SElECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+38,"SELECT MAX(Salary) AS SecondHighestSalary FROM (SELECT Salary, DENSE_RANK() OVER (ORDER BY Salary DESC) d_rank FROM Employee) as x WHERE x.d_rank = 2"
+39,SELECT MAX(Salary) as SecondHighestSalary from Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+40,select MAX(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee) 
+41,select MAX(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee) 
+42,"with tmp as (select Salary, dense_rank() over (order by Salary desc) as rankN from Employee) select max(Salary) as secondHighestSalary from tmp where rankN = 2"
+43,"select ( select distinct(salary) as secondhighestsalary from ( select salary,dense_rank()over(order by salary desc) as sal_rank from employee) as t where sal_rank=2 ) as secondhighestsalary from dual "
+44,"SELECT NULLIF((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+45,"SELECT IFNULL((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) , NULL) AS SecondHighestSalary"
+46,"SELECT (select distinct Salary from Employee order by Salary desc limit 1, 1) as 'SecondHighestSalary'"
+47,select (select distinct Salary from Employee order by Salary desc limit 1 offset 1) as SecondHighestSalary
+48,"SELECT IFNULL( (SELECT DISTINCT(Salary) FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1 ), NULL) AS SecondHighestSalary "
+49,"select max(salary) as SecondHighestSalary from ( select rank() over(order by salary desc ) as salary_rank, salary from Employee ) a where salary_rank = 2 "
+50,"select IFNULL((select Distinct Salary from Employee order by Salary Desc limit 1 offset 1), NULL) as SecondHighestSalary"
+51,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+52,"select (select distinct salary from Employee order by Salary desc Limit 1,1) as SecondHighestSalary"
+53,SELECT max(Salary) as SecondHighestSalary FROM Employee WHERE Salary < (SELECT Max(Salary) FROM Employee)
+54,SELECT (SELECT DISTINCT(Salary) FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1 ) AS SecondHighestSalary 
+55,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from employee)
+56,"with tmp as (select Salary, dense_rank() over (order by Salary desc) as rankN from Employee) select max(Salary) as secondHighestSalary from tmp where rankN = 2"
+57,select max(Salary) as SecondHighestSalary from employee where Salary not in (select max(salary) from employee ) 
+58,"Select IFNULL(( select distinct Salary from Employee order by salary desc limit 1 offset 1), NULL )as SecondHighestSalary"
+59,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+60,select Max(Salary) as SecondHighestSalary from Employee where Salary < (select Max(Salary) from Employee) 
+61,"select CASE WHEN cnt >= 2 THEN SecondHighestSalary ELSE NULL END as SecondHighestSalary from ( select min(Salary) as SecondHighestSalary, count(*) as cnt from ( select distinct(Salary) from Employee order by Salary desc limit 2 ) tmp ) tmp2"
+62,"Select ifnull ( (select distinct Salary from Employee Order by Salary desc limit 1,1), NULL) as SecondHighestSalary "
+63,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee)
+64,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee) 
+65,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+66,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+67,Select( Select Distinct Salary From Employee Order By Salary Desc Limit 1 Offset 1) as SecondHighestSalary 
+68,select max(Salary) as SecondHighestSalary from Employee where Salary not in (select max(Salary) from Employee) 
+69,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+70,"SELECT IFNULL( (SELECT Distinct Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+71,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee)
+72,"select ifnull( (select distinct Salary from Employee order by Salary desc limit 1 offset 1 ),null) AS SecondHighestSalary"
+73,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary "
+74,"SELECT IFNULL( (SELECT DISTINCT Salary AS SecondHighestSalary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+75,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+76,"select max(Salary) as secondHighestSalary from (select Salary, dense_rank() over (order by Salary desc) as rankN from Employee) tmp where rankN = 2"
+77,select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee) 
+78,select max(Salary) As SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+79,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+80,"with cte as ( select id, salary, dense_rank() over(order by salary desc) rnk from employee) select (select max(salary) from cte where rnk =2) as SecondHighestSalary from dual"
+81,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary Desc LIMIT 1 OFFSET 1) as SecondHighestSalary 
+82,Select Max(Salary) As SecondHighestSalary From Employee where Salary < (Select max(Salary) From Employee) 
+83,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+84,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < ( SELECT MAX(Salary) FROM Employee )
+85,"select ifnull( (select distinct salary from employee order by salary desc limit 1 offset 1), null) as SecondHighestSalary from employee limit 1"
+86,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+87,select (select distinct salary from employee order by Salary DESC limit 1 offset 1) as secondhighestSalary
+88,select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee)
+89,"select MAX(salary) AS ""SecondHighestSalary"" from Employee where salary not in (select MAX(salary) from Employee) "
+90,SELECT max(Salary) AS SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+91,"select case when max(rnk) = 1 then null else Salary end as SecondHighestSalary from (select Salary, dense_rank() over (order by Salary desc) as rnk from Employee) e where rnk = 2"
+92,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1,1), NULL) as SecondHighestSalary"
+93,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+94,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+95,SELECT MAX(salary) AS SecondHighestSalary FROM employee WHERE salary < (SELECT MAX(salary) FROM employee)
+96,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+97,select max(salary) as SecondHighestSalary from employee where salary<(select max(salary) from employee order by salary)
+98,select max(Salary) as SecondHighestSalary from Employee where Salary not in (select max(Salary) from Employee) 
+99,"select ifnull((select distinct salary FROM employee ORDER BY salary desc limit 1,1), null) as SecondHighestSalary "
+100,"SELECT max(a.salary) as 'SecondHighestSalary' FROM (SELECT *, DENSE_RANK() OVER w as 'rank' FROM EMPLOYEE WINDOW w as (ORDER BY Salary DESC)) a WHERE a.rank=2"
+101,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+102,select max(Salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee)
+103,"select ifnull ((select distinct Salary from Employee order by Salary DESC limit 1 offset 1), null) as SecondHighestSalary"
+104,select (select distinct Salary From Employee Order by Salary Desc Limit 1 Offset 1 ) as SecondHighestSalary
+105,select max(salary)AS SecondHighestSalary from employee where salary <(select max(salary) from employee)
+106,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary  
+107,select (select distinct salary from employee order by salary desc limit 1 offset 1) as secondhighestsalary 
+108,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employee)
+109,select max(E.Salary) SecondHighestSalary from Employee as E where E.Salary not in (select max(E.Salary) from Employee E)
+110,select MAX(Salary) as SecondHighestSalary from Employee where Salary <(select MAX(Salary) from Employee)
+111,Select Max(Salary) as SecondHighestSalary From Employee Where Salary<(Select Max(Salary) From Employee)
+112,"select ifnull ((select distinct salary from employee order by salary desc limit 1 offset 1 ) , Null) as SecondHighestSalary "
+113,Select max(Salary) as 'SecondHighestSalary' From Employee where Salary <(Select max(Salary) From Employee) 
+114,SELECT * FROM ( SELECT DISTINCT Salary AS SecondHighestSalary FROM Employee ORDER BY SecondHighestSalary DESC LIMIT 1 OFFSET 1 ) AS ina UNION ALL SELECT Null LIMIT 1 
+115,select (SELECT max(Salary) FROM Employee WHERE Salary < (SELECT max(Salary) FROM Employee)) as SecondHighestSalary
+116,"select case when count(rank_Salary) > 0 then Salary else null end as SecondHighestSalary from ( select Salary, dense_rank() over (order by Salary desc) as rank_Salary from Employee ) as a where rank_salary = 2"
+117,"SELECT IFNULL((SELECT DISTINCT Salary from Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) , NULL) as SecondHighestSalary"
+118,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+119,select max(Salary) as SecondHighestSalary from Employee where Salary not in ( select max(Salary) from Employee ) 
+120,select Max(Salary) as SecondHighestSalary from Employee where Salary < (select Max(Salary) from Employee)
+121,select(select distinct salary from employee order by salary desc limit 1 offset 1 ) as secondhighestsalary
+122,select max(Salary) as SecondHighestSalary from Employee where Salary not in ( select max(Salary) from Employee )
+123,"SELECT IFNULL((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+124,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employee)
+125,select MAX(salary) as SecondHighestSalary from Employee where salary < (select MAX(salary) from Employee)
+126,"select ifnull((select distinct salary from employee order by salary desc limit 1 offset 1), null) as SecondHighestSalary"
+127,select max(Salary) as SecondHighestSalary from Employee where Salary not in (select max(Salary) from Employee)
+128,Select max(distinct(salary)) as SecondHighestSalary from employee where salary < ( Select max(distinct(salary)) from employee)
+129,SELECT ( SELECT DISTINCT e.Salary as SecondHighestSalary FROM Employee e ORDER BY e.Salary DESC LIMIT 1 OFFSET 1) as SecondHighestSalary
+130,SELECT Max(salary) as SecondHighestSalary FROM Employee WHERE Salary<(SELECT Max(Salary) FROM Employee) 
+131,"select ifnull( (select distinct Salary from Employee Order by Salary DESC Limit 1 Offset 1), null ) as SecondHighestSalary"
+132,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary "
+133,"select (select distinct salary from Employee order by salary desc limit 1,1) as SecondHighestSalary"
+134,"SELECT ( SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1, 1 ) AS SecondHighestSalary"
+135,select max(salary) as SecondHighestSalary from Employee where salary not in (select max(salary) as salary from employee ) 
+136,select Max(Salary) as SecondHighestSalary from Employee where Salary< (select max(Salary) from Employee)
+137,"select IFNULL( Null, (select distinct Salary from Employee order by Salary desc limit 1 offset 1) ) as SecondHighestSalary"
+138,"SELECT ifnull((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1),null) AS SecondHighestSalary "
+139,"Select IFNULL((Select distinct Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) As SecondHighestSalary "
+140,Select max(Salary) as SecondHighestSalary from Employee where salary < (select max(Salary) from Employee)
+141,SELECT CASE WHEN COUNT(top_two.Salary) >= 2 THEN MIN(top_two.Salary) ELSE Null END SecondHighestSalary FROM ( SELECT DISTINCT(Salary) FROM Employee ORDER BY Salary DESC LIMIT 2 ) top_two 
+142,select MAX(Salary) as SecondHighestSalary from Employee where Salary <(select MAX(Salary) from Employee)
+143,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) 
+144,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+145,"SELECT MAX(Salary) AS SecondHighestSalary FROM ( SELECT Salary, RANK () over (order by employee.salary DESC) rank_desc FROM Employee ) salary_rank WHERE rank_desc = 2 "
+146,"SELECT IFNULL((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+147,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+148,SELECT( SELECT DISTINCT salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1 ) AS SecondHighestSalary 
+149,SELECT MAX( Salary) AS SecondHighestSalary FROM Employee WHERE Salary < ( SELECT MAX( Salary) FROM Employee )
+150,"select coalesce(max(a.Salary),null) as SecondHighestSalary from (select salary, dense_rank()over(order by salary desc) as ranks from employee) a where a.ranks = 2"
+151,"select MAX(a.salary) as SecondHighestSalary from (select salary, RANK() over (order by salary desc) as ranking from Employee) a where a.ranking=2 "
+152,select (select distinct salary from employee order by salary desc limit 1 offset 1) as secondhighestsalary
+153,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employee)
+154,SELECT max(Salary) as SecondHighestSalary From Employee WHERE Salary not in (SELECT max(Salary) FROM Employee )
+155,"SELECT (select distinct Salary FROM Employee ORDER BY Salary DESC LIMIT 1,1) as SecondHighestSalary "
+156,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary<(SELECT MAX(Salary) FROM Employee)
+157,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < ( SELECT MAX(Salary) FROM Employee ) 
+158,Select (Select DISTINCT Salary from Employee Order by Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+159,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) 
+160,select max(distinct Salary) as SecondHighestSalary from Employee where Salary<(select max(distinct Salary) from Employee)
+161,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary NOT IN ( SELECT MAX(Salary) FROM Employee) 
+162,select case when count(*)=2 then min(Salary) else null end as SecondHighestSalary from ( select distinct Salary from Employee order by Salary desc limit 2) e 
+163,select max(Salary) as SecondHighestSalary from Employee where Salary <(select max(Salary) from Employee) 
+164,select max(salary) as 'SecondHighestSalary' from Employee where salary <> (select max(Salary) from Employee)
+165,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+166,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee ) 
+167,select max(salary) as SecondHighestSalary from employee where salary < (Select max(salary) from employee)
+168,Select (Select Distinct Salary From Employee Order By Salary Desc Limit 1 Offset 1) as SecondHighestSalary 
+169,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee)
+170,select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee)
+171,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS 'SecondHighestSalary'"
+172,SELECT COALESCE(MAX(Salary)) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+173,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) as max from Employee) 
+174,"select IFNULL ((select salary from employee where salary < (select max(salary) from employee) order by salary desc limit 1), null) as SecondHighestSalary "
+175,select max(salary) as SecondHighestSalary from Employee where salary < (select max(salary) from Employee)
+176,select max(salary) as secondhighestsalary from employee where salary not in (select max(salary) from employee) 
+177,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+178,select max(Salary) AS SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee) 
+179,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY SALARY DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+180,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+181,"select if(count(*) <= 1, null, min(salary)) as secondhighestsalary from ( select distinct salary from employee order by salary desc limit 2 ) as newTable"
+182,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+183,SELECT CASE WHEN Salary IS NULL THEN NULL ELSE MAX(Salary) END as SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+184,SELECT MAX(e1.Salary) AS 'SecondHighestSalary' FROM Employee e1 WHERE e1.Salary < ( SELECT MAX(Salary) FROM Employee ) 
+185,"SELECT IFNULL ( (Select distinct Salary from Employee order by Salary desc limit 1 offset 1), null) as SecondHighestSalary"
+186,SELECT (MAX(Salary)) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) 
+187,SELECT MAX(Salary) as SecondHighestSalary from Employee WHERE Salary < (Select MAX(Salary) FROM Employee)
+188,"select ifNull((select distinct Salary from Employee order by Salary desc limit 1,1),null) as SecondHighestSalary"
+189,SELECT ( SELECT DISTINCT SALARY FROM EMPLOYEE ORDER BY SALARY DESC LIMIT 1 offset 1 ) AS SecondHighestSalary
+190,SELECT MAX(Salary) as SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+191,Select Max(Salary) as SecondHighestSalary From Employee Where Salary < ( SELECT Max(Salary) FROM Employee) Limit 1
+192,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+193,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+194,"select ifnull( (select salary from ( select salary, rank() over (order by salary desc) as ranking from employee group by salary)a where ranking = 2) , null) as SecondHighestSalary "
+195,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+196,select max(salary) as SecondHighestSalary from Employee where salary < ( select max(salary) from Employee ) 
+197,select MAX(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee) 
+198,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+199,"with ranking as (select id, salary, DENSE_RANK() OVER (order by salary desc, NULL) r from employee) select (CASE WHEN COUNT(id) >= 1 then salary else NULL END) as SecondHighestSalary from ranking where r = 2"
+200,select max(Salary) as SecondHighestSalary from Employee E where Salary != (select max(Salary) from Employee)
+201,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+202,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) 
+203,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary"
+204,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(salary) FROM Employee)
+205,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+206,"select coalesce(max(Salary),null) as SecondHighestSalary from(select Salary, rank()over (order by Salary Desc)as rnk from Employee)A where A.rnk =2 "
+207,select (select distinct salary from employee order by salary desc limit 1 offset 1) as 'SecondHighestSalary'
+208,SELECT Max(Salary) as SecondHighestSalary FROM Employee Where salary < (select Max(Salary) from Employee)
+209,SELECT MAX(Salary) as SecondHighestSalary FROM Employee WHERE Salary< (SELECT MAX(Salary) from Employee)
+210,SELECT max(Salary) AS SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+211,select max(Salary) as SecondHighestSalary from Employee where Salary not in (select max(Salary) from Employee) 
+212,SELECT MAX(salary) as SecondHighestSalary FROM Employee WHERE salary != (Select MAX(salary) FROM Employee) 
+213,Select Max(Salary) as SecondHighestSalary From Employee where Salary < (Select Max(Salary)From Employee )
+214,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+215,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+216,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary  "
+217,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+218,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)
+219,SELECT( SELECT DISTINCT a.Salary FROM Employee AS a join Employee AS b on a.Salary < b.Salary GROUP BY a.Id HAVING COUNT(a.Id) = 1) AS SecondHighestSalary
+220,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1, 1), NULL) AS SecondHighestSalary"
+221,select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee) 
+222,"SELECT IFNULL((SELECT DISTINCT SALARY FROM EMPLOYEE ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary "
+223,"SELECT IFNULL( (SELECT DISTINCT SALARY FROM EMPLOYEE ORDER BY SALARY DESC LIMIT 1 OFFSET 1), NULL) as SecondHighestSalary "
+224,select max(Salary) SecondHighestSalary from Employee where Salary not in( select max(Salary) from Employee) 
+225,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary "
+226,select Max(Salary) as SecondHighestSalary from Employee where Salary not in ( select Max(Salary) from Employee )
+227,select (select distinct salary from employee order by Salary DESC limit 1 offset 1) as secondhighestSalary
+228,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+229,select max(Salary) as SecondHighestSalary from Employee where Salary < (SELECT MAX(Salary) FROM Employee)
+230,SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE salary < (SELECT MAX(Salary) AS Salary FROM Employee)
+231,SELECT (SELECT DISTINCT Salary FROM EMPLOYEE ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+232,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+233,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary 
+234,"SELECT IFNULL( (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) as SecondHighestSalary"
+235,select max(Salary) as SecondHighestSalary from Employee where Salary not in (select max(Salary) from Employee)
+236,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee) 
+237,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee) limit 1
+238,"select IFNULL( Null, (select distinct Salary from Employee order by Salary desc limit 1 offset 1) ) as SecondHighestSalary"
+239,SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+240,SELECT (SELECT DISTINCT Salary FROM Employee ORDER By Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+241,select max(salary) as secondhighestsalary from employee where salary < (select max(salary) from employee)
+242,select max(Salary) as SecondHighestSalary from Employee where Salary < (select max(Salary) from Employee)

@@ -1,0 +1,248 @@
+id,original query
+1,"UPDATE salary SET sex=IF(sex='f', 'm', 'f')"
+2,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+3,"update salary set sex = CASE WHEN sex = 'f' then 'm' WHEN sex = 'm' then 'f' END where sex in ('f','m')"
+4,"UPDATE SALARY SET SEX = IF(sex = 'm', 'f', 'm')"
+5,update Salary set sex= case when sex='m' then 'f' else 'm' end 
+6,UPDATE Salary SET sex = ( CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END ) 
+7,update salary set sex = case when sex = 'f' then 'm' else 'f' end
+8,Update Salary set sex=case sex when 'm' then 'f' else 'm' end 
+9,update Salary s set s.sex = CASE sex when 'm' then 'f' else 'm' end 
+10,UPDATE salary SET sex = (CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END)
+11,UPDATE Salary SET sex = ( CASE sex WHEN 'm' Then 'f' ELSE 'm' END ) 
+12,update Salary set sex = case sex when 'm' then 'f' else 'm' end
+13,"UPDATE Salary SET sex=Case WHEN sex=""f"" THEN ""m"" ELSE ""f"" END"
+14,UPDATE Salary SET sex = CASE sex WHEN 'f' THEN 'm' WHEN 'm' THEN 'f' END 
+15,update salary set sex = ( case when sex = 'm' then 'f' else 'm' end)
+16,update Salary set sex = case when sex = 'f' then 'm' else 'f' end 
+17,"update salary set sex = IF (sex = ""m"", ""f"", ""m"")"
+18,"update salary set sex=case sex when ""m"" then ""f"" else ""m"" end"
+19,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END 
+20,UPDATE salary SET sex = (CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END)
+21,UPDATE Salary SET sex = ( CASE WHEN sex = 'f' then 'm' ELSE 'f' END) 
+22,update Salary set sex= case when sex='m' then 'f' else 'm' end
+23,"update salary set sex=if(sex=""m"",""f"",""m"")"
+24,"Update Salary set sex = if (sex = 'm','f','m') "
+25,"UPDATE Salary SET sex = IF(sex = 'f', 'm', 'f')"
+26,"update Salary set sex = IF(sex='f','m','f') "
+27,"UPDATE Salary SET sex = IF(sex = 'm', 'f', 'm')"
+28,"update salary set sex = IF (sex = ""m"", ""f"", ""m"")"
+29,"update salary set sex = if(sex='m', 'f', 'm')"
+30,"update salary set sex=case sex when ""m"" then ""f"" else ""m"" end"
+31,"update Salary set sex = if(sex=""m"",""f"",""m"")"
+32,UPDATE salary SET sex = CASE sex when'm'THEN 'f' ELSE 'm' END
+33,update Salary set sex = case sex when 'f' then 'm' when 'm' then 'f' end
+34,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+35,update salary set sex = case when sex='f' then 'm' when sex='m' then 'f' end
+36,update salary set sex = case when sex = 'm' then 'f' when sex = 'f' then 'm' end 
+37,"update Salary set sex = if(sex = 'm', 'f', 'm')"
+38,"UPDATE Salary SET sex = if(sex='m','f','m')"
+39,update Salary set sex = case sex when 'm' then 'f' when 'f' then 'm' end 
+40,update salary set sex = (case when sex = 'f' then 'm' when sex = 'm' then 'f' else sex end)
+41,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+42,update salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END 
+43,"UPDATE Salary SET sex = (IF(sex='m','f','m'))"
+44,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+45,"UPDATE salary SET sex = IF(sex = 'm', 'f', 'm')"
+46,update salary set sex = (case when sex = 'm' then 'f' else 'm' end) 
+47,"update salary set sex = IF (sex = ""m"", ""f"", ""m"")"
+48,UPDATE salary SET sex= CASE WHEN sex = 'f' THEN 'm' WHEN sex = 'm' THEN 'f' END
+49,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+50,UPDATE Salary set sex = (case when sex = 'f' then 'm' else 'f' end)
+51,update salary set sex = (case when sex = 'm' then 'f' else'm' end)
+52,"UPDATE Salary SET sex = IF(sex = 'm', 'f', 'm') "
+53,update Salary set sex = case when sex='f' then 'm' when sex='m' then 'f' end 
+54,UPDATE salary SET sex = CASE WHEN sex='m' THEN 'f' ELSE 'm' END
+55,"UPDATE Salary SET sex = IF(sex = ""m"", ""f"", ""m"") "
+56,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+57,update Salary set sex = (case when sex = 'm' then 'f' when sex = 'f' then 'm' end)
+58,"UPDATE Salary SET sex = CASE WHEN sex=""f"" then ""m"" ELSE ""f"" END "
+59,UPDATE salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+60,update Salary set sex = Case sex When 'm' Then 'f' Else 'm' END
+61,update Salary set sex = case when sex='m' then 'f' else 'm' end 
+62,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+63,UPDATE salary SET sex=CASE sex when 'm' Then 'f' else 'm' end
+64,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END 
+65,update salary set sex = (case when sex ='m' then 'f' else 'm' end)
+66,update salary set sex = case sex when 'm' then 'f' else 'm' end
+67,UPDATE Salary SET sex = (CASE WHEN sex = 'm' THEN 'f' else 'm' END)
+68,"update Salary set sex = (if (sex = 'f', 'm', 'f'))"
+69,"update salary set sex = case when sex = ""f"" then ""m"" when sex = ""m"" then ""f"" end"
+70,"update salary set sex = if(sex='f','m','f')"
+71,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+72,update Salary set sex=case sex when 'm' then 'f' when 'f' then 'm' end 
+73,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+74,"update salary set sex= (case when sex=""m"" then ""f"" when sex=""f"" then ""m"" end )  "
+75,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+76,update Salary set sex = (case when sex = 'm' then 'f' else 'm' end)
+77,"UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END WHERE sex IN ('f','m')"
+78,update Salary set sex = case sex when 'm' then 'f' else 'm' end 
+79,update Salary set sex = case when sex = 'm' then 'f' else 'm' end
+80,update salary set sex=CHAR(ASCII('f') + ASCII('m') - ASCII(sex))
+81,update Salary set sex = case when sex = 'm' then 'f' when sex = 'f' then 'm' end
+82,"update salary set sex = if (sex ='m', 'f', 'm')"
+83,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+84,UPDATE Salary SET sex=CASE sex WHEN 'm' THEN'f' ELSE 'm' END
+85,update Salary set sex = case when sex='m' then 'f' else 'm' end
+86,"update salary set sex = case when sex = ""m"" then ""f"" when sex = ""f"" then ""m"" end"
+87,"UPDATE Salary SET sex = CASE WHEN sex = ""f"" THEN 'm' WHEN sex = ""m"" THEN 'f' END "
+88,update Salary set sex = (case when sex='m' then 'f' else 'm' end) 
+89,UPDATE Salary SET sex = CASE sex WHEN 'm' then 'f' ELSE 'm' END
+90,UPDATE Salary set sex = Case when sex='m' then'f' else 'm' end
+91,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END 
+92,"update salary Set sex = Case sex When ""m"" Then ""f"" Else ""m"" End"
+93,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+94,UPDATE salary SET sex = (CASE WHEN sex = 'f' THEN 'm' ELSE 'f' END)
+95,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+96,update salary set sex = case when sex = 'm' then 'f' when sex = 'f' then 'm' end 
+97,UPDATE SALARY SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+98,"UPDATE Salary SET sex = IF(sex Like 'm', 'f', 'm')"
+99,UPDATE Salary SET sex = CASE sex WHEN 'f' THEN 'm' WHEN 'm' THEN 'f' END
+100,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+101,update salary set sex = case when sex = 'm' then 'f' when sex = 'f' then 'm' end 
+102,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+103,update Salary set sex = ( CASE WHEN SEX = 'm' then 'f' else 'm' end )
+104,update salary set sex = ( case WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END )
+105,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+106,"UPDATE Salary SET sex = if( sex = 'f', 'm', 'f' ) "
+107,UPDATE Salary SET sex = CASE WHEN sex = 'f' THEN 'm' WHEN sex = 'm' THEN 'f' END  
+108,UPDATE Salary SET sex= CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+109,update Salary set sex=case when sex='m' then 'f' else 'm' end
+110,UPDATE Salary SET sex = CASE WHEN (sex = 'm') THEN 'f' WHEN (sex = 'f') THEN 'm' END
+111,"UPDATE salary SET sex = case when sex=""m"" then ""f"" else ""m"" end "
+112,update salary set sex = case when sex = 'm' then 'f' when sex = 'f' then 'm' end
+113,"update salary set sex = if(sex = 'm', 'f', 'm')"
+114,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+115,UPDATE salary set sex = case when sex = 'm' then 'f' else 'm' end
+116,"UPDATE Salary SET sex = IF (sex = 'f', 'm', 'f')"
+117,update salary set sex = (case when sex='m' then 'f' else 'm' end ) 
+118,UPDATE Salary SET sex = case when sex ='m' then 'f' else 'm' end
+119,"UPDATE Salary SET sex = IF(sex = 'm','f','m')"
+120,UPDATE salary SET sex=CASE WHEN sex='m' THEN 'f' ELSE 'm' END 
+121,"UPDATE salary SET sex = IF(sex='m', 'f', 'm')"
+122,"update salary set sex = IF (sex = ""m"", ""f"", ""m"")"
+123,update Salary set sex = case when sex = 'f' then 'm' else 'f' end 
+124,update salary set sex = case when sex = 'f' then 'm' else 'f' end
+125,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+126,update salary set sex = case sex when 'm' then 'f' else 'm' end
+127,UPDATE salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+128,UPDATE `Salary` SET `sex` = CASE WHEN sex = 'f' THEN 'm' WHEN sex = 'm' THEN 'f' END
+129,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+130,"UPDATE salary SET sex = IF(sex='m','f','m')"
+131,update salary set sex=CASE sex WHEN 'm' then 'f' else 'm' end
+132,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END 
+133,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END 
+134,update Salary SET sex = char(ASCII(sex) ^ ascii('m') ^ ascii('f'))
+135,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' else 'm' END
+136,"update salary set sex = if(sex = 'm','f','m') "
+137,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END 
+138,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+139,update Salary set sex = case when sex = 'm' then 'f' else 'm' end
+140,"update salary set sex = if(sex = 'm', 'f', 'm)')"
+141,Update salary set sex = Case when sex = 'f' then 'm' else 'f' end where true
+142,Update Salary set sex = case when sex='f' then 'm' when sex='m' then 'f' end
+143,update Salary SET sex = case when sex = 'f' then 'm' when sex = 'm' then 'f' end
+144,UPDATE salary SET sex = CASE when sex='f' THEN 'm' ELSE 'f' END 
+145,update Salary set sex=case sex when 'm' then 'f' else 'm' end
+146,update salary set sex=Case when sex='m' then 'f' else 'm' END
+147,update salary set sex = CHAR(ASCII('f') ^ ASCII('m') ^ ASCII(sex)) 
+148,UPDATE Salary SET sex = CASE WHEN SEX = 'f' THEN 'm' WHEN SEX = 'm' THEN 'f' END 
+149,update salary set sex = Case when sex='m' then 'f' else 'm' END
+150,"UPDATE Salary SET sex = if (sex = 'm', 'f', 'm')"
+151,update salary set sex = CHAR(ASCII('f') ^ ASCII('m') ^ ASCII(sex))
+152,"UPDATE salary SET sex = if(sex='f','m','f')"
+153,UPDATE Salary SET sex = ( CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END) 
+154,update salary set sex = case sex when 'm' then 'f' else 'm' end 
+155,"update salary s set sex=IF(s.sex='m','f','m')"
+156,update Salary set sex = ( case when sex = 'm' then 'f' else 'm' end) 
+157,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+158,update salary set sex = case when sex = 'm' then 'f' else 'm' end 
+159,"update Salary set sex=if(sex='m','f','m')"
+160,"update Salary set sex = (case when sex=""m"" then ""f"" else ""m"" end) "
+161,update Salary set sex = CHAR(ASCII('f') ^ ASCII('m') ^ ASCII(sex)) 
+162,update salary set sex = case when sex ='m' then 'f' else 'm' end 
+163,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+164,update Salary set sex= case when sex='m' then 'f' else 'm' end
+165,update Salary set sex = case when sex = 'f' then 'm' else 'f' end
+166,"UPDATE Salary SET sex = IF(sex = 'm', 'f', IF(sex = 'f', 'm', sex)) WHERE sex IS NOT NULL"
+167,UPDATE salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+168,update Salary set sex = CASE sex when 'm' THEN 'f' ELSE 'm' END
+169,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+170,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+171,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+172,update Salary set sex= case when sex='m' then 'f' else 'm' end 
+173,"UPDATE SALARY SET sex = (CASE WHEN sex =""f"" THEN ""m"" else ""f"" END) "
+174,UPDATE Salary Set sex = CASE when sex = 'm' THEN 'f' when sex = 'f' THEN 'm' END
+175,"update salary set sex = case sex WHEN ""m"" then ""f"" when ""f"" then ""m"" end"
+176,update Salary set sex=case when sex='m' then 'f' else 'm' end
+177,update salary set sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+178,UPDATE Salary SET sex = (CASE sex WHEN 'm' THEN 'f' ELSE 'm' END)
+179,"update salary set sex=if(sex=""m"",""f"",""m"")"
+180,UPDATE salary SET sex= CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+181,UPDATE Salary SET Sex = Case WHEN Sex = 'm' THEN 'f' WHEN Sex = 'f' THEN 'm' END
+182,update Salary set sex = case sex when 'm' then 'f' else 'm' end 
+183,"update Salary set sex = case when sex=""m"" then ""f"" when sex=""f"" then ""m"" end "
+184,UPDATE Salary SET sex = CASE WHEN sex='f' THEN 'm' ELSE 'f' END 
+185,"update salary set sex = if(sex = 'm','f','m') "
+186,"UPDATE Salary SET sex = IF(sex = ""m"", 'f', 'm')"
+187,"UPDATE Salary SET sex = IF (sex = 'm', 'f','m')"
+188,"update salary set sex = IF (sex = ""m"", ""f"", ""m"") "
+189,update Salary set sex = (case when sex = 'm' then 'f' else 'm' end)
+190,update Salary set sex = case when sex = 'm' then 'f' when sex = 'f' then 'm' end
+191,update salary set sex = case when sex='m' then 'f' else 'm' end
+192,UPDATE Salary SET sex = CASE WHEN sex='m' THEN 'f' ELSE 'm' END 
+193,"UPDATE Salary SET sex = IF(sex = 'm', 'f', 'm')"
+194,UPDATE salary SET sex = CASE WHEN sex='f' THEN 'm' ELSE 'f' END 
+195,update salary set sex = case sex when 'm' then 'f' when 'f' then 'm' else sex end
+196,UPDATE Salary SET sex = CASE sex WHEN 'm' then 'f' ELSE 'm' END
+197,update salary set sex=(case when sex='m' then 'f' else 'm' end)
+198,UPDATE Salary SET sex = (CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END)
+199,"UPDATE salary SET sex = IF(sex='m', 'f', 'm') "
+200,update Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+201,"UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END WHERE sex IN ('m', 'f') "
+202,update salary a set sex = case sex when 'm' then 'f' else 'm' end 
+203,"UPDATE Salary SET sex = CASE WHEN sex = ""m"" THEN ""f"" WHEN sex = ""f"" THEN ""m"" END"
+204,"update salary set sex = replace('fm',sex,'') "
+205,UPDATE Salary SET sex = CASE sex when 'm' then 'f' ELSE 'm' end
+206,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+207,Update salary set sex=(case when sex='m' then 'f' else 'm' end)
+208,UPDATE Salary SET sex = ( CASE WHEN sex = 'f' THEN 'm' ELSE 'f' END )
+209,update salary set sex= case when sex='f' then 'm' when sex='m' then 'f' end 
+210,update Salary set sex = case when sex='m' then 'f' else 'm' end 
+211,UPDATE Salary SET sex=(CASE sex WHEN 'm' THEN 'f' WHEN 'f' THEN 'm' ELSE '' END)
+212,update salary set sex = Case sex when 'm' then 'f' else 'm' end 
+213,update salary set sex=case when sex='f' then 'm' else 'f' end
+214,UPDATE Salary SET sex = (case when sex = 'f' then 'm' else 'f' end) 
+215,"update salary set sex = IF(sex = ""f"", ""m"", ""f"")"
+216,update Salary set sex = ( case when sex = 'm' then 'f' when sex = 'f' then 'm' end)
+217,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+218,update Salary set sex= case when sex='m' then 'f' else 'm' end
+219,UPDATE Salary set Salary.sex = (case when sex = 'm' then 'f' when sex = 'f' then 'm' end) 
+220,"Update Salary set sex = if(sex = ""m"",""f"",""m"")"
+221,"update salary set sex =if(sex ='m','f',if(sex='f','m',sex)) "
+222,"update salary set sex = if(sex=""m"",""f"",""m"")"
+223,UPDATE Salary SET sex=(CASE WHEN Sex='f' then 'm' else 'f' end)
+224,UPDATE Salary SET sex = CHAR(ASCII('f') ^ ASCII('m') ^ ASCII(sex))
+225,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+226,"update salary set sex = if(sex='m', 'f', 'm')"
+227,Update salary set sex = case sex when 'f' then 'm' else 'f' end 
+228,UPDATE salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END 
+229,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+230,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+231,UPDATE Salary SET sex = CASE WHEN sex = 'm' THEN 'f' WHEN sex = 'f' THEN 'm' END
+232,UPDATE salary SET sex = CASE sex When 'm' THEN 'f' ELSE 'm' END
+233,update Salary set sex= case when sex = 'm' then 'f' else 'm' end
+234,update Salary set sex=case when sex='m' then 'f' else 'm' end
+235,update salary set sex = (case when sex = 'f' then 'm' else 'f' end)
+236,UPDATE salary Set sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+237,Update Salary set sex = case sex when 'm' then 'f' else 'm' end
+238,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+239,"UPDATE salary SET sex = (CASE WHEN sex = ""m"" THEN ""f"" ELSE ""m"" END)"
+240,"update salary set sex = (case sex when ""f"" then ""m"" when ""m"" then ""f"" end)"
+241,"update salary set sex = replace(replace(replace(sex, 'f', 'x'), 'm', 'f'), 'x', 'm')"
+242,UPDATE salary SET sex= CASE WHEN sex='m' THEN 'f' WHEN sex='f' THEN 'm' END
+243,UPDATE SALARY SET SEX = CASE WHEN SEX = 'm' THEN 'f' ELSE 'm' END
+244,UPDATE SALARY SET SEX = CASE WHEN SEX = 'M' THEN 'f' WHEN SEX ='F' THEN 'm' ELSE SEX END
+245,UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END
+246,update Salary set sex = case sex when 'm' then 'f' else 'm' end
+247,UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END 

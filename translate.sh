@@ -1,6 +1,6 @@
 #!/bin/bash
 
-in_folder="raw"
+in_folder="origin"
 out_folder="translated"
 
 mkdir -p $out_folder

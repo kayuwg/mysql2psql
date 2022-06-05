@@ -1,0 +1,208 @@
+id,original query
+1,"select min(a) as shortest from (select abs(x- (lead(x,1) over (order by x))) as a from point) as y "
+2,"select min(x-rnk) as shortest from (select x, lag(x,1) over (order by x)as rnk from point)t "
+3,"select abs(min(next-x )) as shortest from( select x, lead(x)over(order by x)next from point ) as point2 "
+4,"select min(tem.pre-tem.x) as shortest from ( select *, lead(x) over (order by x) as pre from point) as tem "
+5,"SELECT min(distance) as shortest from ( SELECT x, abs(x- LEAD(x) OVER(order by x asc)) as distance from point ) x"
+6,"select min(a.d0) as shortest from ( select abs(x - lead(x,1) over (order by x asc)) as d0 from point union select abs((lead(x,1) over (order by x asc)- lead(x,2) over (order by x asc))) as d1 from point union select abs(x - lead(x,1) over (order by x asc)) as d2 from point )a "
+7,"select min(x2) as shortest from (select x,abs(x-lag(x,1) over (order by x)) as x2 from (select x from point order by x) t)t2"
+8,"select min(abs( x - val)) as shortest from ( select x, lag(x) over(order by x desc) as val from point ) t "
+9,"select min(tem.pre-tem.x) as shortest from ( select *, lead(x) over (order by x) as pre from point) as tem "
+10,select min(abs(((t1.x)-(t2.x)))) as shortest from point as t1 join point as t2 on t1.x != t2.x 
+11,WITH dist AS ( SELECT ABS(LAG(x) OVER() - x) difference FROM point ) SELECT MIN(difference) shortest FROM dist
+12,"select min(abs(re.x - re.la)) as shortest from (select x, lag(x, 1) over (order by x) as la from point) re "
+13,select min(diff) as shortest from ( select abs(x - lead(x) over (order by x asc)) as diff from point ) p
+14,"select abs(min(next-x )) as shortest from( select x, lead(x)over()next from point ) as point2 "
+15,SELECT MIN(ABS(p1.x - p2.x)) as shortest FROM point p1 JOIN point p2 ON p1.x <> p2.x
+16,"with cte as ( select x,lead(x) over (order by x) as ld from point ) select min(ld-x) as shortest from cte"
+17,"SELECT MIN(short - x) as shortest FROM (SELECT x, LEAD(x) OVER (ORDER BY x) AS short from point) AS p"
+18,"with cte as (select row_number() over() as row_num, x from point) select min(abs(c1.x - c2.x)) as shortest from cte c1 inner join cte c2 on c1.row_num = c2.row_num -1"
+19,SELECT MIN(ABS(p1.x-p2.x)) shortest FROM point p1 CROSS JOIN point p2 WHERE p1.x<>p2.x
+20,SELECT MIN(ABS(p1.x-p2.x)) shortest FROM point p1 CROSS JOIN point p2 WHERE p1.x<>p2.x
+21,select distinct min(abs(P1.x-P2.x)) AS shortest from point P1 JOIN point P2 ON P1.x!=P2.x
+22,select min(abs(p1.x-p2.x)) as shortest from point p1 cross join point p2 where p1.x != p2.x
+23,"with dist as (select a1.x - a2.x as min_dis from point a1, point a2 where a1.x <> a2.x) select min(min_dis) as shortest from dist where min_dis>0 "
+24,"select min(abs(a.x - b.x)) shortest from point a , point b where a.x<>b.x "
+25,SELECT MIN(c.distance) AS shortest FROM (SELECT (a.x - b.x) AS distance FROM point a JOIN point b ON a.x <> b.x AND a.x > b.x) c 
+26,SELECT MIN(ABS(a.x-b.x)) as shortest FROM point a join point b WHERE abs(a.x-b.x)>0
+27,"with cte as( select p1.x as x1, p2.x as x2 from point p1 join point p2 where p1.x != p2.x) select distinct min(abs(x1-x2)) as shortest from cte"
+28,SELECT MIN(p1.x-p2.x) shortest FROM point p1 JOIN point p2 ON p1.x>p2.x
+29,SELECT MIN(ABS(p1.x-p2.x)) as shortest FROM point p1 JOIN point p2 ON p1.x != p2.x
+30,SELECT MIN(ABS(P1.X-P2.X)) AS shortest FROM POINT AS P1 JOIN POINT AS P2 ON P1.X <> P2.X
+31,select min(abs(p1.x-p2.x)) as shortest from point p1 join point p2 on p1.x!=p2.x
+32,select min(p1.x - p2.x) as shortest from point p1 join point p2 where p1.x > p2.x
+33,SELECT MIN(a.x - b.x) AS shortest FROM point a JOIN point b ON a.x <> b.x AND a.x > b.x
+34,"WITH cte as (SELECT x, x-LAG(x) OVER(order by x) as lag_x FROM point) SELECT min(lag_x) as shortest from cte "
+35,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x<>b.x"
+36,select min(abs(a.x - b.x)) as 'shortest' from point a join point b on a.x != b.x
+37,"with cte as (select x,abs(x - lead(x) over (order by x asc)) as distance from point) select min(distance) as shortest from cte"
+38,SELECT MIN(ABS(p1.x-p2.x)) As shortest FROM point p1 join point p2 on p1.x!=p2.x
+39,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x "
+40,SELECT MIN(p1.x-p2.x) shortest FROM point p1 JOIN point p2 ON p1.x>p2.x
+41,"select min(p1.x-p2.x) as shortest from point p1, point p2 where p1.x>p2.x"
+42,select min(abs(a.x-b.x)) as shortest from point a join point b on a.x <> b.x
+43,SELECT MIN(ABS(P1.X-P2.X)) AS shortest FROM POINT AS P1 JOIN POINT AS P2 ON P1.X <> P2.X
+44,"SELECT MIN(short - x) as shortest FROM (SELECT x, LEAD(x) OVER (ORDER BY x) AS short from point) AS P"
+45,"select x-lx as shortest from (select x, lag(x) over(order by x asc) as lx from point) a where lx is not NULL order by x-lx asc limit 1"
+46,select MIN(ABS(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x
+47,"select abs(min(next-x )) as shortest from( select x, lead(x)over()next from point ) as point2 "
+48,select min(ABS(p1.x-p2.x)) as shortest from point p1 join point p2 On p1.x != p2.x
+49,select min(abs(p1.x - p2.x)) as shortest from point p1 inner join point p2 on p1.x != p2.x
+50,select min(abs(a.x-b.x)) as shortest from point a cross join point b where a.x!=b.x
+51,"select min(abs(p1.x-p2.x))shortest from point p1, point p2 where p1.x<>p2.x"
+52,SELECT MIN(ABS(p1.x - p2.x)) as shortest FROM point p1 JOIN point p2 ON p1.x <> p2.x
+53,"select min(abs(abs(a.x)-abs(a.next_closest))) as shortest from( select *, lead(x) over(order by x) as next_closest from point) a"
+54,select min(p1.x - p2.x) as shortest from point p1 join point p2 on p1.x > p2.x
+55,"select min(next_x - x) shortest from (select x, lead(x) over(order by x asc) next_x from point) t "
+56,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x
+57,select min(abs(a.x-b.x)) as shortest from point a inner join point b on a.x<b.x or a.x>b.x
+58,SELECT ABS(x2.x - x1.x) as shortest FROM point x1 JOIN point x2 ON x1.x != x2.x ORDER BY 1 LIMIT 1
+59,"select min(abs(a.x-a.next_x)) as shortest from (select x, lag(x,1) over (order by x) as next_x from point order by x ) a"
+60,select min(abs(p1.x-p2.x)) as shortest from point p1 join point p2 on p1.x !=p2.x
+61,SELECT MIN(distance) AS shortest FROM ( SELECT ABS(p1.x - p2.x) AS distance FROM point p1 JOIN point p2 WHERE ABS(p1.x - p2.x) != 0 ) distances
+62,select min(abs(x1.x - x2.x)) as shortest from point x1 left join point x2 on x1.x != x2.x
+63,select abs(a.x-b.x) as shortest from point as a join point as b on a.x <>b.x order by 1 limit 1
+64,select min(abs(a.x-b.x)) as shortest from point a join point b on a.x != b.x
+65,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x
+66,select min(abs(a.x-b.x)) as shortest from Point a join Point b on a.x!= b.x  
+67,SELECT MIN(ABS(p1.x-p2.x)) as shortest FROM point p1 CROSS JOIN point p2 WHERE p1.x != p2.x 
+68,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+69,"select min(p1.x - p2.x) as shortest from point p1, point p2 where p1.x>p2.x"
+70,"select min(a.x- b.x) as shortest from point as a, point as b where a.x > b.x"
+71,select min(distance) as shortest from (select abs(p1.x-p2.x) as distance from point p1 join point p2 on p1.x<p2.x) t
+72,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x
+73,"select abs(p1.x-p2.x) as shortest from point p1, point p2 where p1.x<>p2.x order by 1 limit 1 "
+74,SELECT MIN(p1.x-p2.x) shortest FROM point p1 JOIN point p2 ON p1.x>p2.x
+75,SELECT MIN(p2.x-p1.x) shortest FROM point p1 JOIN point p2 ON p1.x<p2.x
+76,select min(abs(p1.x-p2.x)) as shortest from point p1 join point p2 on p1.x<>P2.x 
+77,select min(abs(a.x - b.x)) as shortest from point a join point b on a.x != b.x
+78,select min(abs(p1.x-p2.x)) as shortest from point p1 cross join point p2 where p1.x != p2.x
+79,select min(abs(a.x-b.x)) as shortest from point a join point b on a.x != b.x 
+80,select min(a.x-b.x) shortest from point a left join point b on a.x>b.x
+81,"SELECT MIN(ABS(P1.x - P2.x)) AS shortest FROM Point P1, Point P2 WHERE P1.x != P2.x"
+82,"select min(t2.x-t1.x) as shortest from point t1, point t2 where t2.x>t1.x"
+83,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x 
+84,"SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1, point p2 WHERE p1.x != p2.x"
+85,select min(abs(p1.x - p2.x)) as shortest from point as p1 join point as p2 on p1.x != p2.x
+86,"select min(abs(p1.x - p2.x)) shortest from point p1, point p2 where p1.x <> p2.x "
+87,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+88,"select min(abs(a.x - b.x)) as shortest from point a, point b where a.x != b.x"
+89,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x<b.x"
+90,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 LEFT JOIN point p2 ON p1.x != p2.x 
+91,"SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1, point p2 where p1.x != p2.x"
+92,select abs(a.x-b.x) as shortest from point a join point b on a.x <>b.x order by shortest limit 1
+93,"SELECT MIN(distance) AS shortest FROM ( SELECT ABS( x1-x2 ) AS distance FROM ( SELECT x AS x1, LAG(x, 1) OVER ( ) AS x2 FROM point )AS SubQuery1 )AS SubQuery2"
+94,select distinct min(ABS(p1.x -p2.x)) as shortest from point as p1 join point as p2 on p1.x <> p2.x 
+95,select min(abs(a.x-b.x)) as shortest from point a join point b where a.x != b.x 
+96,SELECT MIN(ABS(p1.x-p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x
+97,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x 
+98,"SELECT MIN(ABS(x1.x - x2.x)) AS shortest FROM point x1, point x2 WHERE x1.x != x2.x"
+99,SELECT MIN(ABS(t1.x-t2.x)) AS shortest FROM point AS t1 JOIN point AS t2 ON t1.x != t2.x 
+100,"select min(abs(p1.x - p2.x)) as shortest from point p1, point p2 where p1.x <> p2.x"
+101,"SELECT MIN( distance ) AS shortest FROM ( SELECT ABS( x1-x2 ) AS distance FROM ( SELECT x AS x1, LAG( x, 1 ) OVER ( ) AS x2 FROM point )AS SubQuery1 )AS SubQuery2"
+102,"select abs(p1.x-p2.x) as shortest from point p1, point p2 where p1.x<>p2.x order by shortest limit 1"
+103,select min(abs(p1.x-p2.x)) as shortest from point p1 join point p2 where p1.x!=p2.x
+104,select min(abs(p1.x - p2.x)) shortest from point p1 join point p2 on p1.x <> p2.x 
+105,"select min(abs(p1.x-p2.x)) as shortest from point p1, point p2 where p1.x!=p2.x"
+106,SELECT MIN(d) shortest FROM (SELECT x-(LAG(x) OVER(ORDER BY x)) d FROM point) t
+107,select min(abs(a.x-b.x)) as shortest from point as a join point as b on a.x != b.x
+108,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+109,"SELECT MIN(abs(a.x - b.x)) AS shortest FROM point a, point b WHERE a.x <> b.x "
+110,"SELECT MIN(ABS(p2.x-p1.x)) AS ""shortest"" FROM point p1, point p2 WHERE p1.x<> p2.x"
+111,"SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM Point AS p1, Point AS p2 WHERE p1.x < p2.x"
+112,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x
+113,"select min(p1.x-p2.x) as shortest from point p1, point p2 where p1.x>p2.x"
+114,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x !=b.x"
+115,"with a as (select x, lag(x) over(order by x), x - lag(x) over(order by x) as dist from point order by x asc) select min(dist) as shortest from a"
+116,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+117,select min(abs(p1.x - p2.x)) shortest from point p1 cross join point p2 where p1.x <> p2.x
+118,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x
+119,"select min(abs(p1.x - p2.x)) as shortest from point p1, point p2 where p1.x != p2.x"
+120,select min(abs(a.x-b.x)) as shortest from point a cross join point b where a.x!=b.x
+121,"Select MIN(ABS(shortest)) as shortest FROM ( Select x-x2 as shortest FROM ( SELECT x, LEAD(x,1) OVER (ORDER BY X ASC) as x2 FROM POINT P ) a ) b"
+122,"select min(abs(a.x-b.x)) as shortest from point as a, point as b where abs(a.x-b.x)!=0"
+123,select min(t1.num) as shortest from (select abs(x-lag(x) over ()) as num from point) as t1 where t1.num is not null 
+124,"SELECT MIN(distance) AS shortest FROM ( SELECT ABS( x1-x2 ) AS distance FROM ( SELECT x AS x1, LAG(x, 1) OVER ( ) AS x2 FROM point )AS SubQuery1 )AS SubQuery2"
+125,select min(abs(p1.x-p2.x)) shortest from point p1 join point p2 on p1.x!=p2.x
+126,"SELECT MIN( distance ) AS shortest FROM ( SELECT ABS( x1-x2 ) AS distance FROM ( SELECT x AS x1, LAG( x, 1 ) OVER ( ) AS x2 FROM point )AS SubQuery1 )AS SubQuery2"
+127,"WITH A AS ( SELECT ABS(a.x-b.x) AS dis FROM point a, point b WHERE a.x <> b.x ) SELECT MIN(dis) AS shortest FROM A"
+128,"SELECT ABS(P1.x - P2.x) AS shortest FROM point P1, point P2 WHERE P1.x <> P2.x ORDER BY shortest LIMIT 1"
+129,SELECT MIN(ABS(p.x - p1.x)) AS shortest FROM point p INNER JOIN point p1 ON p.x <> p1.x
+130,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+131,select min(ABS(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x<>p2.x
+132,"SELECT MIN(distance) AS shortest FROM ( SELECT ABS( x1-x2 ) AS distance FROM ( SELECT x AS x1, LAG(x, 1) OVER ( ) AS x2 FROM point )AS SubQuery1 )AS SubQuery2"
+133,"select y-x as shortest from ( select x, lead(x) over () as y from point order by x asc ) t where y is not null order by y-x limit 1"
+134,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x>b.x"
+135,SELECT MIN(p1.x - p2.x) AS shortest FROM point p1 JOIN point p2 ON p1.x > p2.x
+136,"SELECT MIN(ABS(a.x-b.x)) AS shortest FROM point AS a, point AS b WHERE a.x != b.x"
+137,"select min(a.x - b.x) as shortest from point a, point b where a.x > b.x"
+138,"select abs(p1.x-p2.x) as shortest from point p1,point p2 where p1.x!=p2.x order by shortest limit 1"
+139,"SELECT MIN(ABS(x1-x2)) as shortest FROM (SELECT p1.x as x1, p2.x as x2 FROM point p1, point p2 where p1.x!=p2.x) AS C1 "
+140,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x <> p2.x 
+141,select min(abs(a.x-b.x)) as shortest from point a join point b where a.x != b.x 
+142,select min(a.x-b.x) as shortest from point a join point b where a.x - b.x >=1
+143,select min(P2.x - P1.x) as shortest from point P1 inner join point P2 on P1.x < P2.x 
+144,SELECT ABS(p1.x-p2.x) AS shortest FROM point AS p1 JOIN point AS p2 ON p1.x<>p2.x ORDER BY 1 LIMIT 1
+145,"select min(diff) as shortest from (select abs(x-(lag(x,1) over(order by x asc))) as diff from point) a"
+146,SELECT MIN(ABS(p2.x - p1.x)) AS shortest FROM point p1 LEFT JOIN point p2 ON p1.x != p2.x
+147,SELECT min(distance) as shortest FROM ( SELECT abs(t1.x - t2.x) as distance FROM point t1 JOIN point t2 ON t1.x <> t2.x ) as t
+148,SELECT MIN(ABS(p1.x-p2.x)) as shortest FROM point p1 JOIN point p2 WHERE p1.x != p2.x
+149,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+150,"select min(p2.x - p1.x) as shortest from point p1, point p2 where p1.x < p2.x"
+151,select min(abs(p1.x-p2.x))as shortest from point p1 join point p2 where p1.x!=p2.x
+152,select min(abs(a.x-b.x)) as shortest from point a cross join point b where a.x!=b.x
+153,"SELECT MIN(ABS(a.x-b.x)) shortest FROM point a, point b WHERE a.x != b.x "
+154,SELECT MIN(ABS(p1.x-p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x <> p2.x
+155,"select min(dist) as shortest from (select abs(x-x1) as dist from (select a.x, a.row_num, b.x as x1, b.row_num as row_num1 from (select x,row_number() over(order by x) as row_num from point) a cross join (select x,row_number() over(order by x) as row_num from point) b )c where row_num!=row_num1) d"
+156,"WITH t1 AS ( SELECT x, LEAD(x) OVER() as next FROM point ), t2 AS ( SELECT x, ABS(ABS(x)- ABS(next)) AS diff FROM t1 ), t3 AS ( SELECT min(diff) as shortest FROM t2 ) SELECT * FROM t3"
+157,select min(diff) as shortest from ( select abs(x - lead(x) over (order by x asc)) as diff from point ) p
+158,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x!=b.x"
+159,"select min(abs(p1.x-p2.x)) as 'shortest' from point p1, point p2 where p1.x <> p2.x"
+160,"SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1, point p2 WHERE p1.x != p2.x"
+161,select min(p1.x - p2.x) shortest from point p1 inner join point p2 on p1.x > p2.x
+162,"SELECT min(distance) as shortest from ( SELECT x, abs(x- LEAD(x) OVER(order by x asc)) as distance from point ) x"
+163,SELECT min(abs(a.x - b.x)) as shortest from point a join point b where a.x <> b.x
+164,select min(p1.x-p2.x) as shortest from point p1 inner join point p2 on p1.x>p2.x
+165,"select min(abs(A.x - B.x)) as shortest from point A, point B where A.x != B.x"
+166,SELECT min(sub.distance) AS shortest FROM ( SELECT x - LAG(x) OVER (ORDER BY x) AS distance FROM point ) sub
+167,select min(abs(p2.x - p1.x)) as shortest from point p1 join point p2 on p1.x != p2.x
+168,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+169,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x  
+170,SELECT DISTINCT MIN(ABS(P2.X - P1.X)) AS SHORTEST FROM POINT P1 CROSS JOIN POINT P2 WHERE P1.X <> P2.X 
+171,select abs(p1.x-p2.x) as shortest from point p1 join point p2 on p1.x!=p2.x order by 1 asc limit 1
+172,"select min(A.x - B.x) as shortest from point A, point B where A.x > B.x "
+173,select min(abs(a.x-b.x)) as shortest from point a cross join point b where a.x!=b.x 
+174,select min(abs(A.x - B.x)) 'shortest' from point A cross join point B on A.x != B.x
+175,"select abs(a.x-b.x) shortest from point a, point b where a.x != b.x order by abs(a.x-b.x) limit 1"
+176,SELECT ABS(p1.x - p2.x) as shortest FROM point p1 JOIN point p2 ON p1.x != p2.x ORDER BY shortest LIMIT 1 
+177,Select Min(Abs(a.x-b.x)) As shortest From point a Left Join point b on a.x != b.x
+178,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x
+179,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x
+180,SELECT MIN(ABS(p1.x - p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x <> p2.x
+181,select min(abs(p1.x-p2.x)) as shortest from point p1 join point p2 on p1.x<>p2.x
+182,"select abs(a.x - b.x) shortest from point a , point b where a.x<>b.x order by shortest limit 1 "
+183,"SELECT MIN(ABS(p1.x-p2.x)) AS shortest FROM point p1, point p2 WHERE p1.x!=p2.x"
+184,"SELECT min(p1.x-p2.x) as shortest FROM point as p1, point as p2 WHERE p1.x!=p2.x and p1.x>p2.x"
+185,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x != b.x"
+186,SELECT MIN(p1.x-p2.x) shortest FROM point p1 JOIN point p2 ON p1.x>p2.x
+187,"SELECT ABS(a.x - b.x) AS shortest FROM point a, point b WHERE a.x <> b.x ORDER BY shortest LIMIT 1"
+188,"SELECT MIN(ABS(x - y)) AS shortest FROM( SELECT x, LAG(x) OVER(ORDER BY x) AS y FROM point ORDER BY x) foo"
+189,select min(abs(point1.x - point2.x)) as shortest from point point1 join point point2 on point1.x != point2.x
+190,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x
+191,select min(abs(b.x-a.x)) as shortest from point a left join point b on a.x!=b.x 
+192,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x 
+193,"select min(abs(a.x-b.x)) as shortest from point a, point b where a.x!=b.x"
+194,select min(abs(a.x-b.x)) as shortest from point a join point b where a.x != b.x
+195,select min(abs(a.x - b.x)) as shortest from point a join point b on a.x != b.x
+196,select distinct min(abs(t1.x - t2.x)) as shortest from point t1 join point t2 on t1.x != t2.x 
+197,"SELECT DISTINCT ABS(a.x-b.x) AS shortest FROM point a, point b WHERE a.x != b.x ORDER BY 1 LIMIT 1"
+198,SELECT min(abs(p1.x-p2.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x <> p2.x
+199,select min(abs(t1.x - t2.x)) as shortest from point t1 join point t2 on t1.x != t2.x
+200,SELECT MIN(abs(p2.x-p1.x)) AS shortest FROM point p1 JOIN point p2 ON p1.x != p2.x 
+201,SELECT MIN(p1.x - p2.x) AS shortest FROM point p1 INNER JOIN point p2 on p1.x > p2.x
+202,"select distinct abs(p1.x - p2.x) as ""shortest"" from point p1, point p2 where abs(p1.x - p2.x) >0 order by abs(p1.x - p2.x) limit 1"
+203,select min(abs(p.x-q.x)) as shortest from point p join point q on p.x!=q.x
+204,"WITH all_lines AS ( SELECT p1.x as p1_x, p2.x AS p2_x, ABS(p1.x - p2.x) AS dist FROM point p1, point p2 WHERE p1.x <> p2.x ) SELECT MIN(dist) AS shortest FROM all_lines"
+205,"SELECT MIN(a.x - b.x) AS shortest FROM point a, point b WHERE a.x > b.x"
+206,"select min(abs(t1.x-t2.x)) shortest from point t1, point t2 where t1.x <> t2.x"
+207,select min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x != p2.x 

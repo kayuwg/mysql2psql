@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bufio"
+	"encoding/csv"
 	"fmt"
 	"log"
 	"os"
@@ -29,21 +29,35 @@ func main() {
 		return
 	}
 	defer file.Close()
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		fmt.Println(translate(scanner.Text(), parser))
-	}
-	if err := scanner.Err(); err != nil {
+	reader := csv.NewReader(file)
+	records, err := reader.ReadAll()
+	if err != nil {
 		log.Fatal(err)
 	}
-
+	for i, record := range records {
+		// skip title
+		if i == 0 {
+			continue
+		}
+		record[1] = translate(record[1], parser)
+	}
+	writer := csv.NewWriter(os.Stdout)
+	for _, record := range records {
+		if err := writer.Write(record); err != nil {
+			log.Fatalln("error writing record to csv:", err)
+		}
+	}
+	// Write any buffered data to the underlying writer (standard output).
+	writer.Flush()
+	if err := writer.Error(); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func translate(sql string, parser *parser.Parser) string {
 	stmtNodes, _, err := parser.Parse(sql, "", "")
 	if err != nil {
-		fmt.Printf("parse error: %v\n", err.Error())
-		return "ERROR"
+		return fmt.Sprintf("ERROR: mysql parse error: %v", err.Error())
 	}
 	astNode := &stmtNodes[0]
 	var stringBuilder strings.Builder

@@ -1,0 +1,355 @@
+id,original query
+1,SELECT customer_number FROM ORDERS GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+2,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+3,select (customer_number) from orders group by customer_number ORDER BY COUNT(*) DESC LIMIT 1
+4,"select customer_number from (select customer_number, count(order_number) as onum from orders group by customer_number order by onum desc limit 1) t1"
+5,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+6,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+7,Select customer_number From orders group by customer_number order by Count(customer_number) desc Limit 1
+8,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1 
+9,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+10,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+11,"select customer_number from (select customer_number, count(order_number) as cnt from orders group by customer_number order by cnt desc) as temp limit 1"
+12,"SELECT customer_number FROM (SELECT customer_number, COUNT(*) AS counts FROM Orders GROUP BY customer_number ORDER BY counts DESC) as w HAVING MAX(counts)"
+13,Select customer_number From orders Group by customer_number Order by count(*) Desc Limit 1 
+14,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+15,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+16,"SELECT i.customer_number FROM (SELECT customer_number, COUNT(order_number) as orders FROM Orders GROUP BY customer_number) as i ORDER BY i.orders DESC LIMIT 1"
+17,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+18,select customer_number from orders group by 1 order by count(order_number) desc limit 1
+19,Select customer_number from Orders group by customer_number Order by Count(*) DESC LIMIT 1 
+20,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+21,"select distinct temp as customer_number from( select customer_number, first_value(customer_number) over (order by count(customer_number) desc ) as temp from orders group by customer_number) as sub "
+22,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+23,"select customer_number from (select customer_number, count(order_number) as cnt from Orders group by customer_number order by cnt desc limit 1) t "
+24,select customer_number from orders group by customer_number order by count(*) desc limit 1
+25,select distinct customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+26,select customer_number from Orders group by customer_number having count(order_number) = (select count(order_number) from Orders group by customer_number order by count(order_number) desc limit 1 )
+27,"SELECT customer_number FROM (SELECT customer_number, COUNT(customer_number) as n_orders FROM Orders GROUP BY customer_number ORDER BY n_orders DESC) as T LIMIT 1"
+28,"select customer_number from ( select customer_number, count(customer_number) from orders group by customer_number order by count(customer_number) desc limit 1) x "
+29,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+30,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+31,"with temp as (select customer_number , count(*) total from orders group by customer_number), temp2 as (select customer_number, dense_rank() over (order by total desc) as rnk from temp) select customer_number from temp2 where rnk=1"
+32,select customer_number from Orders group by customer_number order by count(distinct order_number) desc limit 1 
+33,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+34,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+35,select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1
+36,"with tot as (select customer_number , count(order_number) over(partition by customer_number) as cn from orders) select customer_number from tot order by cn desc limit 1 "
+37,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+38,"select customer_number from( select customer_number, count(order_number) from orders group by customer_number order by count(order_number) desc) s LIMIT 1"
+39,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+40,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+41,select customer_number from orders group by customer_number order by count(*) desc limit 1
+42,"select customer_number from (select count(order_number) as a, customer_number from Orders group by customer_number order by a desc) as A limit 1"
+43,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+44,"WITH total AS( SELECT customer_number, COUNT(order_number) AS total_order FROM Orders GROUP BY customer_number ORDER BY total_order DESC) SELECT customer_number FROM total LIMIT 1"
+45,"select customer_number from (select distinct customer_number, count(order_number) as num from orders group by customer_number) A order by num desc limit 1 "
+46,select customer_number from Orders group by customer_number order by count(*) desc LIMIT 1
+47,"select customer_number from (select customer_number, count(order_number) from Orders group by customer_number order by count(order_number) desc limit 1) as a"
+48,"Select customer_number from( Select customer_number, count(distinct order_number) from Orders group by 1 order by 2 desc limit 1) a"
+49,"WITH CTE1 AS ( SELECT customer_number, count(order_number) FROM Orders GROUP BY customer_number ORDER BY 2 DESC ) SELECT customer_number FROM CTE1 LIMIT 1"
+50,"select customer_number from (select o.customer_number, dense_rank() over(order by count(o.order_number) desc) rank_no from orders o group by o.customer_number) tmp where rank_no = 1"
+51,"select customer_number from ( select customer_number, count(*) from orders group by 1 order by 2 desc limit 1) t1"
+52,"SELECT customer_number FROM( SELECT customer_number, COUNT(DISTINCT order_number) AS num FROM Orders GROUP BY customer_number ORDER BY num DESC ) tmp LIMIT 1"
+53,"select o.customer_number from (select customer_number, rank() over(order by count(customer_number) desc) as 'rnk' from orders group by customer_number) o where o.rnk=1"
+54,"select customer_number from ( select customer_number, count(order_number) as ord_cnt from orders group by 1 order by 2 desc limit 1 ) a"
+55,select customer_number from orders group by customer_number order by count(customer_number) desc limit 1 
+56,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+57,"select customer_number from (select customer_number, count(*) as num_orders from Orders group by 1) a order by num_orders desc limit 1"
+58,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+59,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC limit 1
+60,select distinct customer_number from orders group by customer_number having count(order_number) = (select max(p) from (select count(order_number) as p from orders group by customer_number) t) 
+61,"select t.customer_number from (select customer_number, count(1) cnt from orders group by customer_number order by cnt desc limit 1) as t"
+62,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1 
+63,"select customer_number from ( select customer_number, count(order_number), dense_rank() over(order by count(order_number) desc) as prank from Orders group by 1 ) as tbl where prank = 1"
+64,"With t1 as ( Select customer_number, Rank() over(order by count(customer_number) desc) as rk from orders group by customer_number ) Select t1.customer_number from t1 where t1.rk=1"
+65,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+66,"select a.customer_number from( select customer_number , count(distinct order_number) as top from Orders group by customer_number ) a order by top desc limit 1 "
+67,select customer_number from orders group by customer_number order by count(*) desc limit 1 
+68,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+69,select customer_number from orders group by customer_number order by count(*) desc limit 1
+70,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+71,"with temp as( select customer_number ,count(*) as customer_count from Orders group by customer_number ) select customer_number from temp order by customer_count desc limit 1"
+72,SELECT customer_number FROM Orders group by customer_number order by count(order_number) desc limit 1 
+73,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1  
+74,"with cte as ( select customer_number,count(order_number) cnt from Orders group by customer_number order by cnt desc limit 1 ) select customer_number from cte"
+75,"with cte as ( select customer_number, count(customer_number) as num from orders group by 1) select customer_number from cte order by num desc limit 1"
+76,select customer_number from orders group by customer_number order by count(*) desc limit 1 
+77,"select distinct t.customer_number from( select customer_number, count(distinct order_number) as dis_orders from orders group by customer_number order by 2 desc limit 1) t"
+78,select customer_number from orders Group by customer_number order by count(order_number) desc LIMIT 1
+79,"with cte as (select customer_number, count(order_number) as count1 from Orders group by customer_number ) select customer_number from cte where count1 in (select max(count1) from cte) "
+80,SELECT customer_number FROM Orders GROUP BY 1 ORDER BY COUNT(order_number) DESC LIMIT 1
+81,select customer_number from orders group by customer_number order by count(*) desc limit 1
+82,select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1
+83,SELECT customer_number FROM Orders GROUP BY customer_number HAVING COUNT(*) = (SELECT COUNT(*) FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1) 
+84,"SELECT o.customer_number FROM (SELECT customer_number,COUNT(order_number) AS cnt FROM orders GROUP BY customer_number ORDER BY cnt DESC LIMIT 1) AS o"
+85,select customer_number from orders group by customer_number order by count(*) desc limit 1 
+86,SELECT Orders.customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+87,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+88,Select customer_number from orders group by customer_number order by count(customer_number) DESC LIMIT 1
+89,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+90,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY count(*) DESC LIMIT 1
+91,select customer_number from orders group by customer_number order by count(*) desc limit 1
+92,"SELECT customer_number FROM ( SELECT customer_number, COUNT(*) FROM Orders GROUP BY customer_number ORDER BY 2 DESC LIMIT 1 ) AS top_customer"
+93,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1  
+94,"with cte as (select customer_number, count(order_number) over(partition by customer_number) cnt from Orders order by cnt desc limit 1 ) select customer_number from cte"
+95,"Select customer_number From ( Select customer_number, count(customer_number) As count_cust From Orders Group by customer_number Order by count_cust DESC ) As pw Limit 1 "
+96,"select customer_number from(select customer_number,count(order_number) as test from orders group by customer_number order by test desc limit 1) t "
+97,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+98,"SELECT customer_number FROM (SELECT customer_number, COUNT(customer_number) as num_orders FROM Orders GROUP BY customer_number ORDER BY num_orders DESC LIMIT 1) AS sub  "
+99,select customer_number from orders group by 1 order by count(*) desc limit 1
+100,SELECT customer_number FROM ORDERS GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+101,"select customer_number from ( select customer_number , rank()over(order by count(distinct order_number) desc) rnk from orders group by customer_number ) a where rnk=1 "
+102,select distinct customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+103,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+104,select customer_number from orders group by 1 order by count(*) desc limit 1
+105,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+106,"select customer_number from orders group by customer_number having count(order_number) = (select max(total_orders) from (select customer_number,count(order_number) as total_orders from orders group by customer_number order by total_orders desc) as T) "
+107,"SELECT customer_number FROM (SELECT customer_number, COUNT(*) AS Orders_no FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC) t LIMIT 1 "
+108,"SELECT customer_number FROM (SELECT customer_number, COUNT(order_number) cnt FROM orders GROUP BY customer_number ORDER BY cnt DESC) freq LIMIT 1 "
+109,"select customer_number from ( select customer_number, count(*) orders from Orders group by customer_number order by orders desc limit 1) a"
+110,"select a.customer_number from ( select customer_number, count(order_number) as order_nr from Orders group by customer_number order by order_nr DESC) a limit 1 "
+111,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+112,select customer_number from orders group by customer_number having count(*) = (select max(counts) from (select count(*) as counts from orders group by customer_number) as temp) 
+113,select customer_number from orders Group by customer_number order by count(order_number) desc limit 1
+114,"select a.cusNum as customer_number from (select customer_number cusNum,count(*) CNT from orders group by customer_number ORDER BY Count(*) desc Limit 1) a "
+115,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1 
+116,"select customer_number from ( select customer_number, count(1) as c from orders group by customer_number order by c desc) A limit 1"
+117,"SELECT customer_number FROM ( SELECT customer_number, COUNT(*) AS ct FROM orders GROUP BY 1 ORDER BY ct DESC ) a LIMIT 1"
+118,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+119,select customer_number from Orders group by customer_number order by count(order_number) DEsc limit 1
+120,select customer_number from orders group by customer_number order by count(*) desc limit 1 
+121,"select customer_number from (select customer_number, count(customer_number) from orders group by customer_number order by 2 desc limit 1)T"
+122,select customer_number from orders group by customer_number order by count(*) desc limit 1
+123,"with customer_order_cnt as ( select customer_number, count(order_number) as order_num from Orders group by 1 ) select distinct customer_number from customer_order_cnt where order_num = (select max(order_num) from customer_order_cnt)"
+124,"select customer_number from ( select customer_number,count(order_number) from orders where customer_number is not null group by customer_number order by count(customer_number) desc) as a limit 1"
+125,select customer_number from orders group by customer_number order by count(*) desc limit 1
+126,"SELECT t.customer_number FROM (SELECT customer_number, COUNT(order_number) AS NUM FROM Orders GROUP BY customer_number ORDER BY NUM DESC LIMIT 1 )t "
+127,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1 
+128,"select customer_number from (select customer_number, dense_rank() over(order by count(order_number) desc) rank_no from orders group by customer_number) tmp where rank_no = 1"
+129,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+130,"Select customer_number from ( Select customer_number, row_number() over (order by total_orders desc) as ""Rank"" from ( Select customer_number, count(*) as ""total_orders"" from orders group by 1 ) a ) b where b.Rank = 1  "
+131,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+132,select customer_number from orders group by customer_number order by count(*) desc limit 1
+133,select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1 
+134,"WITH num_order_1 AS ( SELECT customer_number ,COUNT(*) as num_order FROM Orders GROUP BY 1 ) SELECT customer_number FROM ( SELECT customer_number ,num_order ,RANK() OVER (ORDER BY num_order DESC) as top_1 FROM num_order_1 ) as num_order_2 WHERE top_1 = 1 "
+135,"with tmp as (select customer_number,count(customer_number) as number from orders group by customer_number) select customer_number from tmp order by number desc limit 1"
+136,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+137,SELECT customer_number FROM Orders GROUP BY customer_number HAVING COUNT(order_number) = (SELECT COUNT(order_number) as cnt FROM Orders GROUP BY customer_number ORDER BY cnt DESC LIMIT 1)
+138,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+139,"SELECT customer_number FROM ( SELECT customer_number, count(order_number) cnt from Orders group by customer_number ORDER BY 2 desc LIMIT 1) a "
+140,"with a as (Select customer_number, count(*) as total from orders group by customer_number order by total desc limit 1) Select customer_number from a"
+141,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+142,"Select a.customer_number from (Select Count(order_number) as nums, customer_number from Orders Group By customer_number order by nums Desc) a Limit 1"
+143,select customer_number from orders group by customer_number order by count(order_number) desc limit 1 
+144,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+145,select customer_number from orders group by customer_number order by count(*) desc limit 1
+146,"select customer_number from ( select customer_number, count(order_number) as cnt from orders group by customer_number order by cnt desc ) sub order by cnt desc limit 1"
+147,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+148,"SELECT customer_number from (select customer_number, COUNT(*) as cnt from Orders group by customer_number) as T ORDER BY cnt DESC LIMIT 1"
+149,"with customer_orders as ( select customer_number, count(distinct order_number) as orders from orders o group by 1 ) select customer_number from customer_orders co where orders = (select max(orders) from customer_orders) "
+150,select customer_number from Orders group by 1 order by count(customer_number) desc limit 1
+151,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+152,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+153,SELECT customer_number FROM Orders GROUP BY customer_number HAVING COUNT(order_number) = (SELECT MAX(T.GC) FROM( SELECT COUNT(order_number) AS GC FROM Orders GROUP BY customer_number) AS T) 
+154,select customer_number from orders group by customer_number order by count(order_number) desc limit 1 
+155,SELECT customer_number FROM Orders GROUP BY customer_number HAVING COUNT(customer_number) > 0 ORDER BY COUNT(customer_number) DESC LIMIT 1
+156,Select customer_number from Orders group by customer_number order by count(*) desc limit 1
+157,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+158,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+159,select customer_number from orders group by customer_number order by count(*) desc limit 1 offset 0 
+160,SELECT customer_number FROM orders GROUP BY customer_number HAVING count(order_number) = ( SELECT count(order_number) FROM orders GROUP BY customer_number ORDER BY count(order_number) DESC LIMIT 1 )
+161,select distinct customer_number from Orders where customer_number = (select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1) 
+162,SELECT customer_number FROM orders GROUP BY customer_number HAVING count(order_number) = ( SELECT count(order_number) FROM orders GROUP BY customer_number ORDER BY count(order_number) DESC LIMIT 1 )
+163,"with t1 as ( select customer_number, count(customer_number), rank() over (order by count(customer_number) desc) as count_rank from orders group by customer_number) select customer_number from t1 where count_rank =1 "
+164,"with temp as ( select customer_number, count(customer_number), dense_rank() over(order by count(customer_number) desc) as rnk from orders group by customer_number ) select customer_number from temp where rnk = 1 "
+165,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1 
+166,"select customer_number from (select customer_number, count(*) as orders from Orders group by customer_number order by orders desc) a limit 1"
+167,"select customer_number from (select customer_number,COUNT(*) as cc from Orders group by customer_number )g order by cc desc limit 1 "
+168,"with customer_orders as (select customer_number, count(order_number) number_of_orders from orders group by customer_number) select customer_number from customer_orders where number_of_orders = (select max(number_of_orders) from customer_orders) "
+169,select customer_number from orders group by customer_number having count(customer_number) = ( select count(customer_number) as number from orders group by customer_number order by number desc limit 1 )
+170,"SELECT customer_number FROM ( SELECT customer_number, COUNT(order_number) as num FROM Orders GROUP BY customer_number ORDER BY num DESC LIMIT 1 ) AS temp"
+171,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+172,"SELECT customer_number FROM ( SELECT customer_number, COUNT(DISTINCT order_number) AS tmp FROM Orders GROUP BY customer_number ) t ORDER BY tmp DESC LIMIT 1"
+173,select customer_number from orders group by customer_number order by count(*) desc limit 1
+174,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+175,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY count(order_number) DESC LIMIT 1
+176,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+177,"SELECT sub.customer_number FROM ( SELECT customer_number, RANK() OVER (ORDER BY COUNT(order_number) DESC) AS customer_rank FROM Orders GROUP BY customer_number ) sub WHERE sub.customer_rank = 1"
+178,"select customer_number from ( select customer_number, count(order_number) over (partition by customer_number) as counts from orders order by counts desc limit 1) as g "
+179,select customer_number from orders group by customer_number order by count(*) desc limit 1
+180,"With temp AS ( SELECT customer_number, count(order_number) AS cnt FROM Orders GROUP BY 1) SELECT a.customer_number FROM ( SELECT *, dense_rank() OVER(ORDER BY cnt DESC) AS 'Rank' FROM temp) a WHERE a.rank = 1"
+181,select distinct customer_number from orders group by customer_number order by count(customer_number) desc limit 1
+182,SELECT CUSTOMER_NUMBER FROM ORDERS GROUP BY CUSTOMER_NUMBER ORDER BY COUNT(*) DESC LIMIT 1 
+183,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+184,select customer_number from Orders group by customer_number having count(*) = ( select count(*) from Orders group by customer_number order by count(*) desc limit 1)
+185,select customer_number from orders group by customer_number having count(*) > 1 order by count(*) desc limit 1
+186,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+187,"with a as (select customer_number, count(order_number) as order_nr from Orders group by customer_number order by order_nr DESC) select customer_number from a limit 1 "
+188,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+189,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+190,select customer_number from orders group by customer_number order by count(*) desc limit 1
+191,select customer_number from orders GROUP BY customer_number order by count(order_number) desc LIMIT 1
+192,SELECT customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+193,select customer_number from orders group by customer_number order by count(customer_number) DESC limit 1
+194,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY count(customer_number) DESC LIMIT 1
+195,select customer_number from orders group by customer_number order by count(order_number) desc Limit 1
+196,SELECT CUSTOMER_NUMBER FROM ORDERS GROUP BY CUSTOMER_NUMBER ORDER BY COUNT(*) DESC LIMIT 1 
+197,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+198,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+199,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+200,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+201,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+202,"SELECT customer_number FROM ( SELECT customer_number, COUNT(*) AS num_orders FROM orders GROUP BY customer_number ORDER BY 2 DESC LIMIT 1 ) AS max_orders"
+203,select customer_number from orders group by customer_number order by count(*) desc limit 1
+204,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+205,"SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 0, 1"
+206,SELECT customer_number FROM orders GROUP BY customer_number HAVING COUNT(*) >= ALL (SELECT COUNT(customer_number) FROM orders GROUP BY customer_number)
+207,select customer_number from Orders group by customer_number having count(order_number) >= all(select count(order_number) from Orders group by customer_number)
+208,"with cte as( select customer_number, rank() over (order by count(customer_number) desc) rnk from Orders group by customer_number) select customer_number from cte where rnk=1"
+209,"SELECT a.customer_number FROM orders, (SELECT customer_number, COUNT(customer_number) FROM orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1) AS a WHERE order_number = (SELECT MAX(order_number) FROM orders) "
+210,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+211,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+212,"select distinct t.customer_number from( select customer_number, rank() over(order by count(distinct order_number) desc) as rnk from orders group by customer_number) t where t.rnk = 1 "
+213,"Select a.customer_number from ( select customer_number, count(customer_number) as req from orders group by customer_number)a order by a.req desc limit 1 "
+214,"with m1 as (Select customer_number ,count(order_number) as nums from Orders group by customer_number) Select customer_number from m1 where m1.nums = (select max(nums) from m1 )"
+215,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1 
+216,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY count(order_number) DESC LIMIT 1
+217,select customer_number from orders group by customer_number order by count(*) desc limit 1
+218,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(DISTINCT order_number) DESC LIMIT 1
+219,"SELECT a.customer_number FROM (SELECT count(customer_number), customer_number FROM Orders group by customer_number order by 1 desc limit 1) a"
+220,"WITH T AS ( SELECT customer_number, COUNT(order_number) AS num FROM Orders GROUP BY customer_number ) SELECT customer_number FROM T ORDER BY num DESC LIMIT 1 OFFSET 0 "
+221,select customer_number from Orders group by 1 order by count(order_number) desc limit 1
+222,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY count(*) DESC LIMIT 1 
+223,"select customer_number from ( select customer_number,rank()over(order by count(distinct order_number) desc) rnk from Orders group by customer_number ) a where rnk = 1"
+224,"SELECT customer_number FROM (SELECT customer_number, COUNT(*) AS order_num FROM Orders GROUP BY customer_number) t ORDER BY order_num DESC LIMIT 1 "
+225,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+226,"with temp as( SELECT customer_number, COUNT(*) as total FROM Orders GROUP BY 1 ORDER BY 2 DESC ) SELECT customer_number FROM temp LIMIT 1 "
+227,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+228,select customer_number from orders group by 1 order by count(customer_number) desc limit 1
+229,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+230,"WITH max_orders AS ( SELECT MAX(cnt) AS MAX_CNT FROM ( SELECT customer_number, COUNT(DISTINCT order_number) AS cnt FROM orders GROUP BY customer_number ) T ) SELECT customer_number FROM orders GROUP BY customer_number HAVING COUNT(DISTINCT order_number) in (SELECT MAX_CNT FROM max_orders)"
+231,select customer_number from Orders group by 1 order by count(*) desc limit 1
+232,"select customer_number from ( select customer_number,rank()over(order by count(distinct order_number) desc) rnk from Orders group by customer_number ) a where rnk=1 "
+233,"select customer_number from (SELECT customer_number, COUNT(order_number) as order_number FROM Orders GROUP BY customer_number ORDER BY order_number desc limit 1) t "
+234,select customer_number from orders group by customer_number having count(order_number) = (select count(order_number) from orders group by customer_number order by count(order_number) desc limit 1)
+235,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+236,"with cte as ( select customer_number, count(order_number) as cnt from Orders group by customer_number ) select customer_number from cte c where c.cnt= (select max(cnt) from (cte))"
+237,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+238,"select customer_number from( select customer_number, count(*) as cnt from Orders group by 1 order by cnt desc limit 1 )temp "
+239,select customer_number from orders group by customer_number order by count(*) desc limit 1 
+240,select customer_number from orders group by customer_number order by count(order_number) desc limit 1 
+241,select customer_number from Orders group by 1 order by count(order_number) desc limit 1
+242,select customer_number from orders group by customer_number having count(customer_number) >= all (select count(customer_number) from orders group by customer_number) 
+243,"WITH cust_orders AS ( SELECT customer_number, COUNT(order_number) total_orders FROM Orders GROUP BY customer_number ) SELECT cust_orders.customer_number FROM cust_orders WHERE cust_orders.total_orders = (SELECT MAX(total_orders) FROM cust_orders)"
+244,"select customer_number from( select customer_number , row_number() over( order by count(order_number) desc) as no_orders from orders group by 1 ) agg where agg.no_orders = 1"
+245,"SELECT customer_number FROM ( SELECT customer_number, count(*) as orders FROM orders GROUP BY customer_number ORDER BY orders DESC LIMIT 1 ) derived"
+246,select customer_number from Orders a group by customer_number order by count(*) desc limit 1
+247,"with a as( select customer_number ,count(order_number) as countorder from Orders group by customer_number ) select distinct customer_number from a order by countorder desc limit 1"
+248,"select customer_number from (select customer_number, dense_rank() over(order by cnt desc) as r from (select customer_number, count(order_number) as cnt from orders group by 1)x)y where r=1"
+249,"SELECT customer_number FROM (SELECT customer_number, COUNT(customer_number) as num_orders FROM Orders GROUP BY customer_number ORDER BY num_orders DESC LIMIT 1) AS sub  "
+250,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+251,SELECT customer_number FROM orders GROUP BY customer_number HAVING COUNT(order_number) = ( SELECT COUNT(order_number) cnt FROM orders GROUP BY customer_number ORDER BY cnt DESC LIMIT 1 )
+252,select customer_number from orders group by 1 order by count(*) desc limit 1
+253,"SELECT customer_number FROM (SELECT COUNT(order_number) as orderCount, customer_number FROM Orders GROUP BY customer_number) a ORDER BY orderCount DESC LIMIT 1 "
+254,"select customer_number from (select distinct customer_number, count(order_number) over (partition by customer_number) as a from orders order by a desc) b limit 1"
+255,Select Customer_number From Orders o GROUP BY Customer_Number ORDER BY COUNT(*) DESC LIMIT 1
+256,"select customer_number from Orders group by customer_number order by count(order_number) desc limit 0,1 "
+257,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1 
+258,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+259,"select customer_number from (select customer_number,count(*) as cnt from Orders group by 1 ) x order by cnt desc limit 1"
+260,select customer_number from orders group by customer_number having count(customer_number)=( select count(customer_number) from orders group by customer_number order by count(customer_number) desc limit 1 ) 
+261,"WITH CTE as (SELECT DISTINCT customer_number, COUNT(*) as num_trans FROM Orders GROUP BY customer_number) SELECT customer_number FROM CTE ORDER BY num_trans DESC LIMIT 1"
+262,"select customer_number from (select customer_number, DENSE_RANK() over (order by count desc) as 'ranking' from (select customer_number, count(customer_number) as count from orders group by customer_number)sub1 ) sub2 where sub2.ranking = 1"
+263,"select customer_number from (select customer_number, count(distinct order_number) as total_order from orders group by customer_number )a join (select max(total_order) as max_total_order from (select customer_number, count(distinct order_number) as total_order from orders group by customer_number order by total_order desc)b)c on a.total_order = c.max_total_order "
+264,"select t.customer_number from (select customer_number, count(*) as counts from orders group by 1 order by counts desc limit 1) as t"
+265,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+266,select customer_number from Orders group by customer_number order by count(customer_number) DESC limit 1
+267,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+268,"with max_orders as ( select customer_number, count(order_number), row_number() over ( order by count(order_number) desc) as rn from Orders group by customer_number ) select customer_number from max_orders where max_orders.rn=1 "
+269,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1 
+270,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+271,select customer_number from orders group by customer_number order by count(customer_number) desc limit 1
+272,SELECT customer_number FROM Orders group by customer_number order by count(*) desc limit 1 
+273,SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+274,"WITH A AS ( SELECT customer_number, COUNT(*) AS ct FROM Orders GROUP BY customer_number) SELECT customer_number FROM A WHERE ct = (SELECT MAX(ct) FROM A) "
+275,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+276,"SELECT customer_number FROM ( SELECT customer_number, count(*) as orders FROM Orders GROUP BY customer_number ) BASE ORDER BY orders DESC LIMIT 1"
+277,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+278,SELECT customer_number FROM Orders GROUP BY customer_number HAVING COUNT(order_number) = (SELECT COUNT(order_number) as CNT FROM Orders GROUP BY customer_number ORDER BY CNT DESC LIMIT 1) 
+279,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+280,"select a.customer_number from ( select customer_number, count(order_number) as order_nr from Orders group by customer_number) a order by a.order_nr DESC limit 1 "
+281,"select customer_number from (select customer_number,count(*) as c from Orders group by customer_number)O where O.c = (select max(c) from (select customer_number,count(*) as c from Orders group by customer_number)t1)"
+282,"select customer_number from (select customer_number, count(*) as noo from Orders group by customer_number order by noo desc limit 1) as t"
+283,SELECT customer_number FROM orders Group by customer_number Order by Count(order_number) desc Limit 1 
+284,select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1 
+285,select customer_number from orders group by customer_number order by count(order_number) desc limit 1 
+286,SELECT customer_number FROM Orders GROUP BY customer_number HAVING COUNT(order_number) = (SELECT COUNT(order_number) FROM Orders GROUP BY customer_number ORDER BY 1 DESC LIMIT 1) 
+287,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+288,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+289,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1 
+290,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY count(*) DESC LIMIT 1
+291,SELECT customer_number FROM (SELECT customer_number FROM Orders GROUP BY 1 ORDER BY COUNT(*) DESC LIMIT 1)T1
+292,select customer_number from orders group by 1 order by count(*) desc limit 1
+293,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1 
+294,"select customer_number from (select customer_number, rank() over(order by COUNT(*) desc ) as T from orders group by customer_number) b where T = 1 "
+295,SELECT customer_number FROM ORDERS GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+296,select customer_number from orders group by customer_number having count(distinct order_number) = ( select count(distinct order_number) as max_order from orders group by customer_number order by max_order desc limit 1) 
+297,"with cte as( Select customer_number, dense_rank() over (order by count(order_number) desc) as DR from Orders group by 1 order by DR ) Select customer_number from cte where DR=1"
+298,select customer_number from orders group by customer_number order by count(*) desc limit 1
+299,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+300,select customer_number from orders group by customer_number order by count(*) desc limit 1
+301,select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1
+302,select customer_number from orders group by customer_number order by count(order_number) desc limit 1 
+303,"with order_count as ( select customer_number, count(*) as cnt from Orders group by customer_number order by cnt desc ) select customer_number from order_count limit 1"
+304,"select t.customer_number from (select customer_number, count(order_number) as cnt from orders group by customer_number) t order by t.cnt desc limit 1 "
+305,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+306,"SELECT customer_number FROM (SELECT COUNT(order_number) AS counts, customer_number FROM orders GROUP BY customer_number) AS NEW_ORDER ORDER BY counts DESC LIMIT 1"
+307,SELECT customer_number FROM Orders GROUP BY 1 ORDER BY COUNT(order_number) DESC LIMIT 1
+308,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+309,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1 
+310,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+311,"SELECT customer_number FROM (SELECT customer_number,COUNT(order_number) FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1) tmp"
+312,"SELECT T1.customer_number FROM ( SELECT customer_number, COUNT(order_number) AS num_orders FROM Orders GROUP BY 1 ) AS T1 ORDER BY num_orders DESC LIMIT 1 "
+313,"select customer_number from ( select customer_number,count(order_number) from orders group by 1 order by 2 desc limit 1)a "
+314,select customer_number from orders group by customer_number order by count(*) desc limit 1
+315,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+316,SELECT customer_number FROM Orders GROUP By customer_number ORDER bY COUNT(order_number) DESC LIMIT 1
+317,select customer_number from Orders group by customer_number order by count(order_number) desc limit 1
+318,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+319,select customer_number from Orders group by customer_number order by count(*) DESC limit 1
+320,"Select customer_number from (Select customer_number,count(*) as ordercnt from Orders group by customer_number order by ordercnt desc limit 1)t"
+321,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1
+322,SELECT customer_number from Orders Group By customer_number order by Count(order_number) desc Limit 1
+323,"select t.customer_number from (select customer_number, count(order_number) as count_order from orders group by customer_number)t order by t.count_order desc limit 1"
+324,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY count(*) desc limit 1 
+325,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+326,"select customer_number from ( select customer_number, count(*) as count from orders group by customer_number ) t order by count desc limit 1"
+327,select customer_number from orders group by customer_number order by count(*) DESC limit 1
+328,select customer_number from Orders group by customer_number order by count(*) DESC LIMIT 1
+329,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+330,SELECT Orders.customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1
+331,select customer_number from Orders group by customer_number order by count(order_number) desc LIMIT 1 
+332,"with cte as( select customer_number, count(order_number) as total_order_for_customer from orders group by customer_number ) select customer_number from cte where total_order_for_customer = (select max(total_order_for_customer) from cte)"
+333,SELECT customer_number FROM Orders GROUP BY customer_number ORDER by COUNT(*) DESC LIMIT 1 
+334,select customer_number from Orders group by customer_number having count(order_number) = (select max(count) from (select count(order_number) as count from Orders group by customer_number ) a) 
+335,Select customer_number From Orders Group By customer_number Order By Count(*) DESC Limit 1
+336,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(order_number) DESC LIMIT 1 
+337,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+338,"SELECT max_order.customer_number FROM (SELECT customer_number, COUNT(*) as count_order FROM orders GROUP BY customer_number ORDER BY count_order DESC LIMIT 1) as max_order  "
+339,select customer_number from orders group by customer_number order by count(order_number) desc limit 1
+340,"with cte as (select customer_number, rank() over (order by count(customer_number) desc) as rnk from Orders group by customer_number) select customer_number from cte where rnk = 1 "
+341,select customer_number from Orders group by customer_number order by count(*) desc limit 1 
+342,SELECT customer_number FROM Orders GROUP BY customer_number ORDER by COUNT(*) DESC LIMIT 1 
+343,select customer_number from Orders group by 1 having count(order_number) = (select count(order_number) from Orders group by customer_number order by 1 desc limit 1)
+344,"select customer_number from (select customer_number, count(order_number) as cnt from Orders group by customer_number)t order by cnt desc limit 1"
+345,SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(customer_number) DESC LIMIT 1
+346,Select customer_number from Orders group by customer_number order by Count(order_number) Desc Limit 1 
+347,"select c.customer_number from (select customer_number, count(order_number) order_count from Orders group by customer_number order by order_count desc limit 1) c"
+348,select customer_number from Orders group by customer_number order by count(*) desc limit 1
+349,"select customer_number from (select customer_number, row_number() over (order by count(order_number) desc) as r from Orders group by customer_number) a where r = 1  "
+350,select customer_number from orders group by customer_number order by count(*) desc limit 1
+351,select customer_number from Orders group by customer_number having count(*) = (select max(counts) from (select count(*) as counts from Orders group by customer_number) as temp) 
+352,"WITH T AS( SELECT customer_number, DENSE_RANK() OVER (ORDER BY COUNT(order_number) DESC) AS rank_val FROM Orders GROUP BY customer_number ) SELECT customer_number FROM T WHERE rank_val = 1 "
+353,SELECT DISTINCT CUSTOMER_NUMBER FROM ORDERS GROUP BY CUSTOMER_NUMBER ORDER BY COUNT(CUSTOMER_NUMBER) DESC LIMIT 1
+354,select customer_number from orders group by 1 order by count(*) desc limit 1

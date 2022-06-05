@@ -1,3 +1,4 @@
+import csv
 import sys
 import pglast
 from pglast.visitors import Visitor
@@ -51,8 +52,23 @@ def test_custom():
           
 def rectify_file(filename):
     with open(filename) as file:
-        for line in file:
-            print(rectify(line))
+        reader = csv.reader(file, delimiter=",", quotechar='"')
+        records = [row for row in reader]
+    for i, record in enumerate(records):
+        print(i, record)
+        if i == 0:
+            continue 
+        if record[1][0:5] == "ERROR":
+            continue
+        try:
+            record[1] = rectify(record[1])
+        except Exception as error:
+            return f"ERROR: {error}"
+            
+        
+    writer = csv.writer(sys.stdout)
+    writer.writerows(records)
+
     
 if __name__ == "__main__": 
     if len(sys.argv) > 1:

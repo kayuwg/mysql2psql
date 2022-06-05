@@ -1,0 +1,432 @@
+id,original query
+1,select tweet_id from Tweets where LENGTH(Tweets.content) > 15
+2,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+3,select tweet_id from Tweets where LENGTH(content) > 15
+4,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+5,SELECT tweet_id FROM Tweets as t WHERE LENGTH(t.content)>15
+6,SELECT tweet_id from Tweets WHERE LENGTH(content) > 15
+7,"select tweet_id from (select tweet_id, length(content) as len_tweet from Tweets ) a where len_tweet>15"
+8,select tweet_id from Tweets where length(content) > 15
+9,select tweet_id from Tweets where content is not null and length(content)>15
+10,select tweet_id from Tweets where LENGTH(content) > 15
+11,select tweet_id from Tweets where length(content) >15
+12,select tweet_id from tweets where length(content) > 15
+13,select tweet_id from Tweets where length(content) >15
+14,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+15,Select tweet_id from Tweets where CHAR_LENGTH(content)>15
+16,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+17,SELECT tweet_id FROM Tweets WHERE length(content) > 15 
+18,select tweet_id from Tweets where length(content) > 15
+19,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+20,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+21,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+22,select tweet_id from Tweets where length(content)>15
+23,"WITH tw_length AS ( SELECT tweet_id, length(content) AS tw_length FROM Tweets ) SELECT tweet_id FROM tw_length WHERE tw_length > 15"
+24,select tweet_id from tweets where length(content) > 15
+25,select tweet_id from tweets where char_length(content)>15
+26,select tweet_id from Tweets where LENGTH(content) > 15
+27,select tweet_id from Tweets where length(content) > 15 
+28,SELECT tweet_id FROM Tweets WHERE char_length(content)>15 
+29,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+30,select tweet_id from Tweets where char_length(content) > 15
+31,Select tweet_id from Tweets where length(content) > 15
+32,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+33,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+34,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+35,select tweet_id from Tweets where length(content) > 15
+36,select tweet_id from Tweets where length(content) > 15
+37,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+38,SELECT tweet_id from Tweets where CHAR_LENGTH(content) > 15
+39,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+40,Select tweet_id from Tweets Where char_length(content) > 15
+41,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15 
+42,select tweet_id from tweets where length(content) > 15
+43,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content)>15
+44,select tweet_id from Tweets where length(content) > 15
+45,select tweet_id from Tweets where length(content)>15
+46,select tweet_id from Tweets where char_length(content) > 15
+47,select tweet_id from Tweets where length(content) > 15
+48,select tweet_id from tweets where length(content)>15
+49,select tweet_id from Tweets where CHAR_LENGTH(content)>15
+50,select tweet_id from tweets where length(content) > 15
+51,select tweet_id from tweets where length(content) > 15
+52,select tweet_id from Tweets where length(content) > 15 
+53,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+54,select tweet_id from Tweets where length(content) > 15
+55,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+56,SELECT tweet_id FROM Tweets WHERE LENGTH(Tweets.content) > 15
+57,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+58,select tweet_id from tweets where char_length(content) > 15 
+59,select tweet_id from tweets where CHAR_LENGTH(content) > 15
+60,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+61,select tweet_id from Tweets where length(content) >15
+62,select tweet_id from Tweets Where LENGTH(content)>15
+63,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+64,select tweet_id from tweets where char_length(content)>15
+65,select tweet_id from Tweets where length(content)>15
+66,select tweet_id from Tweets where length(content) > 15
+67,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+68,Select tweet_id from Tweets where LENGTH(content) > 15
+69,select tweet_id from Tweets where length(content)>15
+70,select tweet_id from Tweets where length(content) > 15
+71,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+72,select tweet_id from Tweets where LENGTH(content)>15
+73,select tweet_id from Tweets where char_length(content) > 15
+74,select tweet_id from Tweets where length(content) > 15
+75,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+76,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+77,select tweet_id from tweets where length(content) > 15
+78,select tweet_id from tweets where LENGTH(content) > 15
+79,select tweet_id from tweets where length(content)>15
+80,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+81,select tweet_id from tweets where length(content) > 15
+82,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+83,select tweet_id from Tweets where length(content) > 15
+84,select tweet_id from Tweets where length (content)>15
+85,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+86,select tweet_id from tweets where length(content)>15
+87,select tweet_id from Tweets where length(content)>15
+88,SELECT tweet_id FROM tweets WHERE length(content) > 15
+89,select tweet_id from Tweets where char_length(content) > 15
+90,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+91,select tweet_id from Tweets where length(content)>15 
+92,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15 
+93,SELECT tweet_id FROM tweets WHERE LENGTH(content)>15
+94,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+95,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+96,select tweet_id from tweets where 15 < char_length(content)
+97,select tweet_id from Tweets where length(content) > 15
+98,select tweet_id from tweets where length(content) > 15 
+99,select tweet_id from tweets where length(content) > 15
+100,select tweet_id from tweets where length(content)>15
+101,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+102,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+103,SELECT tweet_id FROM tweets WHERE LENGTH(content)>15
+104,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+105,select tweet_id from Tweets where length(content) > 15
+106,Select tweet_id from Tweets where LENGTH(content) >15
+107,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+108,select tweet_id from tweets where char_length(content) > 15
+109,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+110,select tweet_id from Tweets where char_length(content) > 15
+111,Select tweet_id from Tweets where length(content)>15 
+112,SELECT tweet_id FROM Tweets WHERE length(content)>15
+113,select tweet_id from tweets where length(content)>15
+114,select tweet_id from Tweets where length(content)>15
+115,select tweet_id from Tweets where length(content) > 15
+116,select tweet_id from Tweets where length(content) > 15
+117,select tweet_id from Tweets where CHAR_LENGTH(content) > 15
+118,select tweet_id from Tweets where length(content) > 15
+119,select tweet_id from tweets where length(content)> 15
+120,select tweet_id from Tweets where length(content)>15
+121,SELECT tweet_id FROM Tweets WHERE length(content)>15
+122,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+123,select distinct tweet_id from Tweets where length(content) > 15
+124,SELECT tweet_id FROM TWEETS WHERE LENgth(content)>15
+125,SELECT t.tweet_id FROM Tweets t WHERE LENGTH(t.content) > 15
+126,select tweet_id from Tweets where LENGTH(content) > 15
+127,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+128,select tweet_id from Tweets where length(content)>15 
+129,Select tweet_id from Tweets where CHAR_LENGTH(content) > 15
+130,select tweet_id from Tweets where length(content) > 15 
+131,select t.tweet_id from Tweets t where length(t.content)>15
+132,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+133,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+134,SELECT tweet_id from Tweets WHERE LENGTH(content) > 15
+135,SELECT tweet_id FROM Tweets where char_length(content) > 15
+136,SELECT tweet_id FROM Tweets WHERE length(content)>15  
+137,SELECT tweet_id FROM Tweets WHERE LENGTH(CONTENT) > 15
+138,select tweet_id from tweets where length(content)>15
+139,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15 
+140,select tweet_id from Tweets where length(content) > 15
+141,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+142,select tweet_id from Tweets where length(content) >15
+143,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+144,select tweet_id from Tweets where CHAR_LENGTH(content) > 15
+145,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+146,select tweet_id from tweets where length(content)> 15
+147,SELECT tweet_id FROM Tweets WHERE 1=1 AND LENGTH(content) > 15
+148,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+149,select tweet_id from tweets where length(content)>15
+150,select tweet_id from tweets where length(content) > 15
+151,select tweet_id from Tweets where length(content)>15
+152,select tweet_id from Tweets where length(content) > 15
+153,select tweet_id from Tweets where length(content) > 15
+154,select tweet_id from Tweets where length(content) > 15
+155,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15 
+156,select tweet_id from Tweets where char_length(content) >15 
+157,select tweet_id from Tweets where length(content) > 15
+158,select tweet_id from Tweets where LENGTH(content) > 15
+159,select tweet_id from Tweets where length(content)>15
+160,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+161,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+162,SELECT tweet_id FROM Tweets WHERE length(content)>15
+163,select tweet_id from Tweets where length(content)>15
+164,select tweet_id from Tweets where length(content)>15
+165,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(CONTENT) > 15
+166,select tweet_id from Tweets where length(content) > 15
+167,select tweet_id from Tweets where length(content)>15
+168,select tweet_id from Tweets where length(content) > 15
+169,select tweet_id from Tweets where length(content)>15
+170,SELECT tweet_id FROM tweets WHERE CHAR_LENGTH(content) > 15
+171,SELECT tweet_id FROM tweets WHERE LENGTH(content) > 15
+172,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+173,select tweet_id from tweets where length(content)>15
+174,select tweet_id from Tweets where length(content) > 15
+175,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+176,select tweet_id from Tweets where length(content)>15 
+177,select tweet_id from Tweets where length(content)>15
+178,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+179,select tweet_id from tweets where LENGTH(content) > 15
+180,select tweet_id from tweets where length(content)>15
+181,SELECT tweet_id from Tweets where LENGTH(content) > 15
+182,select tweet_id from Tweets where LENGTH(content) > 15
+183,SELECT tweet_id FROM Tweets AS T WHERE CHAR_LENGTH(content) > 15
+184,SELECT tweet_id from Tweets where LENGTH(content) > 15
+185,select tweet_id from Tweets where CHAR_LENGTH(content) > 15
+186,SELECT tweet_id FROM Tweets WHERE length(content)>15
+187,SELECT tweet_id FROM Tweets Where length(content) > 15
+188,SELECT tweet_id FROM tweets WHERE LENGTH(content) > 15 
+189,select tweet_id from Tweets where length(content)>15
+190,select tweet_id from Tweets where length(content)>15
+191,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+192,select tweet_id from Tweets where char_length(content)>15
+193,select tweet_id from Tweets where LENGTH(content) > 15
+194,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+195,Select tweet_id FROM Tweets WHERE LENGTH(content) > 15 
+196,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+197,SELECT tweet_id from Tweets t WHERE LENGTH(t.content) > 15
+198,SELECT tweet_id from Tweets Where length(content) > 15
+199,select tweet_id from tweets t where length(t.content) > 15
+200,SELECT t.tweet_id from Tweets t WHERE LENGTH(t.content) > 15
+201,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content)>15
+202,select tweet_id from Tweets where length(trim(content)) > 15 
+203,select tweet_id from tweets where length(content) > 15
+204,SELECT tweet_id FROM Tweets WHERE char_length(content) > 15
+205,Select tweet_id from Tweets where length(content) > 15
+206,select tweet_id from Tweets where length(content) > 15
+207,select tweet_id from Tweets where length(content) >15
+208,Select tweet_id From Tweets Where Length(content) > 15 
+209,SELECT tweet_id FROM tweets WHERE CHAR_LENGTH(content) > 15
+210,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) >15
+211,"SELECT tweet_id FROM tweets WHERE LENGTH(SUBSTR(content, 16)) > 0"
+212,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+213,select tweet_id from Tweets where CHAR_LENGTH(content) > 15
+214,select tweet_id from tweets where length(content)>15
+215,Select tweet_id From Tweets Where CHAR_length(content)>15
+216,select tweet_id FROM Tweets WHERE LENGTH(content)>15
+217,SELECT tweet_id FROM Tweets Where 1 = 1 and length(content) > 15 
+218,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+219,select tweet_id from Tweets where LENGTH(content)>15
+220,select tweet_id from Tweets where length(content) >15
+221,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+222,select tweet_id from Tweets where length(content)>15 
+223,select tweet_id from tweets where length(content) > 15
+224,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+225,select tweet_id from Tweets where length(content) > 15 
+226,select tweet_id from tweets where length(content) > 15
+227,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+228,select tweet_id from Tweets where length(content)>15
+229,select tweet_id from Tweets where LENGTH(content)>15
+230,select tweet_id from Tweets where length(content)>15
+231,SELECT tweet_id FROM tweets WHERE LENGTH(content) > 15 
+232,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+233,select tweet_id from tweets where LENGTH(content) > 15
+234,select tweet_id from Tweets where char_length(content) > 15
+235,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15 
+236,select tweet_id from Tweets where length(content)>15
+237,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+238,select tweet_id from Tweets where length(content) > 15
+239,select tweet_id from Tweets where length(content)>15
+240,SELECT T.tweet_id FROM Tweets T WHERE LENGTH(CONTENT) > 15
+241,select tweet_id from tweets where length(content) > 15
+242,Select tweet_id From Tweets Where length(content) > 15
+243,select tweet_id from tweets where length(content) > 15
+244,SELECT tweet_id FROM Tweets WHERE char_length(content) > 15
+245,select tweet_id from tweets where char_length(content) > 15
+246,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+247,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+248,select tweet_id from Tweets where LENGTH(content) > 15
+249,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+250,select tweet_id from Tweets where length(content)>15
+251,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+252,select tweet_id from Tweets where length(content)>15 
+253,SELECT Tweets.tweet_id FROM Tweets WHERE LENGTH(Tweets.content) > 15
+254,Select tweet_id from Tweets where Length(content) > 15
+255,select tweet_id from Tweets where CHAR_LENGTH(content)>15
+256,select tweet_id from Tweets where length(content) > 15
+257,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+258,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15 
+259,select tweet_id from Tweets where length(content) > 15
+260,select tweet_id from tweets where length(content)>15
+261,select tweet_id from Tweets where length(content) > 15
+262,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+263,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+264,select tweet_id from tweets where length(content)>15
+265,select distinct tweet_id from Tweets where length(content)>15
+266,select tweet_id from tweets where length(content) > 15
+267,SELECT tweet_id FROM tweets where LENGTH(content) > 15
+268,SELECT tweet_id from Tweets WHERE LENGTH(content) > 15
+269,select tweet_id from tweets where length(content) > 15
+270,select tweet_id from Tweets where length(content) > 15
+271,select tweet_id from Tweets where CHAR_LENGTH(content)>15
+272,select tweet_id from Tweets where length(content) > 15
+273,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+274,SELECT tweet_id from Tweets where length(content)>15
+275,select tweet_id from Tweets where char_length(content) > 15
+276,select tweet_id from Tweets where char_length(content) > 15 
+277,select tweet_id from Tweets where length(content) > 15
+278,select tweet_id from Tweets where LENGTH(content)>15
+279,select tweet_id from tweets where length(content) > 15 
+280,select tweet_id from Tweets where length(content)>15
+281,select tweet_id from Tweets where length(content)>15
+282,select tweet_id from Tweets where length(content) > 15
+283,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+284,select tweet_id from tweets where length(content) > 15
+285,"select tweet_id from (select tweet_id, length(content) as len from tweets) as a where len > 15"
+286,select tweet_id from Tweets where length(content) > 15
+287,select tweet_id from Tweets where LENGTH(content)>15
+288,select tweet_id from tweets where char_length(content) > 15
+289,select tweet_id from Tweets where char_length(content) > 15 
+290,select tweet_id from Tweets where LENGTH(content)>15
+291,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+292,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+293,select tweet_id from tweets where length(content) > 15
+294,select tweet_id from tweets where CHAR_LENGTH(content) > 15
+295,SELECT TWEET_ID FROM TWEETS WHERE CHAR_LENGTH(CONTENT)>15
+296,select tweet_id from tweets where length(content)>15
+297,select tweet_id from Tweets where length(content)>15
+298,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content)>15 
+299,select tweet_id from tweets where length(content) > 15 
+300,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+301,select tweet_id from tweets where length(content) > 15
+302,Select tweet_id from Tweets where LENGTH(content) > 15
+303,SELECT tweet_id from Tweets where CHAR_LENGTH(content) > 15
+304,select tweet_id from Tweets where length(content) > 15
+305,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+306,SELECT tweet_id from Tweets where length(content) > 15
+307,select tweet_id from Tweets where LENGTH(content)>15
+308,select tweet_id from Tweets where length(content) > 15
+309,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+310,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content)>15 GROUP BY tweet_id
+311,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+312,select tweet_id from tweets where length(content) > 15
+313,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+314,select tweet_id from Tweets where length(content)>15
+315,SELECT tweet_id FROM Tweets WHERE character_length(content)> 15
+316,select tweet_id from tweets where length(tweets.content)>15
+317,select tweet_id from tweets where length(content)>15
+318,select tweet_id from Tweets where length(content) > 15
+319,select t.tweet_id from Tweets t where length(t.content)>15
+320,select tweet_id from tweets where length(content)>15
+321,select tweet_id from tweets where length(content)>15
+322,select tweet_id from Tweets where char_length(content) > 15
+323,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+324,select tweet_id from Tweets where length(content) > 15
+325,select tweet_id from Tweets where length(content) > 15
+326,select tweet_id from Tweets where length(content)>15
+327,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+328,select tweet_id from tweets where length(content) > 15
+329,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+330,SELECT tweet_id FROM Tweets WHERE length(content)>15
+331,select tweet_id from tweets where length(content) > 15 order by char_length(content) DESC
+332,select tweet_id from Tweets where LENGTH(content)>15
+333,select tweet_id from Tweets where length(content) > 15
+334,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+335,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+336,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+337,select Tweets.tweet_id from Tweets where LENGTH(Tweets.content) > 15
+338,select tweet_id from tweets where length(content) > 15 
+339,SELECT tweet_id FROM tweets WHERE length(content) > 15
+340,SELECT tweet_id FROM tweets WHERE LENGTH(content) > 15
+341,select tweet_id from Tweets where char_length(content)>15
+342,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+343,select tweet_id from tweets where LENGTH(content) >15
+344,select tweet_id from tweets WHERE CHAR_LENGTH(content) > 15 
+345,select tweet_id from tweets where length(content) > 15
+346,SELECT tweet_id FROM Tweets where length(content)>15
+347,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+348,select tweet_id from Tweets where length(content) > 15
+349,select tweet_id from Tweets where length(content)>15
+350,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+351,SELECT tweet_id FROM Tweets WHERE length(content) > 15
+352,select tweet_id from tweets where length(content) > 15
+353,SELECT tweet_id FROM Tweets where length(content) > 15
+354,select tweet_id from tweets where length(content) > 15
+355,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+356,select tweet_id from Tweets where length(content) > 15
+357,select tweet_id from tweets where char_length(content) > 15
+358,SELECT tweet_id from Tweets WHERE CHAR_LENGTH(content) > 15
+359,select tweet_id from tweets where char_length(content) > 15
+360,SELECT TWEET_ID FROM TWEETS WHERE CHAR_LENGTH(CONTENT) > 15
+361,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+362,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+363,SELECT tweet_id FROM Tweets WHERE LENGTH(CONTENT) > 15
+364,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+365,select tweet_id from tweets where length(content) > 15
+366,select tweet_id from Tweets where length(content) > 15
+367,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+368,Select tweet_id from Tweets where length(content) > 15
+369,select tweet_id from Tweets where LENGTH(content) >15 
+370,SELECT tweet_id from Tweets WHERE LENGTH(content) > 15
+371,select tweet_id from Tweets where length(content) > 15
+372,select tweet_id from Tweets where length(content)>15
+373,select tweet_id from Tweets where length(content) > 15
+374,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+375,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+376,select tweet_id from tweets where length(content) > 15
+377,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+378,select tweet_id from tweets where length(content) > 15
+379,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+380,select tweet_id from Tweets where length(content) > 15
+381,select tweet_id from tweets where length(content)>15
+382,SELECT t.tweet_id from Tweets t WHERE length(t.content) > 15
+383,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+384,select tweet_id from tweets where length(content) > 15
+385,select tweet_id from tweets where length(content) > 15
+386,select tweet_id from tweets where length(content)>15
+387,select tweet_id from Tweets where length(content) > 15
+388,select tweet_id from Tweets where LENGTH(content) > 15
+389,select tweet_id from Tweets where length(content)>15
+390,select tweet_id from Tweets where length(content) > 15
+391,select tweet_id from Tweets where LENGTH(content) > 15
+392,select tweet_id from Tweets where char_length(content) > 15
+393,select tweet_id from Tweets where char_length(content)>15
+394,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+395,SELECT t.tweet_id from Tweets t WHERE LENGTH(t.content) > 15
+396,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+397,select tweet_id from Tweets where length(content) > 15
+398,"select tweet_id from ( select tweet_id, length(content) as lt from tweets ) r1 where lt>15"
+399,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+400,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+401,select tweet_id from Tweets where CHAR_LENGTH(content) > 15 
+402,select tweet_id from Tweets where length(content) > 15
+403,SELECT tweet_id FROM Tweets Where LENGTH(content) > 15
+404,select tweet_id from tweets where length(content)>15
+405,SELECT tweet_id FROM Tweets WHERE CHAR_LENGTH(content) > 15
+406,select tweet_id from tweets where length(content)>15
+407,SELECT tweet_id from tweets where length(content)>15 
+408,"select tweet_id from (select tweet_id, char_length(content) as length from tweets) as t1 where length > 15"
+409,"select t1.tweet_id from Tweets t1 JOIN (select tweet_id, LENGTH(content) as len from Tweets GROUP BY tweet_id HAVING len>15) t2 ON t1.tweet_id=t2.tweet_id"
+410,select tweet_id from Tweets where LENGTH(content) > 15
+411,SELECT tweet_id FROM tweets WHERE length(content) > 15
+412,select tweet_id from Tweets where LENGTH(content) > 15 
+413,SELECT tweet_id FROM tweets WHERE length(content) > 15
+414,select tweet_id from tweets where length(content) > 15
+415,SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15
+416,select tweet_id from Tweets where CHAR_LENGTH(Content) > 15
+417,select tweet_id from Tweets t where length(t.content) > 15
+418,SELECT tweet_id FROM tweets WHERE LENGTH(content) > 15
+419,Select tweet_id from tweets where CHAR_LENGTH(content) > 15
+420,SELECT tweet_id FROM Tweets WHERE length(content) >15
+421,SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15
+422,select tweet_id from tweets where CHAR_LENGTH(content) > 15
+423,SELECT tweet_id from Tweets where length(content) > 15
+424,SELECT t.tweet_id from Tweets t WHERE LENGTH(t.content) > 15
+425,select tweet_id from tweets where length(content)>15
+426,select tweet_id from tweets where length(content)>15
+427,select tweet_id from Tweets where length(content) >15
+428,select tweet_id from tweets where char_length(content) > 15
+429,select tweet_id from Tweets where char_length(content) > 15
+430,select tweet_id from Tweets where char_length(content) > 15 
+431,Select tweet_id from tweets where CHAR_LENGTH(content)>15

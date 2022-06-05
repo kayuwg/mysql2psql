@@ -1,0 +1,254 @@
+id,original query
+1,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'"
+2,"select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+3,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+4,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'"
+5,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+6,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' 
+7,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'"
+8,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+9,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' "
+10,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'"
+11,"select patient_id, patient_name, conditions from Patients where conditions like ""DIAB1%"" or conditions like ""% DIAB1%"""
+12,"select p.patient_id, p.patient_name, conditions from patients p where (conditions like 'DIAB1%') OR (conditions like '% DIAB1%') "
+13,"select patient_id, patient_name, conditions from patients where conditions regexp ""^DIAB1|[ ]+DIAB1"""
+14,"select p.patient_id, p.patient_name, conditions from patients p where left(conditions, 5) = 'DIAB1' or locate(' DIAB1', conditions) != 0 "
+15,"select patient_id, patient_name, conditions from patients where conditions LIKE 'DIAB1%' or conditions like '% DIAB1%' "
+16,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' or conditions like 'DIAB1%'
+17,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' "
+18,SELECT * FROM Patients WHERE conditions REGEXP '^DIAB1| DIAB1'
+19,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+20,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+21,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' 
+22,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' or conditions like '% DIAB1%' 
+23,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"" "
+24,"SELECT patient_id, patient_name, conditions FROM patients WHERE conditions LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'"
+25,"SELECT patient_id, patient_name, conditions FROM patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% %DIAB1%'"
+26,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+27,"select patient_id, patient_name, conditions from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%' "
+28,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+29,"select p.patient_id, p.patient_name, p.conditions from Patients p where p.conditions LIKE 'DIAB1%' OR p.conditions LIKE '% DIAB1%'"
+30,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+31,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like ""DIAB1%"""
+32,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+33,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+34,"select patient_id, patient_name, conditions from Patients where conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' "
+35,"select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+36,"select * from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+37,"select patient_id, patient_name, conditions from patients where CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'"
+38,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' or conditions LIKE '% DIAB1%'
+39,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+40,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+41,select * from Patients where conditions REGEXP '^DIAB1| DIAB1'
+42,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' 
+43,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+44,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'"
+45,select * from Patients where conditions regexp '^DIAB1' or conditions regexp ' DIAB1' 
+46,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+47,"SELECT P.patient_id, P.patient_name, P.conditions FROM Patients P WHERE P.conditions LIKE 'DIAB1%' OR P.conditions LIKE '% DIAB1%'"
+48,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions LIKE '% DIAB1%'"
+49,"SELECT patient_id, patient_name, conditions FROM Patients WHERE 1=1 AND conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'"
+50,select * from Patients where conditions like '% DIAB1%' or Conditions like 'DIAB1%'
+51,select * from Patients where conditions like 'DIAB1%' or conditions like'% DIAB1%'
+52,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+53,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+54,"select * from Patients where conditions like ""DIAB1%"" or conditions like ""% DIAB1%"""
+55,"select patient_id, patient_name, conditions from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+56,"select patient_id, patient_name, conditions from Patients where REGEXP_LIKE(conditions, ' +DIAB1|^DIAB1')"
+57,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+58,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+59,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%' 
+60,"select patient_id, patient_name, conditions from Patients where conditions REGEXP '^DIAB1' or conditions REGEXP '.* DIAB1'"
+61,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'"
+62,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+63,"SELECT patient_id, patient_name, conditions FROM patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' "
+64,select * from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+65,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+66,"select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+67,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+68,select * from patients where conditions like 'DIAB1%' OR conditions LIKE '% DIAB1%'
+69,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+70,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%' "
+71,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' OR conditions like 'DIAB1%'"
+72,select * from patients where conditions like 'DIAB1%' OR CONDITIONS LIKE '% DIAB1%'
+73,"SELECT * FROM Patients WHERE conditions REGEXP ""^DIAB1"" OR conditions REGEXP "" +DIAB1"""
+74,select * from Patients where conditions LIKE 'DIAB1%' or conditions LIKE '% DIAB1%'
+75,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+76,SELECT * FROM Patients WHERE conditions like 'DIAB1%' OR conditions like '% DIAB1%' 
+77,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+78,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' UNION SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' 
+79,SELECT * FROM Patients WHERE conditions REGEXP '^DIAB1.*' OR conditions REGEXP '.*sDIAB1.*'
+80,"select p.patient_id, p.patient_name, conditions from patients p where left(conditions, 5) = 'DIAB1' or locate(' DIAB1', conditions) != 0 "
+81,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+82,"SELECT patient_id,patient_name,conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' "
+83,Select * from Patients where conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+84,"SELECT * FROM Patients WHERE conditions like ""DIAB1%"" OR conditions like ""% DIAB1%"""
+85,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' 
+86,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+87,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'"
+88,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+89,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+90,"select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+91,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+92,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' "
+93,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+94,"select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+95,"select patient_id, patient_name, conditions from Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+96,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+97,"select * from patients where conditions like ""DIAB1%"" or conditions like ""% DIAB1%"""
+98,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+99,"select patient_id, patient_name, conditions from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+100,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' or conditions LIKE '% DIAB1%'"
+101,SELECT * FROM Patients WHERE conditions LIKE('% DIAB1%') OR conditions LIKE('DIAB1%')
+102,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+103,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+104,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%' "
+105,"SELECT patient_id, patient_name, conditions from Patients where conditions REGEXP '^DIAB1' OR conditions REGEXP '.* DIAB1'"
+106,"select patient_id, patient_name, conditions from Patients where regexp_like(conditions, ' +DIAB1|^DIAB1') "
+107,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+108,SELECT * FROM Patients WHERE conditions like 'DIAB1%' OR conditions like '% DIAB1%'
+109,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" or conditions like '% DIAB1' or conditions like ""% DIAB1%"" "
+110,"Select * from Patients where conditions like ""DIAB1%"" or conditions like ""% DIAB1%"""
+111,select * from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+112,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+113,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+114,"select p.patient_id, p.patient_name, conditions from patients p where left(conditions, 5) = 'DIAB1' or locate(' DIAB1', conditions) != 0 "
+115,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%' 
+116,SELECT * FROM Patients WHERE conditions LIKE ('% DIAB1%') OR conditions LIKE ('DIAB1%')
+117,"SELECT patient_id , patient_name , conditions FROM Patients WHERE conditions LIKE 'DIAB1%' or CONDITIONS LIKE '% DIAB1%' "
+118,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE ""% DIAB1%"" OR conditions LIKE ""DIAB1%"""
+119,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'"
+120,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' 
+121,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+122,"select patient_id, patient_name, conditions from patients where conditions regexp ""^DIAB1|[ ]+DIAB1"""
+123,"select * from patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+124,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+125,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' "
+126,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' "
+127,Select * from patients where conditions rlike ' +DIAB1|^DIAB1' 
+128,SELECT * FROM patients WHERE conditions like 'DIAB1%' OR conditions like '% DIAB1%'
+129,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+130,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' or conditions LIKE 'DIAB1%'"
+131,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+132,"SELECT patient_id, patient_name, group_concat(DISTINCT conditions ORDER BY conditions) as conditions FROM Patients WHERE conditions regexp ""^DIAB1| +DIAB1"" GROUP BY patient_id, patient_name"
+133,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' 
+134,"select * from Patients where conditions regexp ""^DIAB1[A-Za-z0-9]*"" or conditions regexp ""[A-Za-z0-9]*sDIAB1[A-Za-z0-9]*"" "
+135,Select * from Patients where conditions like '% DIAB1%' OR conditions like 'DIAB1%' 
+136,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+137,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+138,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+139,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+140,"select * from patients where conditions like 'DIAB1%' OR conditions LIKE ""% DIAB1%"" "
+141,SELECT * FROM Patients WHERE (conditions LIKE '% DIAB1%') OR (conditions LIKE 'DIAB1%')
+142,"select * from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+143,"SELECT patient_id, patient_name, conditions FROM patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' "
+144,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' "
+145,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'"
+146,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' 
+147,"select patient_id, patient_name, conditions from patients where conditions regexp ""^DIAB1|[ ]+DIAB1"""
+148,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+149,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' 
+150,"select patient_id, patient_name, conditions from patients where conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+151,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+152,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+153,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+154,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+155,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+156,"select * from patients where conditions like 'DIAB1%' OR conditions LIKE ""% DIAB1%"" "
+157,"select * from Patients where conditions regexp ""^DIAB1[A-Za-z0-9]*"" or conditions regexp ""s+DIAB1[A-Za-z0-9]*"""
+158,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+159,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+160,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"" "
+161,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"" "
+162,"select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+163,select * from patients a where a.conditions like 'DIAB1%' or a.conditions like '% DIAB1%'
+164,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+165,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+166,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+167,"select patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+168,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"" "
+169,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+170,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%' 
+171,select * from patients where conditions LIKE 'DIAB1%' or conditions like '% DIAB1%'
+172,"select * from patients where conditions like ""DIAB1%"" or conditions like ""% DIAB1%"" "
+173,Select * From Patients Where conditions like 'DIAB1%' OR conditions like '% DIAB1%'
+174,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+175,"Select patient_id, patient_name, conditions from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+176,"select p.patient_id, p.patient_name, conditions from patients p where left(conditions, 5) = 'DIAB1' or locate(' DIAB1', conditions) != 0 "
+177,"select patient_id, patient_name, conditions from Patients where conditions like ""DIAB1%"" or conditions like ""% DIAB1%"" "
+178,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+179,"select * from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+180,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+181,"select * from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+182,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' 
+183,"Select patient_id, patient_name, conditions from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+184,"select patient_id,patient_name,conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' "
+185,"select distinct patient_id, patient_name, conditions from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+186,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+187,select * from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+188,"select patient_id, patient_name, conditions from patients where conditions like '% diab1%' or conditions like 'diab1%'"
+189,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+190,select * from Patients where CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+191,"select patient_id,patient_name,conditions from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+192,"select patient_id, patient_name, conditions from Patients where regexp_like(conditions, ' +DIAB1|^DIAB1')"
+193,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+194,"select * from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+195,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' 
+196,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+197,"select * from patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+198,"select patient_id,patient_name,conditions from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+199,Select * FROM Patients Where conditions LIKE '% DIAB1%' or conditions LIKE 'DIAB1%'
+200,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+201,"select patient_id, patient_name, conditions from Patients drv where conditions like '% DIAB1%' or conditions like 'DIAB1%' "
+202,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%' 
+203,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' 
+204,SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+205,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+206,"select patient_id, patient_name, conditions from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+207,"Select patient_id, patient_name, conditions from Patients where conditions like 'DIAB1%'or conditions like '% DIAB1%'"
+208,select * from Patients where conditions regexp '^DIAB1' or conditions regexp '.* DIAB1' 
+209,"select patient_id ,patient_name ,conditions from Patients where conditions REGEXP '^DIAB1' or conditions REGEXP '.* DIAB1' "
+210,SELECT * FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'
+211,select * from patients where conditions like ('DIAB1%') or conditions like ('% DIAB1%')
+212,select * from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+213,"SELECT patient_id, patient_name, conditions FROM patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE ""DIAB1%"""
+214,SELECT * FROM patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+215,select * from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'
+216,"select distinct patient_id, patient_name,conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+217,Select * From Patients Where conditions Like 'DIAB1%' Or conditions Like '% DIAB1%'
+218,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' "
+219,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+220,"select patient_id, patient_name, conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'"
+221,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+222,SELECT * FROM Patients WHERE conditions LIKE ('% DIAB1%') OR conditions LIKE ('DIAB1%')
+223,"Select * from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+224,SELECT * FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%'
+225,SELECT * FROM patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' 
+226,"select patient_id ,patient_name ,conditions from Patients where conditions like '% DIAB1%' or conditions like 'DIAB1%'"
+227,"select * from Patients where conditions LIKE ""DIAB1%"" or conditions LIKE ""% DIAB1%"""
+228,"SELECT patient_id , patient_name , conditions FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+229,"SELECT patient_id, patient_name,conditions FROM Patients WHERE conditions REGEXP '^DIAB1' or conditions REGEXP '.* DIAB1'"
+230,"select patient_id, patient_name, conditions From patients where conditions like '% DIAB1%' or conditions like 'DIAB1%' or conditions like '%DIAB1'"
+231,"select patient_id, patient_name, conditions from patients where conditions like'DIAB1%' or conditions like'% DIAB1%' "
+232,"select patient_id, patient_name, conditions from Patients where conditions like ""% DIAB1%"" or conditions like ""DIAB1%"""
+233,SELECT * FROM Patients WHERE conditions like '% DIAB1%' OR conditions like'DIAB1%' 
+234,"select patient_id, patient_name, conditions from Patients where patient_id in (select patient_id from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%')"
+235,"select patient_id, patient_name, conditions from Patients where regexp_like(conditions, ""^DIAB1| DIAB1"")"
+236,"select patient_id, patient_name, conditions from patients where CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'"
+237,"select patient_id, patient_name, conditions from Patients where conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'"
+238,"select patient_id,patient_name,conditions from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' "
+239,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+240,"select p.patient_id, p.patient_name, conditions from patients p where left(conditions, 5) = 'DIAB1' or locate(' DIAB1', conditions) != 0 "
+241,"SELECT PATIENT_ID, PATIENT_NAME, CONDITIONS FROM PATIENTS WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'"
+242,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' "
+243,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+244,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+245,select * from patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'
+246,"SELECT * FROM Patients WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"" "
+247,"select patient_id, patient_name, conditions from patients WHERE CONDITIONS LIKE '% DIAB1%' OR CONDITIONS LIKE 'DIAB1%'"
+248,"SELECT patient_id, patient_name, conditions FROM Patients p WHERE conditions LIKE ""DIAB1%"" OR conditions LIKE ""% DIAB1%"""
+249,select * from patients where conditions like 'DIAB1%' or conditions like '% DIAB1%' 
+250,"SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions LIKE '% DIAB1%'"
+251,"SELECT patient_id, patient_name, conditions FROM patients WHERE conditions LIKE '% DIAB1%' OR conditions LIKE 'DIAB1%' "
+252,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+253,select * from Patients where conditions like 'DIAB1%' or conditions like '% DIAB1%'
