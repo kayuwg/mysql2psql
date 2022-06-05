@@ -175,14 +175,11 @@ func (n *Join) Restore(ctx *format.RestoreCtx) error {
 	if n.NaturalJoin {
 		ctx.WriteKeyWord(" NATURAL")
 	}
-	// changed for PSQL, if no ON condition then do not add LEFT/RIGHT keyword
-	if n.On != nil {
-		switch n.Tp {
-		case LeftJoin:
-			ctx.WriteKeyWord(" LEFT")
-		case RightJoin:
-			ctx.WriteKeyWord(" RIGHT")
-		}
+	switch n.Tp {
+	case LeftJoin:
+		ctx.WriteKeyWord(" LEFT")
+	case RightJoin:
+		ctx.WriteKeyWord(" RIGHT")
 	}
 	if n.StraightJoin {
 		ctx.WriteKeyWord(" STRAIGHT_JOIN ")

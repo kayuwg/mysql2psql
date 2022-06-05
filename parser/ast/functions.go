@@ -451,18 +451,28 @@ func (n *FuncCallExpr) Restore(ctx *format.RestoreCtx) error {
 		}
 		ctx.WritePlain("'")
 		return nil
+	case DateDiff:
+
+		if err := restoreCastStringToDate(ctx, n.Args[0]); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
+		}
+		ctx.WritePlain(" - ")
+		if err := restoreCastStringToDate(ctx, n.Args[1]); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[1]")
+		}
+		return nil
 	case DateFormat:
 		n.FnName = model.NewCIStr("TO_CHAR")
-		if isStringLiteral(n.Args[1]) {
+		if !isStringLiteral(n.Args[1]) {
 			return errors.New("Psql translation: date_format argument format must be string literal")
 		}
-		valueExpr := n.Args[1].(ValueExpr)
 		month := regexp.MustCompile(`%b`)
 		day := regexp.MustCompile(`%e`)
 		year := regexp.MustCompile(`%Y`)
 		time := regexp.MustCompile(`%T`)
 		dayName := regexp.MustCompile(`%W`)
-		format := valueExpr.GetDatumString()
+		valueExpr := n.Args[1].(ValueExpr)
+		format := valueExpr.GetValue().(string)
 		format = month.ReplaceAllString(format, `Mon`)
 		format = day.ReplaceAllString(format, `dd`)
 		format = year.ReplaceAllString(format, `YYYY`)
@@ -472,8 +482,15 @@ func (n *FuncCallExpr) Restore(ctx *format.RestoreCtx) error {
 	case Day, Month, Quarter, Year:
 		ctx.WriteKeyWord("EXTRACT(")
 		ctx.WriteKeyWord(n.FnName.O)
-		ctx.WritePlain(", ")
-		if err := n.Args[0].Restore(ctx); err != nil {
+		ctx.WriteKeyWord(" FROM ")
+		if err := restoreCastStringToDate(ctx, n.Args[0]); err != nil {
+			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
+		}
+		ctx.WritePlain(")")
+		return nil
+	case ToDays:
+		ctx.WriteKeyWord("EXTRACT(EPOCH FROM ")
+		if err := restoreCastStringToDate(ctx, n.Args[0]); err != nil {
 			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
 		}
 		ctx.WritePlain(")")
@@ -485,16 +502,6 @@ func (n *FuncCallExpr) Restore(ctx *format.RestoreCtx) error {
 		}
 		// I want to see how many problems have double precision (which leads to problems)
 		// before adding CAST to all queries
-	case DateDiff:
-
-		if err := restoreCastStringToDate(ctx, n.Args[0]); err != nil {
-			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[0]")
-		}
-		ctx.WritePlain(" - ")
-		if err := restoreCastStringToDate(ctx, n.Args[1]); err != nil {
-			return errors.Annotatef(err, "An error occurred while restore FuncCallExpr.Args[1]")
-		}
-		return nil
 	}
 
 	// end of translation logic
@@ -845,8 +852,7 @@ type AggregateFuncExpr struct {
 // Restore implements Node interface.
 // changed for PSQL: group_concat
 func (n *AggregateFuncExpr) Restore(ctx *format.RestoreCtx) error {
-	switch n.F {
-	case "group_concat":
+	if strings.EqualFold(n.F, "group_concat") {
 		n.F = "string_agg"
 	}
 

@@ -323,7 +323,7 @@ func (ft *FieldType) RestoreAsCastType(ctx *format.RestoreCtx, explicitCharset b
 		}
 	// changed for PSQL
 	case mysql.TypeLonglong:
-		ctx.WriteKeyWord("INT")
+		ctx.WriteKeyWord("INTEGER")
 	case mysql.TypeJSON:
 		ctx.WriteKeyWord("JSON")
 	case mysql.TypeDouble:

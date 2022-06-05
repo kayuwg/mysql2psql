@@ -1,4 +1,5 @@
 // Copyright 2019 PingCAP, Inc.
+// Modifications copyright 2022 Ka Yu Wong
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -78,10 +79,11 @@ func (n *ValueExpr) Restore(ctx *format.RestoreCtx) error {
 	case KindFloat64:
 		ctx.WritePlain(strconv.FormatFloat(n.GetFloat64(), 'e', -1, 64))
 	case KindString:
-		if n.Type.Charset != "" {
-			ctx.WritePlain("_")
-			ctx.WriteKeyWord(n.Type.Charset)
-		}
+		// changed for PSQL: disable writing charset
+		// if n.Type.Charset != "" {
+		// 	ctx.WritePlain("_")
+		// 	ctx.WriteKeyWord(n.Type.Charset)
+		// }
 		ctx.WriteString(n.GetString())
 	case KindBytes:
 		ctx.WriteString(n.GetString())
