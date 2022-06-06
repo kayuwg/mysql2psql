@@ -199,6 +199,7 @@ class TopLevelAnalyzer:
            be a group-by column
            assume target_columns and group_columns have been calculated
         """
+        invalid = False
         class AllColumnsValidVisitor(Visitor):
             def __init__(self, group_columns):
                 self.group_columns = group_columns
@@ -221,10 +222,13 @@ class TopLevelAnalyzer:
             
         if self.node.groupClause is Missing:
             return 
+        # find out all additional columns needed to be in GROUP BY
         new_group_columns = [*self.group_columns]
         for target_column in self.target_columns.values():
             all_columns_valid_visitor = AllColumnsValidVisitor(self.group_columns)
             all_columns_valid_visitor(target_column.val)
+            if len(all_columns_valid_visitor.invalid_columns) > 0:
+                invalid = True
             new_group_columns.extend(all_columns_valid_visitor.invalid_columns)
         seen = set()
         new_group_column_nodes = []
@@ -233,6 +237,7 @@ class TopLevelAnalyzer:
                 seen.add(column.text_form)
                 new_group_column_nodes.append(column.val)
         self.node.ast_node.groupClause = new_group_column_nodes
+        return invalid
         
     
 def ast_BoolExpr(boolop: BoolExprType, predicates: List):

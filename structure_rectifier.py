@@ -31,19 +31,26 @@ def add_necessary_group_by_columns(ast_node: pglast.ast.Node):
         assume target_columns and group_columns have been calculated
     """
     class AddGroupByColumnsVisitor(Visitor):
+        def __init__(self):
+            self.invalid = False
         def visit_SelectStmt(self, _, node):
             top_level = TopLevelAnalyzer(pglast.node.Node(node))
             top_level()
-            top_level.add_necessary_group_by_columns()
+            self.invalid = self.invalid or top_level.add_necessary_group_by_columns()
     visitor = AddGroupByColumnsVisitor()
     visitor(ast_node)
+    return visitor.invalid
     
 def rectify(sql: str) -> str :
     ast_node = pglast.parse_sql(sql)
     fix_having_without_groupby(ast_node)
     fix_same_level_alias_usage(ast_node)
-    add_necessary_group_by_columns(ast_node)
-    return RawStream()(ast_node)
+    invalid = add_necessary_group_by_columns(ast_node)
+    rectififed = RawStream()(ast_node)
+    if invalid:
+        rectififed = "/* Warning: This sql selects columns not present in GROUP BY and without aggregate function. " \
+                     "This is an attempt to fix it, but no guarentee on correctness. */ " + rectififed
+    return rectififed
     
 
 def test_custom():
