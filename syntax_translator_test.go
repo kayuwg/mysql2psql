@@ -118,3 +118,12 @@ func TestDiv(t *testing.T) {
 		t.Fatalf(translated + " ==mismatch== " + expected)
 	}
 }
+
+func TestCrossJoin(t *testing.T) {
+	sql := `select 1 FROM a CROSS JOIN b JOIN c`
+	expected := `SELECT 1 FROM ("a" CROSS JOIN "b") CROSS JOIN "c"`
+	translated := translate(sql, p)
+	if translated != expected {
+		t.Fatalf(translated + " ==mismatch== " + expected)
+	}
+}

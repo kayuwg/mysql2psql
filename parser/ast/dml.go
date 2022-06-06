@@ -181,6 +181,10 @@ func (n *Join) Restore(ctx *format.RestoreCtx) error {
 	case RightJoin:
 		ctx.WriteKeyWord(" RIGHT")
 	}
+	// added for PSQL
+	if n.On == nil && len(n.Using) == 0 {
+		ctx.WriteKeyWord(" CROSS")
+	}
 	if n.StraightJoin {
 		ctx.WriteKeyWord(" STRAIGHT_JOIN ")
 	} else {
