@@ -14,7 +14,7 @@ id,original query
 13,"SELECT (SELECT DISTINCT ""Salary"" AS ""SecondHighestSalary"" FROM ""Employee"" ORDER BY ""SecondHighestSalary"" DESC LIMIT 1 OFFSET 1) AS ""SecondHighestSalary"""
 14,"SELECT (SELECT DISTINCT ""Salary"" FROM ""Employee"" ORDER BY ""Salary"" DESC LIMIT 1 OFFSET 1) AS ""SecondHighestSalary"""
 15,"SELECT COALESCE((SELECT DISTINCT ""Salary"" FROM ""Employee"" ORDER BY ""Salary"" DESC LIMIT 1 OFFSET 1), NULL) AS ""SecondHighestSalary"""
-16,"WITH ""max_salary"" AS (SELECT MAX(""salary"") AS ""max_salary"" FROM ""Employee"") SELECT MAX(""salary"") AS ""SecondHighestSalary"" FROM ""Employee"" JOIN ""max_salary"" WHERE ""Employee"".""Salary""!=""max_salary"".""max_salary"""
+16,"WITH ""max_salary"" AS (SELECT MAX(""salary"") AS ""max_salary"" FROM ""Employee"") SELECT MAX(""salary"") AS ""SecondHighestSalary"" FROM ""Employee"" CROSS JOIN ""max_salary"" WHERE ""Employee"".""Salary""!=""max_salary"".""max_salary"""
 17,"SELECT MAX(""salary"") AS ""SecondHighestSalary"" FROM ""Employee"" WHERE ""salary"" NOT IN (SELECT MAX(""salary"") FROM ""Employee"")"
 18,"SELECT MAX(""salary"") AS ""secondHighestSalary"" FROM ""employee"" WHERE ""salary""<(SELECT MAX(""salary"") FROM ""employee"")"
 19,"SELECT MAX(""salary"") AS ""SecondHighestSalary"" FROM ""employee"" WHERE ""salary""<(SELECT MAX(""salary"") FROM ""employee"")"

@@ -130,7 +130,7 @@ id,original query
 129,"SELECT * FROM ""Patients"" WHERE ""conditions"" LIKE 'DIAB1%' OR ""conditions"" LIKE '% DIAB1%'"
 130,"SELECT ""patient_id"",""patient_name"",""conditions"" FROM ""Patients"" WHERE ""conditions"" LIKE '% DIAB1%' OR ""conditions"" LIKE 'DIAB1%'"
 131,"SELECT * FROM ""Patients"" WHERE ""conditions"" LIKE 'DIAB1%' OR ""conditions"" LIKE '% DIAB1%'"
-132,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
+132,"SELECT ""patient_id"",""patient_name"",STRING_AGG(DISTINCT ""conditions"", ',' ORDER BY ""conditions"") AS ""conditions"" FROM ""Patients"" WHERE ""conditions"" REGEXP '^DIAB1| +DIAB1' GROUP BY ""patient_id"",""patient_name"""
 133,"SELECT * FROM ""Patients"" WHERE ""conditions"" LIKE 'DIAB1%' OR ""conditions"" LIKE '% DIAB1%'"
 134,"SELECT * FROM ""Patients"" WHERE ""conditions"" REGEXP '^DIAB1[A-Za-z0-9]*' OR ""conditions"" REGEXP '[A-Za-z0-9]*sDIAB1[A-Za-z0-9]*'"
 135,"SELECT * FROM ""Patients"" WHERE ""conditions"" LIKE '% DIAB1%' OR ""conditions"" LIKE 'DIAB1%'"

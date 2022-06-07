@@ -859,9 +859,6 @@ func (n *AggregateFuncExpr) Restore(ctx *format.RestoreCtx) error {
 	ctx.WriteKeyWord(n.F)
 	ctx.WritePlain("(")
 	if n.Distinct {
-		if n.F == "string_agg" {
-			return errors.New("Psql translation: string_agg does not support DISTINCT")
-		}
 		ctx.WriteKeyWord("DISTINCT ")
 	}
 	switch strings.ToLower(n.F) {

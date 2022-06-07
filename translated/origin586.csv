@@ -207,7 +207,7 @@ id,original query
 206,"SELECT ""customer_number"" FROM ""orders"" GROUP BY ""customer_number"" HAVING COUNT(1)>=ALL (SELECT COUNT(""customer_number"") FROM ""orders"" GROUP BY ""customer_number"")"
 207,"SELECT ""customer_number"" FROM ""Orders"" GROUP BY ""customer_number"" HAVING COUNT(""order_number"")>=ALL (SELECT COUNT(""order_number"") FROM ""Orders"" GROUP BY ""customer_number"")"
 208,"WITH ""cte"" AS (SELECT ""customer_number"",RANK() OVER (ORDER BY COUNT(""customer_number"") DESC) AS ""rnk"" FROM ""Orders"" GROUP BY ""customer_number"") SELECT ""customer_number"" FROM ""cte"" WHERE ""rnk""=1"
-209,"SELECT ""a"".""customer_number"" FROM (""orders"") JOIN (SELECT ""customer_number"",COUNT(""customer_number"") FROM ""orders"" GROUP BY ""customer_number"" ORDER BY COUNT(""customer_number"") DESC LIMIT 1) AS ""a"" WHERE ""order_number""=(SELECT MAX(""order_number"") FROM ""orders"")"
+209,"SELECT ""a"".""customer_number"" FROM (""orders"") CROSS JOIN (SELECT ""customer_number"",COUNT(""customer_number"") FROM ""orders"" GROUP BY ""customer_number"" ORDER BY COUNT(""customer_number"") DESC LIMIT 1) AS ""a"" WHERE ""order_number""=(SELECT MAX(""order_number"") FROM ""orders"")"
 210,"SELECT ""customer_number"" FROM ""Orders"" GROUP BY ""customer_number"" ORDER BY COUNT(""customer_number"") DESC LIMIT 1"
 211,"SELECT ""customer_number"" FROM ""Orders"" GROUP BY ""customer_number"" ORDER BY COUNT(""order_number"") DESC LIMIT 1"
 212,"SELECT DISTINCT ""t"".""customer_number"" FROM (SELECT ""customer_number"",RANK() OVER (ORDER BY COUNT(DISTINCT ""order_number"") DESC) AS ""rnk"" FROM ""orders"" GROUP BY ""customer_number"") AS ""t"" WHERE ""t"".""rnk""=1"

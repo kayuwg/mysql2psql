@@ -1,320 +1,320 @@
 id,original query
-1,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-2,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-3,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-4,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-5,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-6,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-7,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-8,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-9,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-10,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-11,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-12,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-13,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-14,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-15,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-16,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-17,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-18,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-19,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-20,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-21,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-22,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
+1,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
+2,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+3,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" AS ""a1"" GROUP BY ""sell_Date"""
+4,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+5,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+6,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+7,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+8,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+9,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+10,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+11,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
+12,"SELECT ""a"".""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" AS ""a"" GROUP BY 1 ORDER BY 1"
+13,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+14,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+15,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+16,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+17,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+18,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_Date"""
+19,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+20,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY 1"
+21,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""PRODUCT"") AS ""PRODUCTS"" FROM ""activities"" GROUP BY ""sell_date"""
+22,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
 23,"WITH ""CTE1"" AS (SELECT DISTINCT ""sell_date"",""product"" FROM ""Activities"") SELECT ""sell_date"",COUNT(1) AS ""num_sold"",STRING_AGG(""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""CTE1"" GROUP BY ""sell_date"""
-24,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-25,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-26,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-27,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-28,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-29,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-30,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-31,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-32,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-33,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-34,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-35,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-36,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-37,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-38,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-39,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-40,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-41,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-42,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-43,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-44,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-45,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-46,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-47,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-48,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-49,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-50,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-51,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-52,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-53,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-54,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-55,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-56,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-57,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-58,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-59,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-60,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-61,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-62,ERROR: An error occurred while restore SubqueryExpr.Query: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-63,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-64,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-65,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-66,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-67,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-68,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-69,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-70,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-71,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-72,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-73,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-74,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-75,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-76,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-77,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-78,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-79,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-80,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-81,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-82,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-83,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-84,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-85,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-86,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-87,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-88,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-89,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-90,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-91,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-92,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-93,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-94,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
+24,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+25,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+26,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+27,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+28,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+29,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+30,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+31,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+32,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+33,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+34,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+35,"SELECT ""aa"".""sell_date"",COUNT(DISTINCT ""aa"".""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" AS ""aa"" GROUP BY ""aa"".""sell_date"""
+36,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+37,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+38,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+39,"WITH ""x"" AS (SELECT DISTINCT * FROM ""Activities"") SELECT DISTINCT ""sell_date"",COUNT(""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""x"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+40,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+41,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+42,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+43,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+44,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+45,"SELECT DISTINCT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+46,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+47,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"",STRING_AGG(DISTINCT ""product"", ',')"
+48,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+49,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+50,"SELECT ""a"".""sell_date"" AS ""sell_date"",COUNT(DISTINCT ""a"".""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""a"".""product"", ',' ORDER BY ""a"".""product"") AS ""products"" FROM ""activities"" AS ""a"" JOIN ""activities"" AS ""b"" ON ""a"".""sell_date""=""b"".""sell_date"" GROUP BY ""a"".""sell_date"" ORDER BY ""a"".""sell_date"""
+51,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+52,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+53,"WITH ""x"" AS (SELECT DISTINCT * FROM ""Activities"") SELECT DISTINCT ""sell_date"",COUNT(""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""x"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+54,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1"
+55,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+56,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"",""products"""
+57,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+58,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+59,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+60,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+61,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+62,"WITH ""cte_agg"" AS (SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1) SELECT * FROM ""cte_agg"""
+63,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+64,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+65,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+66,"SELECT ""sell_date"",COUNT(DISTINCT ""Product"") AS ""num_sold"",STRING_AGG(DISTINCT ""Product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"",""product"""
+67,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+68,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+69,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+70,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+71,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+72,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+73,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+74,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY 1"
+75,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+76,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+77,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+78,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+79,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+80,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+81,"WITH ""c"" AS (SELECT DISTINCT * FROM ""Activities"") SELECT ""sell_date"",COUNT(""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""c"" GROUP BY ""sell_date"""
+82,"SELECT DISTINCT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY 1) AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+83,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+84,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+85,"WITH ""c"" AS (SELECT DISTINCT * FROM ""Activities"") SELECT ""sell_date"",COUNT(""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""c"" GROUP BY ""sell_date"""
+86,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+87,"SELECT DISTINCT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+88,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+89,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+90,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+91,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+92,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+93,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+94,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
 95,"SELECT ""b"".""sell_date"",COUNT(1) AS ""num_sold"",STRING_AGG(""b"".""product"", ',' ORDER BY ""product"") AS ""products"" FROM (SELECT ""a"".*,ROW_NUMBER() OVER (PARTITION BY ""sell_date"", ""product"" ORDER BY ""product"") AS ""row_num"" FROM ""Activities"" AS ""a"") AS ""b"" WHERE ""row_num""=1 GROUP BY ""sell_date"""
-96,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-97,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-98,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-99,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-100,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-101,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-102,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-103,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-104,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-105,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-106,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-107,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-108,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-109,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-110,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-111,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-112,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-113,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-114,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-115,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-116,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-117,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-118,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-119,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-120,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-121,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-122,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-123,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-124,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-125,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-126,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-127,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-128,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-129,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-130,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-131,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-132,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-133,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-134,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-135,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-136,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-137,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-138,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-139,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-140,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-141,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-142,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-143,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-144,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-145,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-146,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-147,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-148,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-149,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-150,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-151,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-152,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-153,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-154,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-155,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-156,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-157,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-158,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-159,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-160,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-161,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-162,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-163,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-164,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-165,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-166,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-167,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-168,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-169,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-170,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-171,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-172,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-173,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-174,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-175,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-176,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-177,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-178,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-179,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-180,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-181,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-182,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-183,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-184,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-185,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-186,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-187,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-188,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-189,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-190,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-191,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-192,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-193,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-194,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
+96,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+97,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+98,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY 1"
+99,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+100,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+101,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+102,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+103,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1"
+104,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+105,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1"
+106,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" AS ""T1"" GROUP BY ""sell_date"""
+107,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+108,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+109,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+110,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+111,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+112,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+113,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+114,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+115,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+116,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+117,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+118,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+119,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+120,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+121,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+122,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+123,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" AS ""A"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+124,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+125,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+126,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+127,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+128,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+129,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+130,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+131,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+132,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+133,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+134,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+135,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+136,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+137,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+138,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+139,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+140,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+141,"SELECT ""sell_date"",COUNT(""sell_date"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM (SELECT DISTINCT ""sell_date"",""product"" FROM ""activities"") AS ""t"" GROUP BY ""sell_date"""
+142,"SELECT ""SELL_DATE"",COUNT(DISTINCT ""PRODUCT"") AS ""NUM_SOLD"",STRING_AGG(DISTINCT ""PRODUCT"", ',' ORDER BY ""PRODUCT"") AS ""PRODUCTS"" FROM ""ACTIVITIES"" GROUP BY ""SELL_DATE"""
+143,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+144,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" AS ""a1"" GROUP BY ""sell_Date"""
+145,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+146,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+147,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1"
+148,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+149,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+150,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+151,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+152,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+153,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+154,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+155,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+156,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+157,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY 1"
+158,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+159,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+160,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+161,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+162,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+163,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+164,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+165,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+166,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+167,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+168,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+169,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+170,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+171,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+172,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+173,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+174,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+175,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+176,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+177,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+178,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+179,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+180,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+181,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+182,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+183,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+184,"WITH ""filter"" AS (SELECT DISTINCT ""sell_date"",""product"" FROM ""Activities"" GROUP BY ""sell_date"",""product"") SELECT ""sell_date"",COUNT(""sell_date"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""filter"" GROUP BY ""sell_date"""
+185,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+186,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+187,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1"
+188,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+189,"WITH ""x"" AS (SELECT DISTINCT * FROM ""Activities"") SELECT DISTINCT ""sell_date"",COUNT(""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""x"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+190,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+191,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY 1"
+192,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+193,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+194,"SELECT ""sell_date"",COUNT(1) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM (SELECT DISTINCT ""sell_date"",""product"" FROM ""Activities"" ORDER BY ""product"") AS ""tmp"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
 195,"WITH ""x"" AS (SELECT DISTINCT * FROM ""Activities"") SELECT ""sell_date"",COUNT(""product"") AS ""num_sold"",STRING_AGG(""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""x"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
-196,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-197,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-198,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-199,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-200,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-201,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-202,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-203,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-204,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-205,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-206,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-207,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-208,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-209,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-210,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
+196,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+197,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+198,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+199,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+200,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+201,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+202,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+203,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+204,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+205,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+206,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+207,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+208,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+209,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+210,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
 211,"WITH ""cte"" AS (SELECT ""a"".""sell_date"",""a"".""product"" FROM ""Activities"" AS ""a"" GROUP BY 1,2 ORDER BY 1) SELECT ""sell_date"",COUNT(1) AS ""num_sold"",STRING_AGG(""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""cte"" GROUP BY 1 ORDER BY 1"
-212,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-213,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-214,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-215,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-216,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-217,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-218,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-219,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-220,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-221,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-222,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-223,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-224,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-225,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-226,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-227,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-228,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-229,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-230,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-231,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-232,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-233,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-234,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-235,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-236,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-237,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-238,ERROR: An error occurred while restore SubqueryExpr.Query: An error occurred while restore SelectStmt.Fields[1]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-239,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-240,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-241,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-242,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-243,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-244,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-245,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-246,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-247,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-248,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-249,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-250,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-251,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-252,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-253,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-254,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-255,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-256,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-257,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-258,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-259,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-260,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-261,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-262,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-263,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-264,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-265,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-266,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-267,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-268,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-269,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-270,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-271,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-272,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-273,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-274,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-275,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-276,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-277,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-278,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-279,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-280,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-281,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-282,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-283,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-284,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-285,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-286,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-287,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-288,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-289,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-290,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-291,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-292,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-293,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-294,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-295,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-296,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-297,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-298,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-299,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-300,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-301,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-302,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-303,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-304,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-305,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-306,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-307,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-308,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-309,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-310,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-311,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-312,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-313,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-314,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-315,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-316,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-317,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-318,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
-319,ERROR: An error occurred while restore SelectStmt.Fields[2]: An error occurred while restore SelectField.Expr: Psql translation: string_agg does not support DISTINCT
+212,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+213,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+214,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+215,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+216,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+217,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"",',') AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
+218,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+219,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+220,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
+221,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+222,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+223,"SELECT ""SELL_DATE"",COUNT(DISTINCT ""PRODUCT"") AS ""num_sold"",STRING_AGG(DISTINCT ""PRODUCT"", ',' ORDER BY ""PRODUCT"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+224,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+225,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+226,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+227,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+228,"SELECT DISTINCT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+229,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+230,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+231,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"",'') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+232,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+233,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+234,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+235,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_Date"" ORDER BY 1"
+236,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+237,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+238,"WITH ""t1"" AS (SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"" FROM ""Activities"" GROUP BY ""sell_date""), ""t2"" AS (SELECT ""a1"".""sell_date"",STRING_AGG(DISTINCT ""a1"".""product"", ',') AS ""products"" FROM ""Activities"" AS ""a1"" JOIN ""Activities"" AS ""a2"" ON ""a1"".""sell_date""=""a2"".""sell_date"" GROUP BY ""a1"".""sell_date"") SELECT ""t1"".""sell_date"",""t1"".""num_sold"",""t2"".""products"" FROM ""t1"" JOIN ""t2"" ON ""t1"".""sell_date""=""t2"".""sell_date"""
+239,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
+240,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+241,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+242,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+243,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+244,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+245,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+246,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+247,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+248,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+249,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+250,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+251,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+252,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+253,"SELECT ""a"".""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" AS ""a"" GROUP BY ""a"".""sell_date"" ORDER BY ""sell_date"""
+254,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+255,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+256,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+257,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+258,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+259,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+260,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+261,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+262,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+263,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+264,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+265,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+266,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+267,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+268,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+269,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+270,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+271,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+272,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY 1"
+273,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+274,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+275,"SELECT ""a"".""sell_date"",COUNT(DISTINCT ""a"".""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""a"".""product"", ',' ORDER BY ""a"".""product"") AS ""products"" FROM ""Activities"" AS ""a"" GROUP BY ""a"".""sell_date"" ORDER BY ""a"".""sell_date"",""a"".""product"""
+276,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+277,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY 1"
+278,"SELECT ""sub"".""sell_date"",COUNT(DISTINCT ""sub"".""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""sub"".""product"", ',') AS ""products"" FROM (SELECT * FROM ""Activities"" ORDER BY ""product"") AS ""sub"" GROUP BY ""sub"".""sell_date"" ORDER BY ""sub"".""sell_date"""
+279,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+280,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+281,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+282,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+283,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY 1 ORDER BY 1"
+284,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+285,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+286,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+287,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+288,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+289,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY 1"
+290,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY 1 ORDER BY 1"
+291,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+292,"SELECT DISTINCT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+293,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY 1"
+294,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+295,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+296,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+297,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+298,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+299,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+300,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"""
+301,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+302,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+303,"SELECT ""a1"".""sell_date"",COUNT(DISTINCT ""a1"".""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""a1"".""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" AS ""a1"" GROUP BY ""a1"".""sell_date"""
+304,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+305,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+306,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+307,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+308,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+309,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+310,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',') AS ""products"" FROM ""activities"" GROUP BY 1"
+311,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+312,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+313,"SELECT ""sell_date"",COUNT(DISTINCT (""PRODUCT"")) AS ""num_sold"",STRING_AGG(DISTINCT (""product""), ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+314,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+315,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+316,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY 1"
+317,"SELECT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"""
+318,"SELECT ""sell_date"",COUNT(DISTINCT (""product"")) AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""Activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
+319,"SELECT DISTINCT ""sell_date"",COUNT(DISTINCT ""product"") AS ""num_sold"",STRING_AGG(DISTINCT ""product"", ',' ORDER BY ""product"") AS ""products"" FROM ""activities"" GROUP BY ""sell_date"" ORDER BY ""sell_date"""
